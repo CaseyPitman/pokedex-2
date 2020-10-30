@@ -1,12 +1,16 @@
 import React from "react";
+import EvolutionItem from './EvolutionItem'
 
 const EvolutionChain = () => {
   return (
     <div>
+
+       {/* This will render dynamically based on how many items
+       if no evolutions, so note.  */}
       <ul>
-        <li>evolution 1</li>
-        <li>evolution 2</li>
-        <li>evolution 3</li>
+        <EvolutionItem pokemon = {'7 Squirtle'}/>
+        <EvolutionItem pokemon = {'8 Wartortle'}/>
+        <EvolutionItem pokemon = {'9 Blastoise'}/>
       </ul>
     </div>
   );

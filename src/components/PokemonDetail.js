@@ -6,9 +6,9 @@ import EvolutionChain from "./EvolutionChain";
 const PokemonDetail = () => {
   return (
     <div>
-      <div>
+     
         <Button type='prev' />
-      </div>
+      
       <div>
         <img
           src={placeholder}
@@ -19,9 +19,9 @@ const PokemonDetail = () => {
         <h3>type</h3>
         <EvolutionChain />
       </div>
-      <div>
+      
         <Button type='next' />
-      </div>
+      
     </div>
   );
 };
