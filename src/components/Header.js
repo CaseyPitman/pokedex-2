@@ -14,7 +14,7 @@ import header from "../CSS/header.css";
 const Header = () => {
   return (
     <div className='banner'>
-      <h1>Charlie's Pokédex</h1>
+      <h1 className = 'banner-headline'>Charlie's Pokédex</h1>
       <img
         className='banner-img'
         src={headerImg}
