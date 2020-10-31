@@ -1,12 +1,12 @@
 /* Global Styles */
 
 * {
-   box-sizing: border-box;
-   margin: 0px;
-   padding: 0px;
- }
-
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
 
 #root {
-   font-family: 'Tomorrow', sans-serif;
- }
+  font-family: "Tomorrow", sans-serif;
+  color: rgb(44,44,44)
+}

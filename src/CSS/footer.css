@@ -2,13 +2,21 @@
 
 .footer {
   background-color: rgb(255, 62, 50);
+  border-top: 1px solid rgb(44, 44, 44);
+
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
 }
 
-.footer-img {
+.growlithe-footer-img{
+   max-width: 200px;
+}
+
+.squirtle-footer-img {
+   max-width: 150px;
 }
 
 .footer-text {
-}
-
-.copyright-text {
+  color: white;
 }
