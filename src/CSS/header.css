@@ -44,7 +44,7 @@
   width: 175px;
 }
 
-/* Mobile styles*/
+/* Mobile style adjustments*/
 @media only screen and (max-width: 768px) {
   .filter-type,
   .search-input {

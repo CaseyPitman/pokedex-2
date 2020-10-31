@@ -10,26 +10,26 @@ import footer from "../CSS/footer.css";
 const Footer = () => {
   return (
     <div className='footer'>
-
-        <div className='footer-img'>
+      <div className='footer-content-container'>
+        <div className='footer-img-container'>
           <img
-            className='growlithe-footer-img'
+            className='footer-img growlithe-footer-img'
             src={growlithe}
             alt='Growlithe leaping into the fray.'
           />
         </div>
-        <div className='footer-text'>
-          <h2>For Charlie</h2>
-          <h3 className='copyright-text'>&copy; 2020 | Casey Pitman </h3>
-        </div>
-        <div className='footer-img'>
+
+        <h2 className = 'footer-msg'>For Charlie</h2>
+
+        <div className='footer-img-container'>
           <img
-            className='squirtle-footer-img'
+            className='footer-img squirtle-footer-img'
             src={squirtleGlasses}
             alt='Squirtle looking cool in his shades.'
           />
         </div>
-  
+      <h3 className='copyright-text'>&copy; 2020 | Casey Pitman</h3>
+      </div>
     </div>
   );
 };
