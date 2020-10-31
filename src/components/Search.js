@@ -2,9 +2,8 @@ import React from "react";
 
 const Search = () => {
   return (
-    <div>
-       <label>Search for Pokemon</label>
-      <input type='text'></input>
+    <div className = 'search-input'>
+      <input className = 'input-field' type='text' placeholder = 'Search for Pokémon'></input>
     </div>
   );
 };
