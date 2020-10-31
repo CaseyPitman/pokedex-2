@@ -8,17 +8,23 @@ import FilterType from "./FilterType";
 import headerImg from "../img/starter-pokemon.jpg";
 
 // Styles
-import global from "../CSS/global.css"
+import global from "../CSS/global.css";
 import header from "../CSS/header.css";
 
 const Header = () => {
   return (
     <div className='banner'>
       <h1>Charlie's Pokédex</h1>
-      <img src={headerImg} style={{ "max-width": "200px" }} alt = 'Bulbasaur, Charmander, and Squirtle looking at a Pokédex.'/>
-      <div className='banner-inputs'>
-        <FilterType />
-        <Search />
+      <img
+        className='banner-img'
+        src={headerImg}
+        alt='Bulbasaur, Charmander, and Squirtle looking at a Pokédex.'
+      />
+      <div className='banner-inputs-container'>
+        <div className='banner-inputs'>
+          <FilterType />
+          <Search />
+        </div>
       </div>
     </div>
   );
