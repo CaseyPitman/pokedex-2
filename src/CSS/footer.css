@@ -37,13 +37,13 @@
 }
 
 .footer-msg {
-  font-size: 40px;
+  font-size: 24px;
   text-align: center;
   width: 33%;
 }
 
 .copyright-text {
-  font-size: 24px;
+  font-size: 20px;
   margin: 20px auto 0;
   text-align: center;
   width: 100%;
@@ -52,6 +52,9 @@
 /* Mobile style adjustments*/
 @media only screen and (max-width: 768px) {
   .footer-msg {
-    font-size: 30px;
+    font-size: 20px;
   }
+
+  .copyright-text {
+   font-size: 16px;}
 }

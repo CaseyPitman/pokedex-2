@@ -19,7 +19,7 @@ const Footer = () => {
           />
         </div>
 
-        <h2 className = 'footer-msg'>For Charlie</h2>
+        <h2 className = 'footer-msg'>For Charlie & Lily Beth</h2>
 
         <div className='footer-img-container'>
           <img
