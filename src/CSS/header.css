@@ -38,12 +38,11 @@
 }
 
 .input-field {
-   font-family: "Tomorrow", sans-serif;
+  font-family: "Tomorrow", sans-serif;
   font-size: 16px;
   padding: 5px;
   width: 175px;
 }
-
 
 /* Mobile styles*/
 @media only screen and (max-width: 768px) {
