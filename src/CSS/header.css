@@ -18,7 +18,7 @@
   justify-content: space-around;
   align-items: center;
   flex-flow: row wrap;
-   margin: auto;
+  margin: auto;
   max-width: 1200px;
 }
 
