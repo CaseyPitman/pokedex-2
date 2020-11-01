@@ -7,14 +7,15 @@
 }
 
 .pokemon-detail {
-  
 }
 
 .pokemon-detail-img {
+
   display: block;
   height: auto;
   margin: auto;
   max-width: 200px;
+
   width: 100%;
 }
 

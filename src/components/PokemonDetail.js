@@ -22,7 +22,8 @@ const PokemonDetail = () => {
         <div>
           <h2>7</h2>
           <h2>Squirtle</h2>
-          <h3>type</h3>
+          {/* make type clickable */}
+          <h3>Water</h3>
            <EvolutionChain />
         </div>
         <Button type='right' />
