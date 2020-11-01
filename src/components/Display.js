@@ -4,8 +4,7 @@ import PokemonDetail from "./PokemonDetail";
 
 const Display = () => {
   return (
-    <div>
-      <h1>Display</h1>
+    <div className = 'display'>
       {/* <PokemonList /> */}
       <PokemonDetail />
     </div>
