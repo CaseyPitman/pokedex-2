@@ -19,11 +19,11 @@ const PokemonDetail = () => {
 
       <div className='pokemon-detail-content'>
         <Button type='left' />
-        <div>
+        <div className = 'pokemon-detail-content-text'>
           <h2>7</h2>
           <h2>Squirtle</h2>
           {/* make type clickable */}
-          <h3>Water</h3>
+          <h3>Water Type</h3>
            <EvolutionChain />
         </div>
         <Button type='right' />

@@ -1,11 +1,7 @@
 import React from "react";
 
-const EvolutionItem = ({ pokemon }) => {
-  return (
-    <li className = "pokemon-evolution-chain-item">
-      {pokemon}
-    </li>
-  );
+const EvolutionItem = ({ name }) => {
+  return <li className='evolution-chain-item'>{name}</li>;
 };
 
 export default EvolutionItem;

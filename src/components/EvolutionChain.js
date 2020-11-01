@@ -3,13 +3,14 @@ import EvolutionItem from "./EvolutionItem";
 
 const EvolutionChain = () => {
   return (
-    <div>
+    <div className = 'evolution-chain'>
       {/* This will render dynamically based on how many items
        if no evolutions, so note.  */}
-      <ul>
-        <EvolutionItem pokemon={"7 Squirtle"} />
-        <EvolutionItem pokemon={"8 Wartortle"} />
-        <EvolutionItem pokemon={"9 Blastoise"} />
+      <h3 className = 'evolution-chain-headline'>Evolution</h3>
+      <ul className = 'evolution-chain-list'>
+        <EvolutionItem name={"Squirtle"} />
+        <EvolutionItem name={"Wartortle"}  />
+        <EvolutionItem name={"Blastoise"} />
       </ul>
     </div>
   );
