@@ -1,0 +1,11 @@
+/* Styles for PokemonDetail component */
+
+.pokemon-detail {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.pokemon-detail-container {
+
+   display: flex;
+}
