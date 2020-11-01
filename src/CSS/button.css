@@ -1,0 +1,12 @@
+/* Nav Button Styles */
+
+.nav-icon {
+  color: rgb(255, 62, 50);
+  font-size: 35px;
+}
+
+.nav-icon:hover {
+  color: rgb(255, 62, 50, 0.9);
+  cursor: pointer;
+  transform: scale(1.05);
+}
