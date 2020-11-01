@@ -50,7 +50,6 @@
   font-size: 24px;
 }
 
-
 /* Evolution Chain */
 
 .evolution-chain {
@@ -62,7 +61,7 @@
 }
 
 .evolution-chain-headline {
-  font-size:20px;
+  font-size: 20px;
 }
 
 .evolution-chain-list {
@@ -75,12 +74,20 @@
 
 .evolution-chain-item {
   display: inline-block;
-  font-size:18px;
-  font-weight:700;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .evolution-chain-item:hover {
-  color:rgb(199, 160, 8);
+  color: rgb(199, 160, 8);
   cursor: pointer;
   transform: scale(1.05);
+}
+
+/* Mobile adjustments */
+
+@media only screen and (max-width: 769px) {
+  .display {
+    width: 95%;
+  }
 }
