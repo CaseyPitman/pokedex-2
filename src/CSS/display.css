@@ -51,6 +51,12 @@
   font-size: 1.5em;
 }
 
+.pokemon-detail-content-text-type:hover{
+  color:rgb(42, 117, 187);
+  cursor: pointer;
+  transform: scale(1.05);
+} 
+
 /* Evolution Chain */
 
 .evolution-chain {
