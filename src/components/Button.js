@@ -1,13 +1,10 @@
 import React from "react";
 
-const Button = (props) => {
-
-// Props will be type of button - prev or next
-// Button itself will be arrow icon depending on props.
+const Button = ({ type }) => {
 
   return (
     <div>
-      <button>{props.type}</button>
+      <i className={`nav-icon fas fa-arrow-alt-circle-${type}`}></i>
     </div>
   );
 };
