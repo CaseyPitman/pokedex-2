@@ -20,10 +20,10 @@ const PokemonDetail = () => {
       <div className='pokemon-detail-content'>
         <Button type='left' />
         <div className = 'pokemon-detail-content-text'>
-          <h2>7</h2>
-          <h2>Squirtle</h2>
+          <h2 className = 'pokemon-detail-content-text-number pokemon-detail-content-text-item'>7</h2>
+          <h2 className = 'pokemon-detail-content-text-name pokemon-detail-content-text-item'>Squirtle</h2>
           {/* make type clickable */}
-          <h3>Water Type</h3>
+          <h3 className = 'pokemon-detail-content-text-type pokemon-detail-content-text-item'>Water Type</h3>
            <EvolutionChain />
         </div>
         <Button type='right' />

@@ -36,14 +36,33 @@
   text-align: center;
   width: 100%;
 }
+
+
+.pokemon-detail-content-text-item {
+  margin-top:5px;
+}
+
+.pokemon-detail-content-text-number{
+  
+}
+
+
+
+
+
 /* Evolution Chain */
 
 .evolution-chain {
   width: 100%;
 }
 
+.evolution-chain-headline {
+  
+  margin-top:10px;
+}
+
 .evolution-chain-list {
-  margin: auto;
+  margin: 10px auto 0;
   width: 90%;
 
   display: flex;
