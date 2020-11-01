@@ -37,28 +37,31 @@
   width: 100%;
 }
 
-
 .pokemon-detail-content-text-item {
-  margin-top:5px;
+  margin-top: 5px;
 }
 
-.pokemon-detail-content-text-number{
-  
+.pokemon-detail-content-text-number,
+.pokemon-detail-content-text-name {
+  font-size: 30px;
 }
 
-
-
-
+.pokemon-detail-content-text-type {
+  font-size: 24px;
+}
 
 /* Evolution Chain */
 
 .evolution-chain {
-  width: 100%;
+  background: rgb(60, 90, 166);
+  border-radius: 10px;
+  color: rgb(255, 203, 5);
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .evolution-chain-headline {
-  
-  margin-top:10px;
+  font-size:20px;
 }
 
 .evolution-chain-list {
@@ -71,4 +74,12 @@
 
 .evolution-chain-item {
   display: inline-block;
+  font-size:18px;
+  font-weight:700;
+}
+
+.evolution-chain-item:hover {
+  color:rgb(199, 160, 8);
+  cursor: pointer;
+  transform: scale(1.05);
 }
