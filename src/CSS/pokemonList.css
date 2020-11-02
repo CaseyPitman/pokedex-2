@@ -2,12 +2,16 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-row-gap: 40px;
+  align-content: space-evenly;
   justify-content: space-evenly;
+  height: auto;
   width: 100%;
 }
 
 .pokemon-list-item {
+  font-size: 20px;
   text-align: center;
 }
 
