@@ -31,5 +31,14 @@
   max-width: 125px;
 }
 
+.pokemon-list-pagination-btns {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-flow: row nowrap;
+   margin:50px auto;
+   width:20%;
+}
+
 
 
