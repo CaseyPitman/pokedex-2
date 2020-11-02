@@ -3,7 +3,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-row-gap: 40px;
+  grid-row-gap: 50px;
   align-content: space-evenly;
   justify-content: space-evenly;
   height: auto;
@@ -15,6 +15,12 @@
   text-align: center;
 }
 
+.pokemon-list-item:hover {
+   cursor: pointer;
+   background-color:rgb(44, 44, 44, 0.75);
+   color: white;
+}
+
 .pokemon-list-item-img {
   display: block;
   width: 100%;
@@ -22,4 +28,6 @@
   margin: auto;
   max-width: 125px;
 }
+
+
 
