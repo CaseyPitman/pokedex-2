@@ -11,13 +11,15 @@
 }
 
 .pokemon-list-item {
+   border-radius:10px;
   font-size: 20px;
+  padding-bottom: 5px;
   text-align: center;
 }
 
 .pokemon-list-item:hover {
    cursor: pointer;
-   background-color:rgb(44, 44, 44, 0.75);
+   background-color:rgb(42, 117, 187);
    color: white;
 }
 
