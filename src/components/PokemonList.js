@@ -1,12 +1,44 @@
 import React from "react";
 
+// Assets
+import placeholder from "../img/placeholder-image.png";
+
+
+// Styles
+import pokemonList from '../CSS/pokemonList.css'
 
 const PokemonList = () => {
   return (
-    <div>
-      <h1>List of Pokemon of selected type.</h1>
-      {/* <img src = {} alt = "pokemon art"/> */}
-      <h4>Pokemon number & name</h4>
+    <div className='pokemon-list grid-container'>
+
+      <div className = 'pokemon-list-item'>
+        <img className = 'pokemon-list-item-img'src={placeholder} alt='pokemon art' />
+        <h4 className = 'pokemon-list-item-number'>7</h4>
+        <h4 className = 'pokemon-list-item-name'>Squirtle</h4>
+      </div>
+
+      <div className = 'pokemon-list-item'>
+        <img className = 'pokemon-list-item-img'src={placeholder} alt='pokemon art' />
+        <h4 className = 'pokemon-list-item-number'>7</h4>
+        <h4 className = 'pokemon-list-item-name'>Squirtle</h4>
+      </div>
+
+      <div className = 'pokemon-list-item'>
+        <img className = 'pokemon-list-item-img'src={placeholder} alt='pokemon art' />
+        <h4 className = 'pokemon-list-item-number'>7</h4>
+        <h4 className = 'pokemon-list-item-name'>Squirtle</h4>
+      </div>
+      
+      <div className = 'pokemon-list-item'>
+        <img className = 'pokemon-list-item-img'src={placeholder} alt='pokemon art' />
+        <h4 className = 'pokemon-list-item-number'>7</h4>
+        <h4 className = 'pokemon-list-item-name'>Squirtle</h4>
+      </div>
+  
+
+
+
+
     </div>
   );
 };
