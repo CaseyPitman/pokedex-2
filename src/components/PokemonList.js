@@ -1,5 +1,8 @@
 import React from "react";
 
+// Components
+import Button from "./Button";
+
 // Assets
 import placeholder from "../img/placeholder-image.png";
 
@@ -210,8 +213,11 @@ const PokemonList = () => {
           <h4 className='pokemon-list-item-name'>Squirtle</h4>
         </div>
       </div>
-     
 
+      <div className='pokemon-list-pagination-btns'>
+        <Button type='left' />
+        <Button type='right' />
+      </div>
     </div>
   );
 };
