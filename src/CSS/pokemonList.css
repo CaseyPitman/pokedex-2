@@ -11,16 +11,16 @@
 }
 
 .pokemon-list-item {
-   border-radius:10px;
+  border-radius: 10px;
   font-size: 20px;
   padding-bottom: 5px;
   text-align: center;
 }
 
 .pokemon-list-item:hover {
-   cursor: pointer;
-   background-color:rgb(42, 117, 187);
-   color: white;
+  cursor: pointer;
+  background-color: rgb(42, 117, 187);
+  color: white;
 }
 
 .pokemon-list-item-img {
@@ -31,17 +31,22 @@
   max-width: 125px;
 }
 
-.pokemon-list-pagination-btns {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-flow: row nowrap;
-   margin:50px auto;
-   width:20%;
+.pokemon-list-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  margin: 50px auto;
+  width: 25%;
 }
 
+.pokemon-list-pagination-list {
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+}
 
-
-
-
-
+.pokemon-list-pagintion-list-item {
+  display: inline;
+  font-size: 18px;
+}

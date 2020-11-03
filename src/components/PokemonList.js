@@ -214,7 +214,7 @@ const PokemonList = () => {
         </div>
       </div>
 
-      <div className='pokemon-list-pagination-btns'>
+      <div className='pokemon-list-pagination'>
         <Button type='left' />
         <ul className = 'pokemon-list-pagination-list'>
           <li className = 'pokemon-list-pagintion-list-item'>1</li>
