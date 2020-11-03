@@ -11,7 +11,7 @@
 }
 
 .pokemon-list-item {
-  border:1px solid transparent;
+  border: 1px solid transparent;
   border-radius: 10px;
   font-size: 20px;
   padding-bottom: 5px;
@@ -20,8 +20,8 @@
 
 .pokemon-list-item:hover {
   cursor: pointer;
-  /* background-color: rgb(42, 117, 187); */
-  border:1px solid rgb(255, 62, 50);
+
+  border: 1px solid rgb(255, 62, 50);
   color: rgb(255, 62, 50);
 }
 

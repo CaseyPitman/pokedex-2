@@ -1,4 +1,6 @@
 import React from "react";
+
+// Components
 import PokemonList from "./PokemonList";
 import PokemonDetail from "./PokemonDetail";
 
