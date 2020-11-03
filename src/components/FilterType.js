@@ -19,17 +19,25 @@ const FilterType = () => {
     getTypes();
   }, []);
 
+  const onChangeSelect = (event) => {
+    console.log(event.target.value);
+  };
+
   //Map call results to create options for dropdown selector.
   const typeOptions = types.map(({ name, url }) => {
     //Capitalize name for selector menu.
     name = name.charAt(0).toUpperCase() + name.slice(1);
 
-    return <option key={name} value = {url}>{name}</option>;
+    return (
+      <option key={name} value={url}>
+        {name}
+      </option>
+    );
   });
 
   return (
     <div className='filter-type'>
-      <select className='input-field'>
+      <select className='input-field' onChange={onChangeSelect}>
         <option>Sort by Type</option>
         {typeOptions}
       </select>
