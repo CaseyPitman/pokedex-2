@@ -216,6 +216,13 @@ const PokemonList = () => {
 
       <div className='pokemon-list-pagination-btns'>
         <Button type='left' />
+        <ul className = 'pokemon-list-pagination-list'>
+          <li className = 'pokemon-list-pagintion-list-item'>1</li>
+          <li className = 'pokemon-list-pagintion-list-item'>2</li>
+          <li className = 'pokemon-list-pagintion-list-item'>3</li>
+          <li className = 'pokemon-list-pagintion-list-item'>4</li>
+          <li className = 'pokemon-list-pagintion-list-item'>5</li>
+        </ul>
         <Button type='right' />
       </div>
     </div>
