@@ -11,17 +11,20 @@ const FilterType = () => {
   useEffect(() => {
     const getTypes = async () => {
       const response = await axios.get("https://pokeapi.co/api/v2/type");
+
+      console.log(response.data.results);
+
       setTypes(response.data.results);
     };
     getTypes();
   }, []);
 
   //Map call results to create options for dropdown selector.
-  const typeOptions = types.map(({ name }) => {
+  const typeOptions = types.map(({ name, url }) => {
     //Capitalize name for selector menu.
     name = name.charAt(0).toUpperCase() + name.slice(1);
 
-    return <option key={name}>{name}</option>;
+    return <option key={name} value = {url}>{name}</option>;
   });
 
   return (
