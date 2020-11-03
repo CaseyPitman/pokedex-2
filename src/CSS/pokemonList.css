@@ -49,4 +49,12 @@
 .pokemon-list-pagintion-list-item {
   display: inline;
   font-size: 18px;
+  padding: 5px;
+}
+
+.pokemon-list-pagintion-list-item:hover {
+  color: rgb(255, 62, 50);
+  cursor: pointer;
+  transform: scale(1.2);
+  font-weight: 700;
 }
