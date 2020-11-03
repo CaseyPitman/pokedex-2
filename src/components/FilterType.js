@@ -5,15 +5,19 @@ import axios from "axios";
 import header from "../CSS/header.css";
 
 const FilterType = () => {
+const [types, setTypes] = useState([]);
+
   useEffect(() => {
-    const types = async () => {
+    const getTypes = async () => {
       const response = await axios.get("https://pokeapi.co/api/v2/type");
 
-      console.log(response);
+      console.log(response.data.results);
+      setTypes(response.data.results);
     };
-    types();
-    // set the state
+    getTypes();
   }, []);
+
+  
 
   return (
     <div className='filter-type'>
