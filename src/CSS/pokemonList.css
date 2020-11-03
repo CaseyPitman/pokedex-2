@@ -19,8 +19,9 @@
 
 .pokemon-list-item:hover {
   cursor: pointer;
-  background-color: rgb(42, 117, 187);
-  color: white;
+  /* background-color: rgb(42, 117, 187); */
+  border:1px solid rgb(255, 62, 50);
+  color: rgb(255, 62, 50);
 }
 
 .pokemon-list-item-img {
