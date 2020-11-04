@@ -7,7 +7,7 @@ import useCall from "../Hooks/useCall";
 // Styles
 import header from "../CSS/header.css";
 
-const FilterType = (props) => {
+const FilterType = ({changeListType}) => {
   const [types, setTypes] = useState([]);
 
   //Make call for list of types.
@@ -22,7 +22,7 @@ const FilterType = (props) => {
 
   //Handles change in selector.
   const onChangeSelect = event => {
-    props.changeListType(event.target.value);
+    changeListType(event.target.value);
   };
 
   // Map call results to create options for dropdown selector.
