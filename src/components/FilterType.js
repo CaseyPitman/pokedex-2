@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+// Hooks
+import useCall from "../Hooks/useCall";
+
 // Styles
 import header from "../CSS/header.css";
 
-const FilterType = () => {
+const FilterType = (props) => {
   const [types, setTypes] = useState([]);
 
   //Make call for list of types.
@@ -12,18 +15,17 @@ const FilterType = () => {
     const getTypes = async () => {
       const response = await axios.get("https://pokeapi.co/api/v2/type");
 
-      console.log(response.data.results);
-
       setTypes(response.data.results);
     };
     getTypes();
   }, []);
 
-  const onChangeSelect = (event) => {
-    console.log(event.target.value);
+  //Handles change in selector.
+  const onChangeSelect = event => {
+    props.changeListType(event.target.value);
   };
 
-  //Map call results to create options for dropdown selector.
+  // Map call results to create options for dropdown selector.
   const typeOptions = types.map(({ name, url }) => {
     //Capitalize name for selector menu.
     name = name.charAt(0).toUpperCase() + name.slice(1);

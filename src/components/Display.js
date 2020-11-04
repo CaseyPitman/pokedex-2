@@ -6,7 +6,7 @@ import PokemonDetail from "./PokemonDetail";
 
 
 
-const Display = () => {
+const Display = (props) => {
   return (
     <div className = 'display'>
       <PokemonList />
