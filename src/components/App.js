@@ -25,8 +25,6 @@ const App = () => {
     }
   }, [listUrl]);
 
-  
-
 
 
   const changeListType = url => {

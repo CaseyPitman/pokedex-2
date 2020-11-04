@@ -1,4 +1,4 @@
-import React,{ useEffect, useState }from "react";
+import React, { useEffect, useState } from "react";
 
 // Components
 import Button from "./Button";
@@ -10,18 +10,12 @@ import placeholder from "../img/placeholder-image.png";
 import pokemonList from "../CSS/pokemonList.css";
 import useCall from "../Hooks/useCall";
 
+import PokemonListItem from "./PokemonListItem";
+
 const PokemonList = () => {
-
-
-
   return (
     <div className='pokemon-list'>
       <div className='grid-container'>
-
-
-
-
-
         <div className='pokemon-list-item'>
           <img
             className='pokemon-list-item-img'
@@ -212,7 +206,7 @@ const PokemonList = () => {
           <h4 className='pokemon-list-item-name'>Squirtle</h4>
         </div>
 
-        <div className='pokemon-list-item'> 
+        <div className='pokemon-list-item'>
           <img
             className='pokemon-list-item-img'
             src={placeholder}
