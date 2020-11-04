@@ -9,7 +9,7 @@ import PokemonDetail from "./PokemonDetail";
 const Display = (props) => {
   return (
     <div className = 'display'>
-      <PokemonList />
+      <PokemonList pokemonListByType = {props.pokemonListByType}/>
       {/* <PokemonDetail /> */}
     </div>
   );

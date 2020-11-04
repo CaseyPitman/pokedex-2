@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-
-const useCall = url => {
+const useCall = inputUrl => {
+  const [url, setUrl] = useState("");
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setUrl(inputUrl);
+  }, [inputUrl]);
 
   useEffect(() => {
     const getResponse = async () => {
@@ -12,7 +15,9 @@ const useCall = url => {
 
       setData(response.data);
     };
-    getResponse();
+
+      getResponse();
+  
   }, [url]);
 
   return data;

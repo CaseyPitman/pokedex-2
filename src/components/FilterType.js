@@ -5,7 +5,7 @@ import axios from "axios";
 import header from "../CSS/header.css";
 
 const FilterType = ({ changeListType }) => {
-  const [typeData, setTypeData] = useState([]);
+
   const [types, setTypes] = useState([]);
 
   // //Make call for list of types.

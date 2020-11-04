@@ -9,7 +9,8 @@ import placeholder from "../img/placeholder-image.png";
 // Styles
 import pokemonList from "../CSS/pokemonList.css";
 
-const PokemonList = () => {
+const PokemonList = ({pokemonListByType}) => {
+  
   return (
     <div className='pokemon-list'>
       <div className='grid-container'>

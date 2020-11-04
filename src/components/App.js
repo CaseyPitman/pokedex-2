@@ -35,10 +35,12 @@ const App = () => {
     setListUrl(url);
   };
 
+ 
+
   return (
     <div>
       <Header changeListType={changeListType} />
-      <Display />
+      <Display pokemonListByType = {pokemonListByType}/>
 
       <Footer />
     </div>
