@@ -7,7 +7,7 @@ import useCall from "../Hooks/useCall";
 // Styles
 import header from "../CSS/header.css";
 
-const FilterType = ({changeListType}) => {
+const FilterType = ({ changeListType }) => {
   const [types, setTypes] = useState([]);
 
   //Make call for list of types.

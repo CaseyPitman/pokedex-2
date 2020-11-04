@@ -14,7 +14,7 @@ const useCall = url => {
     getResponse();
   }, [url]);
 
-  return [data];
+  return [data, setData];
 };
 
 export default useCall;

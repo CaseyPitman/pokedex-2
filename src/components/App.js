@@ -1,27 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 // Components
 import Header from "./Header";
 import Display from "./Display";
 import Footer from "./Footer";
 
-
-
-
 const App = () => {
+  const [listType, setListType] = useState("");
+  const [pokemonList, setPokemonList] = useState([]);
 
-const [listType, setListType] = useState('');
-
-
-const changeListType = (url) =>{
-  console.log(url);
-}
-
-
+  const changeListType = url => {
+    setListType(url);
+  };
 
   return (
     <div>
-      <Header changeListType = {changeListType}/>
+      <Header changeListType={changeListType} />
       <Display />
 
       <Footer />

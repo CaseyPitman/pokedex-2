@@ -11,10 +11,10 @@ import headerImg from "../img/starter-pokemon.jpg";
 import global from "../CSS/global.css";
 import header from "../CSS/header.css";
 
-const Header = (props) => {
+const Header = props => {
   return (
     <div className='banner'>
-      <h1 className = 'banner-headline'>Pokédex</h1>
+      <h1 className='banner-headline'>Pokédex</h1>
       <img
         className='banner-img'
         src={headerImg}
@@ -22,7 +22,7 @@ const Header = (props) => {
       />
       <div className='banner-inputs-container'>
         <div className='banner-inputs'>
-          <FilterType changeListType = {props.changeListType}/>
+          <FilterType changeListType={props.changeListType} />
           <Search />
         </div>
       </div>
