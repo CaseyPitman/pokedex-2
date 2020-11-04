@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
-// Hooks
-import useCall from "../Hooks/useCall";
 
 // Components
 import Header from "./Header";
@@ -12,24 +10,22 @@ import Footer from "./Footer";
 
 const App = () => {
   const [listUrl, setListUrl] = useState("");
-  const [pokemonListByType, setPokemonListByType] = useState([]);
-  const data = useCall(listUrl);
+  const [listByType, setListByType] = useState([]);
+
 
   // Call for list of pokemon in the requested type.
-  // useEffect(() => {
-  //   if (listUrl !== "") {
-  //     const getPokemon = async () => {
-
-  //       const response = await axios.get( listUrl );
-  //       setPokemonListByType(response.data.pokemon);
-  //     };
-  //     getPokemon();
-  //   }
-  // }, [listUrl]);
-
   useEffect(() => {
-    setPokemonListByType(data.pokemon);
-  }, [data]);
+    if (listUrl !== "") {
+      const getPokemon = async () => {
+
+        const response = await axios.get( listUrl );
+        setListByType(response.data.pokemon);
+      };
+      getPokemon();
+    }
+  }, [listUrl]);
+
+
 
   const changeListType = url => {
     setListUrl(url);
@@ -40,7 +36,7 @@ const App = () => {
   return (
     <div>
       <Header changeListType={changeListType} />
-      <Display pokemonListByType = {pokemonListByType}/>
+      <Display />
 
       <Footer />
     </div>
