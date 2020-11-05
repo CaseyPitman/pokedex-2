@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from "react";
 
-// Should I make this an unordered list instead?
 
-const PokemonListItemType = ({typeArr}) => {
+const PokemonListItemType = (props) => {
 
-   const [types, setTypes] = useState(typeArr);
-
+ 
 
 
 
 
-console.log(typeArr);
+
+      // const listItems = props.typeArr.map((cur) => {
+      //    return <li className='pokemon-list-item-type-text'>{cur.type.name}</li>
+      // })
+  
+
+   //may have to go async and call from parent. 
+
+
+
+
 
 
 
 
   return (
     <ul className='pokemon-list-item-type'>
-      <li className='pokemon-list-item-type-text'>Normal</li>
+      {/* <li className='pokemon-list-item-type-text'>Normal</li> */}
+      {/* {listItems} */}
     </ul>
   );
 };
