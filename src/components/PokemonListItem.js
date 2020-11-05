@@ -40,7 +40,7 @@ const PokemonListItem = props => {
       <h4 className='pokemon-list-item-name'>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </h4>
-      <PokemonListItemType types = {type} />
+      <PokemonListItemType typeArr = {type} />
     </div>
   );
 };

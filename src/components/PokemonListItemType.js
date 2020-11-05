@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 
 // Should I make this an unordered list instead?
 
-const PokemonListItemType = props => {
+const PokemonListItemType = ({typeArr}) => {
+
+   const [types, setTypes] = useState(typeArr);
 
 
 
-// map props type to generate list items
+
+
+console.log(typeArr);
+
+
 
 
   return (
