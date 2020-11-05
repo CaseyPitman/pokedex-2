@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+// Components
+import PokemonListItemType from "./PokemonListItemType";
+
 // Dependencies
 import axios from "axios";
 
@@ -20,7 +23,7 @@ const PokemonListItem = props => {
       setNumber(data.id);
       setName(data.name);
       setImg(data.sprites.front_default);
-      setType(data.types)
+      setType(data.types);
     };
     getPokemon();
   }, [props.detailsUrl]);
@@ -33,7 +36,9 @@ const PokemonListItem = props => {
       <h4 className='pokemon-list-item-name'>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </h4>
-      <h4 className='pokemon-list-item-type'>Normal Flying</h4>
+      <ul className='pokemon-list-item-type'>
+        <PokemonListItemType />
+      </ul>
     </div>
   );
 };
