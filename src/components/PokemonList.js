@@ -10,6 +10,10 @@ import useCall from "../Hooks/useCall";
 import PokemonListItem from "./PokemonListItem";
 
 const PokemonList = () => {
+  const [page, setPage] = useState("https://pokeapi.co/api/v2/pokemon");
+  const [nextPage, setNextPage] = useState("");
+  const [prevPage, setPrevPage] = useState("");
+
   return (
     <div className='pokemon-list'>
       <div className='grid-container'>
