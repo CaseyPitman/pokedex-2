@@ -10,9 +10,10 @@ import useCall from "../Hooks/useCall";
 import PokemonListItem from "./PokemonListItem";
 
 const PokemonList = () => {
-  const [page, setPage] = useState("https://pokeapi.co/api/v2/pokemon");
-  const [nextPage, setNextPage] = useState("");
-  const [prevPage, setPrevPage] = useState("");
+  const [pageNumber, setPageNumber] = useState(1);
+  const [pageUrl, setPageUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+  const [nextPageUrl, setNextPageUrl] = useState("");
+  const [prevPageUrl, setPrevPageUrl] = useState("");
 
   return (
     <div className='pokemon-list'>
@@ -21,7 +22,7 @@ const PokemonList = () => {
       </div>
       <div className='pokemon-list-pagination'>
         <Button type='left' />
-
+        <h3 className='list-page-number'>Page 1</h3>
         <Button type='right' />
       </div>
     </div>
