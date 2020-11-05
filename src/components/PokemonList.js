@@ -24,14 +24,15 @@ const PokemonList = () => {
 
   useEffect(() => {
     const getList = async () => {
-      const response = await axios.get(pageUrl);
+      const { data } = await axios.get(pageUrl);
 
-    
-      console.log(`list to show ${response.results}`);
+      setList(data.results);
+      setPrevPageUrl(data.previous);
+      setNextPageUrl(data.next);
+
     };
     getList();
   }, [pageUrl]);
-
 
   return (
     <div className='pokemon-list'>
