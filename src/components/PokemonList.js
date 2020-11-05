@@ -19,20 +19,25 @@ const PokemonList = () => {
   const [nextPageUrl, setNextPageUrl] = useState("");
   const [prevPageUrl, setPrevPageUrl] = useState("");
   const [list, setList] = useState([]);
+  const [listItems, setListItems] = useState([]);
 
   // Call for list of currently showing pokemon
-
   useEffect(() => {
     const getList = async () => {
       const { data } = await axios.get(pageUrl);
-
       setList(data.results);
       setPrevPageUrl(data.previous);
       setNextPageUrl(data.next);
-
     };
     getList();
   }, [pageUrl]);
+
+  //Map the list to make the PokemonListItems for display
+  useEffect(() => {
+
+  }, [list]);
+
+
 
   return (
     <div className='pokemon-list'>
