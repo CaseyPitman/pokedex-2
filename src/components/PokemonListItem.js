@@ -1,10 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 
 // Assets
 import placeholder from "../img/placeholder-image.png";
 
+
 const PokemonListItem = () => {
+
+
+
+
 
 
   return (

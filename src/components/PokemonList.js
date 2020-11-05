@@ -34,15 +34,19 @@ const PokemonList = () => {
 
   //Map the list to make the PokemonListItems for display
   useEffect(() => {
+    const curItems = list.map(pokemon => {
+      return (<PokemonListItem key={pokemon.name} name={pokemon.name} detailsUrl = {pokemon.url}/>)
+    });
 
+    setListItems(curItems);
   }, [list]);
-
-
 
   return (
     <div className='pokemon-list'>
       <div className='grid-container'>
-        <PokemonListItem />
+        {/* <PokemonListItem /> */}
+        {listItems}
+
       </div>
       <div className='pokemon-list-pagination'>
         <Button type='left' />
