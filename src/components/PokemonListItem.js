@@ -20,7 +20,7 @@ const PokemonListItem = props => {
       setNumber(data.id);
       setName(data.name);
       setImg(data.sprites.front_default);
-      // console.log(data.sprites.other.official-artwork.front_default);
+      setType(data.types)
     };
     getPokemon();
   }, [props.detailsUrl]);
