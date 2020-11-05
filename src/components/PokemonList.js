@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+// Dependencies
+import axios from "axios";
+
 // Components
 import Button from "./Button";
 
@@ -10,10 +13,25 @@ import useCall from "../Hooks/useCall";
 import PokemonListItem from "./PokemonListItem";
 
 const PokemonList = () => {
+  // Component state
   const [pageNumber, setPageNumber] = useState(1);
   const [pageUrl, setPageUrl] = useState("https://pokeapi.co/api/v2/pokemon");
   const [nextPageUrl, setNextPageUrl] = useState("");
   const [prevPageUrl, setPrevPageUrl] = useState("");
+  const [list, setList] = useState([]);
+
+  // Call for list of currently showing pokemon
+
+  useEffect(() => {
+    const getList = async () => {
+      const response = await axios.get(pageUrl);
+
+    
+      console.log(`list to show ${response.results}`);
+    };
+    getList();
+  }, [pageUrl]);
+
 
   return (
     <div className='pokemon-list'>
