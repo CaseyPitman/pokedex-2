@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 
 const useCapitalize = word => {
-  const [capitalizedWord, setCapitaliedWord] = useState("");
+  const [capitalizedWord, setCapitalizedWord] = useState("");
 
-  useEffect(() => {});
+  useEffect(() => {
+    setCapitalizedWord(wordcharAt(0).toUpperCase() + word.slice(1));
+  }, [word]);
+
+  return [capitalizedWord];
 };
+
+export default useCapitalize;
