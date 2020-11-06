@@ -28,10 +28,6 @@ const PokemonListItem = props => {
     getPokemon();
   }, [props.detailsUrl]);
 
-
-
-
-
   return (
     <div className='pokemon-list-item'>
       <img className='pokemon-list-item-img' src={img} alt='pokemon art' />
@@ -40,7 +36,7 @@ const PokemonListItem = props => {
       <h4 className='pokemon-list-item-name'>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </h4>
-      <PokemonListItemType typeArr = {type} />
+      <ul className='pokemon-list-item-type'></ul>
     </div>
   );
 };
