@@ -47,8 +47,8 @@ const PokemonList = () => {
     setListItems(curItems);
   }, [list]);
 
-  const changePage = () => {
-    console.log("changePage");
+  const changePage = dir => {
+    console.log(dir);
   };
 
   return (
@@ -58,11 +58,11 @@ const PokemonList = () => {
         {listItems}
       </div>
       <div className='pokemon-list-pagination'>
-        <Button type='left' />
+        <Button type='left' onClick={e => changePage("previous")} />
+
         <h3 className='list-page-number'>Page 1</h3>
-        <div className='button-container'>
-          <Button type='right' />
-        </div>
+
+        <Button type='right' onClick={e => changePage("next")} />
       </div>
     </div>
   );
