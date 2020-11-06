@@ -24,6 +24,9 @@ const PokemonListItem = props => {
     getPokemon();
   }, [props.detailsUrl]);
 
+
+  
+
   return (
     <div className='pokemon-list-item'>
       <img className='pokemon-list-item-img' src={img} alt={`Classic ${name} sprite.`} />
