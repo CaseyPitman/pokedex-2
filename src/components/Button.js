@@ -12,9 +12,12 @@ const Button = (props) => {
 
 
 
+
+
+
   return (
     <div>
-      <i className={`nav-icon fas fa-arrow-alt-circle-${props.type}`} onClick = {handleClick}></i>
+      <i className={`nav-icon fas fa-arrow-alt-circle-${props.type} ${props.status}`} onClick = {handleClick}></i>
     </div>
   );
 };

@@ -1,15 +1,23 @@
 /* Nav Button Styles */
 
 .nav-icon {
-  color: rgb(255, 62, 50);
   font-size: 50px;
 }
 
-.nav-icon:hover {
+.active{
+  color:rgb(255, 62, 50);
+}
+
+.inactive {
+  color: rgb(44, 44, 44);
+}
+
+.active:hover {
   color: rgb(255, 62, 50, 0.9);
   cursor: pointer;
   transform: scale(1.05);
 }
+
 
 /* Mobile adjustments */
 

@@ -20,6 +20,8 @@ const PokemonList = () => {
   const [prevPageUrl, setPrevPageUrl] = useState("");
   const [list, setList] = useState([]);
   const [listItems, setListItems] = useState([]);
+  const [prevBtnStatus, setPrevBtnStatus] = useState("inactive");
+  const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
   // Call for list of currently showing pokemon
   useEffect(() => {
@@ -61,14 +63,20 @@ const PokemonList = () => {
     if (dir === "previous" && pageNumber !== 1) {
       setPageNumber(pageNumber - 1);
       setPageUrl(prevPageUrl);
-    } else if (dir === "next") {
+    }
+
+    if (pageNumber === 2) {
+      setPrevBtnStatus("inactive");
+    }
+
+    if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setPageUrl(nextPageUrl);
+      setPrevBtnStatus("active");
     }
 
     // TODO
 
-    //Set an 'of pages'
     //Set conditional styling on the buttons to negate inactives
 
     //set a top limit. page 50 beedril number 10090
@@ -81,11 +89,19 @@ const PokemonList = () => {
         {listItems}
       </div>
       <div className='pokemon-list-pagination'>
-        <Button type='left' onClick={e => changePage("previous")} />
+        <Button
+          type='left'
+          onClick={e => changePage("previous")}
+          status={prevBtnStatus}
+        />
 
         <h3 className='list-page-number'>Page {pageNumber} of 50</h3>
 
-        <Button type='right' onClick={e => changePage("next")} />
+        <Button
+          type='right'
+          onClick={e => changePage("next")}
+          status={nextBtnStatus}
+        />
       </div>
     </div>
   );
