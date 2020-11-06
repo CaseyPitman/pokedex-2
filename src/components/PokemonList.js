@@ -55,11 +55,12 @@ const PokemonList = () => {
     console.log(dir);
     //Set page number
 
-    //Limit to a certain page (52?)
+    //Limit to 50 pages. Do not advance past page 50.
     if (dir === "next" && pageNumber === 50) {
       return;
     }
 
+    //On page one, do not subtract if previous button clicked.
     if (dir === "previous" && pageNumber !== 1) {
       setPageNumber(pageNumber - 1);
       setPageUrl(prevPageUrl);
@@ -69,16 +70,21 @@ const PokemonList = () => {
       setPrevBtnStatus("inactive");
     }
 
+   
+
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setPageUrl(nextPageUrl);
       setPrevBtnStatus("active");
+    } 
+    
+    if (pageNumber === 49 && dir === "next") {
+      setNextBtnStatus("inactive");
+    } else {
+      setNextBtnStatus("active");
     }
 
-    // TODO
-
-    //Set conditional styling on the buttons to negate inactives
-
+    // Todo : skip to page functionality?
   };
 
   return (
