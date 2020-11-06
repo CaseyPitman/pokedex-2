@@ -79,7 +79,6 @@ const PokemonList = () => {
 
     //Set conditional styling on the buttons to negate inactives
 
-    //set a top limit. page 50 beedril number 10090
   };
 
   return (
