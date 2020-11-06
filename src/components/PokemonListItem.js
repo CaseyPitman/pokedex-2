@@ -11,7 +11,6 @@ const PokemonListItem = props => {
   const [name, setName] = useState("???");
   const [number, setNumber] = useState("?");
 
-
   // Calls for Pokemon image, number, and name to display on list.
   useEffect(() => {
     const getPokemon = async () => {
@@ -24,12 +23,13 @@ const PokemonListItem = props => {
     getPokemon();
   }, [props.detailsUrl]);
 
-
-  
-
   return (
     <div className='pokemon-list-item'>
-      <img className='pokemon-list-item-img' src={img} alt={`Classic ${name} sprite.`} />
+      <img
+        className='pokemon-list-item-img'
+        src={img}
+        alt={`Classic ${name} sprite.`}
+      />
       <h4 className='pokemon-list-item-number'>{number}</h4>
       {/* Capitalize Pokemon name */}
       <h4 className='pokemon-list-item-name'>
