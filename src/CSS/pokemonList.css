@@ -29,6 +29,7 @@
   display: block;
   width: 100%;
   height: auto;
+  max-height:125px;
   margin: auto;
   max-width: 125px;
 }

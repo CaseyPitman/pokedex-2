@@ -30,7 +30,7 @@ const PokemonList = () => {
       setNextPageUrl(data.next);
     };
     getList();
-  }, [pageUrl, pageNumber]);
+  }, [pageUrl]);
 
   //Map the list to make the PokemonListItems for display
   useEffect(() => {
@@ -50,15 +50,22 @@ const PokemonList = () => {
   const changePage = dir => {
     console.log(dir);
     //Set page number
-
-    if (dir === "previous" && pageNumber !== 0) {
+    if (dir === "previous" && pageNumber !== 1) {
       setPageNumber(pageNumber - 1);
+      setPageUrl(prevPageUrl);
     } else if (dir === "next") {
       setPageNumber(pageNumber + 1);
+      setPageUrl(nextPageUrl)
     }
 
+    // TODO
+    // Set pageUrl to next or previous
 
-    //set page url to next or previous
+    //Set conditional styling on the buttons to negate inactives
+
+
+    //set a top limit. page 50 beedril number 10090
+    
   };
 
   return (
