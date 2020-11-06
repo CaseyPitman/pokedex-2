@@ -41,18 +41,3 @@
   margin: 50px auto;
   width: 25%;
 }
-
-
-
-.pokemon-list-item-type{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  
-  margin-top:5px;
-}
-
-.pokemon-list-item-type-text{
-  display: inline-block;
-
-}
