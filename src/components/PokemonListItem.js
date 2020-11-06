@@ -16,9 +16,13 @@ const PokemonListItem = props => {
     const getPokemon = async () => {
       const { data } = await axios.get(props.detailsUrl);
 
+      if (data.sprites.front_default === null) {
+        setImg(pokeball);
+      } else {
+        setImg(data.sprites.front_default);
+      }
       setNumber(data.id);
       setName(data.name);
-      setImg(data.sprites.front_default);
     };
     getPokemon();
   }, [props.detailsUrl]);
