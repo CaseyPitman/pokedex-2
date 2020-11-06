@@ -30,7 +30,7 @@ const PokemonList = () => {
       setNextPageUrl(data.next);
     };
     getList();
-  }, [pageUrl]);
+  }, [pageUrl, pageNumber]);
 
   //Map the list to make the PokemonListItems for display
   useEffect(() => {
@@ -49,6 +49,16 @@ const PokemonList = () => {
 
   const changePage = dir => {
     console.log(dir);
+    //Set page number
+
+    if (dir === "previous" && pageNumber !== 0) {
+      setPageNumber(pageNumber - 1);
+    } else if (dir === "next") {
+      setPageNumber(pageNumber + 1);
+    }
+
+
+    //set page url to next or previous
   };
 
   return (
@@ -60,7 +70,7 @@ const PokemonList = () => {
       <div className='pokemon-list-pagination'>
         <Button type='left' onClick={e => changePage("previous")} />
 
-        <h3 className='list-page-number'>Page 1</h3>
+        <h3 className='list-page-number'>Page {pageNumber} of 53</h3>
 
         <Button type='right' onClick={e => changePage("next")} />
       </div>
