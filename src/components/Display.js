@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Components
 import PokemonList from "./PokemonList";
-import PokemonDetailModal from "./PokemonDetailModal";
+import PokemonDetail from "./PokemonDetail";
 
 import ReactModal from "react-modal";
 
@@ -23,7 +23,9 @@ const Display = props => {
         makeModal={makeModal}
       />
 
-      <ReactModal isOpen={modalStatus}>Modal content goes here.</ReactModal>
+      <ReactModal isOpen={modalStatus}>
+        <PokemonDetail />
+      </ReactModal>
 
       {/* <PokemonDetail /> */}
     </div>

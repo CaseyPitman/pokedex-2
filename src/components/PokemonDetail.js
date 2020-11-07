@@ -10,7 +10,9 @@ import EvolutionChain from "./EvolutionChain";
 // Styles
 import display from "../CSS/display.css";
 
-const PokemonDetailModal = () => {
+
+
+const PokemonDetail = () => {
   return (
     <div className='pokemon-detail'>
 
@@ -18,7 +20,7 @@ const PokemonDetailModal = () => {
 
 
       <div className='pokemon-detail-content'>
-        <Button type='left' />
+        <Button type='left active' />
         <div className = 'pokemon-detail-content-text'>
           <h2 className = 'pokemon-detail-content-text-number pokemon-detail-content-text-item'>7</h2>
           <h2 className = 'pokemon-detail-content-text-name pokemon-detail-content-text-item'>Squirtle</h2>
@@ -26,11 +28,11 @@ const PokemonDetailModal = () => {
           <h3 className = 'pokemon-detail-content-text-type pokemon-detail-content-text-item'>Water Type</h3>
            <EvolutionChain />
         </div>
-        <Button type='right' />
+        <Button type='right active' />
       </div>
      
     </div>
   );
 };
 
-export default PokemonDetailModal;
+export default PokemonDetail;
