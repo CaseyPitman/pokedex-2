@@ -10,7 +10,7 @@ import EvolutionChain from "./EvolutionChain";
 // Styles
 import display from "../CSS/display.css";
 
-const PokemonDetail = () => {
+const PokemonDetailModal = () => {
   return (
     <div className='pokemon-detail'>
 
@@ -33,4 +33,4 @@ const PokemonDetail = () => {
   );
 };
 
-export default PokemonDetail;
+export default PokemonDetailModal;
