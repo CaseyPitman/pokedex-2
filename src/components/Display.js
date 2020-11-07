@@ -4,6 +4,9 @@ import React from "react";
 import PokemonList from "./PokemonList";
 import PokemonDetail from "./PokemonDetail";
 
+
+import ReactModal from 'react-modal';
+
 const Display = props => {
 
 
@@ -20,6 +23,8 @@ const Display = props => {
   return (
     <div className='display'>
       <PokemonList pokemonListByType={props.pokemonListByType} makeModal = {makeModal}/>
+
+      <ReactModal/>
       {/* <PokemonDetail /> */}
     </div>
   );
