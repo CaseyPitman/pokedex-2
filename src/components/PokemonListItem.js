@@ -28,8 +28,7 @@ const PokemonListItem = props => {
   }, [props.detailsUrl]);
 
   const handleClick = () => {
-    console.log(`${name} has been clicked`);
-    console.log(props.detailsUrl);
+    props.makeModal(props.detailsUrl);
   };
 
   return (

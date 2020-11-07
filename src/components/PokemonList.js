@@ -11,7 +11,7 @@ import pokemonList from "../CSS/pokemonList.css";
 
 import PokemonListItem from "./PokemonListItem";
 
-const PokemonList = () => {
+const PokemonList = (props) => {
   // Component state
   const [pageNumber, setPageNumber] = useState(1);
   const [pageUrl, setPageUrl] = useState("https://pokeapi.co/api/v2/pokemon");
@@ -41,6 +41,7 @@ const PokemonList = () => {
           key={pokemon.name}
           name={pokemon.name}
           detailsUrl={pokemon.url}
+          makeModal={props.makeModal}
         />
       );
     });
