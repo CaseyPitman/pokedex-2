@@ -27,8 +27,13 @@ const PokemonListItem = props => {
     getPokemon();
   }, [props.detailsUrl]);
 
+  const handleClick = () => {
+    console.log(`${name} has been clicked`);
+    console.log(props.detailsUrl);
+  };
+
   return (
-    <div className='pokemon-list-item'>
+    <div className='pokemon-list-item' onClick={handleClick}>
       <img
         className='pokemon-list-item-img'
         src={img}

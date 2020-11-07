@@ -8,7 +8,6 @@ import Button from "./Button";
 
 // Styles
 import pokemonList from "../CSS/pokemonList.css";
-import useCall from "../Hooks/useCall";
 
 import PokemonListItem from "./PokemonListItem";
 
@@ -37,8 +36,6 @@ const PokemonList = () => {
   //Map the list to make the PokemonListItems for display
   useEffect(() => {
     const curItems = list.map(pokemon => {
-      console.log("list");
-      console.log(pokemon);
       return (
         <PokemonListItem
           key={pokemon.name}
@@ -70,14 +67,12 @@ const PokemonList = () => {
       setPrevBtnStatus("inactive");
     }
 
-   
-
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setPageUrl(nextPageUrl);
       setPrevBtnStatus("active");
-    } 
-    
+    }
+
     if (pageNumber === 49 && dir === "next") {
       setNextBtnStatus("inactive");
     } else {
