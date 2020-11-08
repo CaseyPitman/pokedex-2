@@ -6,6 +6,8 @@ import PokemonDetail from "./PokemonDetail";
 
 import ReactModal from "react-modal";
 
+import display from "../CSS/display.css";
+
 ReactModal.setAppElement("#root");
 
 const Display = props => {
@@ -23,7 +25,7 @@ const Display = props => {
         makeModal={makeModal}
       />
 
-      <ReactModal isOpen={modalStatus}>
+      <ReactModal isOpen={modalStatus} overlayClassName='modal-overlay'>
         <PokemonDetail />
       </ReactModal>
 
