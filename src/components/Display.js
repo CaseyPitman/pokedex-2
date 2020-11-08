@@ -25,7 +25,7 @@ const Display = props => {
         makeModal={makeModal}
       />
 
-      <ReactModal isOpen={modalStatus} overlayClassName='modal-overlay'>
+      <ReactModal isOpen={modalStatus} overlayClassName='modal-overlay' className = 'modal-content-container'>
         <PokemonDetail />
       </ReactModal>
 
