@@ -36,8 +36,6 @@ const Display = props => {
         onRequestClose={closeModal}>
         <PokemonDetail />
       </ReactModal>
-
-      {/* <PokemonDetail /> */}
     </div>
   );
 };

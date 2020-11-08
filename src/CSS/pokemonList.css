@@ -35,10 +35,17 @@
 }
 
 .pokemon-list-pagination {
+  background-color: rgb(255,255,255,0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row wrap;
   margin: 50px auto;
   width: 25%;
+
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
 }
+
+
