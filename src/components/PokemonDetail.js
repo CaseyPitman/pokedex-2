@@ -20,6 +20,7 @@ const PokemonDetail = () => {
 
 
       <div className='pokemon-detail-content'>
+      <i class="fas fa-times-circle"></i>
         <Button type='left active' />
         <div className = 'pokemon-detail-content-text'>
           <h2 className = 'pokemon-detail-content-text-number pokemon-detail-content-text-item'>7</h2>
