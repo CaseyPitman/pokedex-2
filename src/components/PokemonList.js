@@ -47,7 +47,7 @@ const PokemonList = (props) => {
     });
 
     setListItems(curItems);
-  }, [list]);
+  }, [list, props.makeModal]);
 
   const changePage = dir => {
     console.log(dir);
