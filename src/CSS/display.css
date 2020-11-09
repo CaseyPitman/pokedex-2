@@ -86,9 +86,14 @@
   font-size: 1.875em;
 }
 
-.pokemon-detail-content-text-type {
+.pokemon-detail-content-type-list {
   font-size: 1.5em;
 }
+
+.pokemon-detail-content-type-list-item{
+  
+}
+
 
 .pokemon-detail-content-text-type:hover {
   color: rgb(42, 117, 187);

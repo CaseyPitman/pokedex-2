@@ -17,7 +17,8 @@ const PokemonDetail = props => {
   const [imageSrc, setImageSrc] = useState(placeholder);
   const [number, setNumber] = useState(null);
   const [name, setName] = useState("?");
-  const [type, setType] = useState([]);
+  const [types, setTypes] = useState([]);
+  const [displayTypes, setDisplayTypes] = useState([]);
 
   // API call for individual pokemon details.
   useEffect(() => {
@@ -27,10 +28,15 @@ const PokemonDetail = props => {
       setImageSrc(data.sprites.front_default);
       setNumber(data.id);
       setName(data.name);
-      setType(data.types);
+      setTypes(data.types);
     };
     getDetails();
   }, [props.curPokemonDetailUrl]);
+
+  useEffect(() => {
+    const mappedTypes = types.map(cur => <li key = {cur.slot} className = 'pokemon-detail-content-type-list-item'>{`${cur.type.name} type`}</li>);
+    setDisplayTypes(mappedTypes);
+  }, [types]);
 
   // Handle click on close button
   const handleCloseButtonClick = () => {
@@ -59,9 +65,9 @@ const PokemonDetail = props => {
               {name.charAt(0).toUpperCase() + name.slice(1)}
             </h2>
             {/* make type clickable */}
-            <h3 className='pokemon-detail-content-text-type pokemon-detail-content-text-item'>
-              Water Type
-            </h3>
+            <ul className='pokemon-detail-content-type-list pokemon-detail-content-text-item'>
+              {displayTypes}
+            </ul>
             <EvolutionChain />
           </div>
         </div>
