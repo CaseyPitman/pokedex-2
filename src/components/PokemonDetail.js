@@ -26,6 +26,7 @@ const PokemonDetail = props => {
       console.log(data);
       setImageSrc(data.sprites.front_default);
       setNumber(data.id);
+      setName(data.name);
     };
     getDetails();
   }, [props.curPokemonDetailUrl]);
@@ -54,7 +55,7 @@ const PokemonDetail = props => {
               {number}
             </h2>
             <h2 className='pokemon-detail-content-text-name pokemon-detail-content-text-item'>
-              Squirtle
+              {name.charAt(0).toUpperCase() + name.slice(1)}
             </h2>
             {/* make type clickable */}
             <h3 className='pokemon-detail-content-text-type pokemon-detail-content-text-item'>
