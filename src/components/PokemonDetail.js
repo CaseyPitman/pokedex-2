@@ -27,6 +27,7 @@ const PokemonDetail = props => {
       setImageSrc(data.sprites.front_default);
       setNumber(data.id);
       setName(data.name);
+      setType(data.types);
     };
     getDetails();
   }, [props.curPokemonDetailUrl]);
