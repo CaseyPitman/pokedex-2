@@ -35,9 +35,18 @@
 
 /* POKEMON DETAIL CONTENT */
 
+.pokemon-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
 .close-modal-button {
-  font-size: 30px;
   color: rgb(255, 62, 50);
+  font-size: 30px;
+  text-align: right;
+  width: 100%;
 }
 
 .close-modal-button:hover {
@@ -55,13 +64,6 @@
 }
 
 .pokemon-detail-content {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin: 15px auto 0;
-  max-width: 600px;
-  width: 100%; */
 }
 
 .pokemon-detail-content-text {
