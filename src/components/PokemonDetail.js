@@ -13,6 +13,7 @@ import PokemonTypeListItem from "./PokemonTypeListItem";
 
 // Styles
 import display from "../CSS/display.css";
+import global from "../CSS/global.css"
 
 const PokemonDetail = props => {
   const [imageSrc, setImageSrc] = useState(placeholder);

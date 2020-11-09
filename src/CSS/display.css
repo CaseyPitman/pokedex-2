@@ -23,6 +23,8 @@
 }
 
 .modal-content-container {
+  font-family: "Tomorrow", sans-serif;
+  color: rgb(44, 44, 44);
   border: 1px solid transparent;
   border-radius: 5px;
   background: #fff;
@@ -88,17 +90,17 @@
 
 .pokemon-detail-content-type-list {
   font-size: 1.5em;
-  display:flex;
+  display: flex;
   justify-content: space-around;
-  margin:10px auto;
-  width:60%;
+  margin: 10px auto;
+  width: 60%;
 }
 
 .pokemon-detail-content-type-list-item {
   display: inline-block;
 }
 
-.pokemon-detail-content-text-type:hover {
+.pokemon-detail-content-type-list-item:hover {
   color: rgb(42, 117, 187);
   cursor: pointer;
   transform: scale(1.05);
