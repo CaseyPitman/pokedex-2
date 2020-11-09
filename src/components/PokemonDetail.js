@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Assets
 import placeholder from "../img/placeholder-image.png";
@@ -10,16 +10,22 @@ import EvolutionChain from "./EvolutionChain";
 // Styles
 import display from "../CSS/display.css";
 
-const PokemonDetail = (props) => {
+const PokemonDetail = props => {
+  const [imageSrc, setImageSrc] = useState("");
+  const [number, setNumber] = useState(null);
+  const [name, setName] = useState("?");
+  const [type, setType] = useState([]);
+
 
   const handleCloseButtonClick = () => {
     props.closeModal();
-
-  }
+  };
 
   return (
     <div className='pokemon-detail'>
-      <i class='fas fa-times-circle close-modal-button' onClick = {handleCloseButtonClick}></i>
+      <i
+        class='fas fa-times-circle close-modal-button'
+        onClick={handleCloseButtonClick}></i>
 
       <div className='pokemon-detail-content-container'>
         <Button type='left active' />

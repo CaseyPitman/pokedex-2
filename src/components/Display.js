@@ -12,11 +12,11 @@ ReactModal.setAppElement("#root");
 
 const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
-  const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState('');
-
+  const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
 
   const makeModal = pokemon => {
-    console.log(pokemon);
+    // console.log(pokemon);
+    setCurPokemonDetailUrl(pokemon);
     setModalStatus(true);
   };
 
@@ -36,7 +36,10 @@ const Display = props => {
         overlayClassName='modal-overlay'
         className='modal-content-container'
         onRequestClose={closeModal}>
-        <PokemonDetail closeModal = {closeModal} curPokemonDetailUrl = {curPokemonDetailUrl}/>
+        <PokemonDetail
+          closeModal={closeModal}
+          curPokemonDetailUrl={curPokemonDetailUrl}
+        />
       </ReactModal>
     </div>
   );
