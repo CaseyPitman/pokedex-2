@@ -24,7 +24,6 @@ const PokemonDetail = props => {
     const getDetails = async () => {
       const { data } = await axios.get(props.curPokemonDetailUrl);
       console.log(data);
-
       setImageSrc(data.sprites.front_default);
       setNumber(data.id);
     };
