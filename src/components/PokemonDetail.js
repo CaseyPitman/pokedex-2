@@ -10,33 +10,41 @@ import EvolutionChain from "./EvolutionChain";
 // Styles
 import display from "../CSS/display.css";
 
-const PokemonDetail = () => {
+const PokemonDetail = (props) => {
+
+  const handleCloseButtonClick = () => {
+    props.closeModal();
+
+  }
+
   return (
     <div className='pokemon-detail'>
-      <i class='fas fa-times-circle close-modal-button'></i>
+      <i class='fas fa-times-circle close-modal-button' onClick = {handleCloseButtonClick}></i>
 
-      <Button type='left active' />
-      <div className='pokemon-detail-content'>
-        <img
-          className='pokemon-detail-img'
-          src={placeholder}
-          alt='placeholder pic'
-        />
-        <div className='pokemon-detail-content-text'>
-          <h2 className='pokemon-detail-content-text-number pokemon-detail-content-text-item'>
-            7
-          </h2>
-          <h2 className='pokemon-detail-content-text-name pokemon-detail-content-text-item'>
-            Squirtle
-          </h2>
-          {/* make type clickable */}
-          <h3 className='pokemon-detail-content-text-type pokemon-detail-content-text-item'>
-            Water Type
-          </h3>
-          <EvolutionChain />
+      <div className='pokemon-detail-content-container'>
+        <Button type='left active' />
+        <div className='pokemon-detail-content'>
+          <img
+            className='pokemon-detail-img'
+            src={placeholder}
+            alt='placeholder pic'
+          />
+          <div className='pokemon-detail-content-text'>
+            <h2 className='pokemon-detail-content-text-number pokemon-detail-content-text-item'>
+              7
+            </h2>
+            <h2 className='pokemon-detail-content-text-name pokemon-detail-content-text-item'>
+              Squirtle
+            </h2>
+            {/* make type clickable */}
+            <h3 className='pokemon-detail-content-text-type pokemon-detail-content-text-item'>
+              Water Type
+            </h3>
+            <EvolutionChain />
+          </div>
         </div>
+        <Button type='right active' />
       </div>
-      <Button type='right active' />
     </div>
   );
 };

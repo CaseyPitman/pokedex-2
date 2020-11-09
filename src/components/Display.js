@@ -34,7 +34,7 @@ const Display = props => {
         overlayClassName='modal-overlay'
         className='modal-content-container'
         onRequestClose={closeModal}>
-        <PokemonDetail />
+        <PokemonDetail closeModal = {closeModal}/>
       </ReactModal>
     </div>
   );
