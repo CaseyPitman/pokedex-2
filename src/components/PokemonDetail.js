@@ -9,6 +9,7 @@ import placeholder from "../img/placeholder-image.png";
 // Components
 import Button from "./Button";
 import EvolutionChain from "./EvolutionChain";
+import PokemonTypeListItem from "./PokemonTypeListItem";
 
 // Styles
 import display from "../CSS/display.css";
@@ -34,7 +35,9 @@ const PokemonDetail = props => {
   }, [props.curPokemonDetailUrl]);
 
   useEffect(() => {
-    const mappedTypes = types.map(cur => <li key = {cur.slot} className = 'pokemon-detail-content-type-list-item'>{`${cur.type.name} type`}</li>);
+    const mappedTypes = types.map(cur => (
+      <PokemonTypeListItem key={cur.slot} name={cur.type.name} />
+    ));
     setDisplayTypes(mappedTypes);
   }, [types]);
 
