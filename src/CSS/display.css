@@ -88,12 +88,15 @@
 
 .pokemon-detail-content-type-list {
   font-size: 1.5em;
+  display:flex;
+  justify-content: space-around;
+  margin:10px auto;
+  width:60%;
 }
 
-.pokemon-detail-content-type-list-item{
-  
+.pokemon-detail-content-type-list-item {
+  display: inline-block;
 }
-
 
 .pokemon-detail-content-text-type:hover {
   color: rgb(42, 117, 187);
