@@ -33,11 +33,12 @@ const PokemonDetail = props => {
   // API call for individual pokemon details.
   useEffect(() => {
     const getDetails = async () => {
-      const { data } = await axios.get(curPokemon);
+      const { data } = await axios.get(props.curPokemonDetailUrl);
       console.log(data);
       if (data.sprites.front_default !== null) {
         setImageSrc(data.sprites.front_default);
       }
+     
       setNumber(data.id);
       setName(data.name);
       setTypes(data.types);
@@ -47,10 +48,23 @@ const PokemonDetail = props => {
         setPrvBtnStatus("inactive");
       } else if (data.id === 893) {
         setNextBtnStatus("inactive");
-      }
+      } 
+      setCurPokemon(data.species.name)
+
     };
     getDetails();
-  }, [curPokemon]);
+  }, [props.curPokemonDetailUrl]);
+
+  // Set prev pokemon and next pokemon
+  useEffect(() => {
+    if (number && number > 1){
+      setPrevPokemon(`https://pokeapi.co/api/v2/pokemon/${number-1}`);
+    } 
+
+    if (number < 893){
+      setNextPokemon(`https://pokeapi.co/api/v2/pokemon/${number+1}`)
+    } else {setNextPokemon("")}
+  }, [number]);
 
   useEffect(() => {
     const mappedTypes = types.map(cur => (
