@@ -8,18 +8,28 @@ import EvolutionItem from "./EvolutionItem";
 
 const EvolutionChain = props => {
   const [evolutionChainUrl, setEvolutionChainUrl] = useState("");
+  const [evolutionList, setEvolutionList] = useState([]);
 
   useEffect(() => {
     const getEvolutionChain = async () => {
       if (props.speciesUrl !== "") {
-        const {data} = await axios.get(props.speciesUrl);
-        console.log("evolution url");
-        console.log(data.evolution_chain);
+        const { data } = await axios.get(props.speciesUrl);
+        // console.log("evolution url");
+        // console.log(data.evolution_chain);
+        setEvolutionChainUrl(data.evolution_chain.url);
       }
-    
     };
     getEvolutionChain();
   }, [props.speciesUrl]);
+
+  useEffect(() => {
+    if (evolutionChainUrl !== "") {
+    const getEvolutions = async () => {
+      const response = await axios.get(evolutionChainUrl);
+      console.log(response.data);}
+      getEvolutions();
+    };
+  }, [evolutionChainUrl]);
 
   return (
     <div className='evolution-chain'>
