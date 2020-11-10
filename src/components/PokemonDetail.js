@@ -13,7 +13,7 @@ import PokemonTypeListItem from "./PokemonTypeListItem";
 
 // Styles
 import display from "../CSS/display.css";
-import global from "../CSS/global.css"
+import global from "../CSS/global.css";
 
 const PokemonDetail = props => {
   const [imageSrc, setImageSrc] = useState(placeholder);
@@ -21,6 +21,7 @@ const PokemonDetail = props => {
   const [name, setName] = useState("?");
   const [types, setTypes] = useState([]);
   const [displayTypes, setDisplayTypes] = useState([]);
+  const [speciesUrl, setSpeciesUrl] = useState("");
 
   // API call for individual pokemon details.
   useEffect(() => {
@@ -31,6 +32,7 @@ const PokemonDetail = props => {
       setNumber(data.id);
       setName(data.name);
       setTypes(data.types);
+      setSpeciesUrl(data.species.url);
     };
     getDetails();
   }, [props.curPokemonDetailUrl]);
