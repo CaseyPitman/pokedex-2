@@ -31,7 +31,7 @@
   overflow: auto;
   outline: none;
   padding: 20px;
-  width: 66%;
+  width: 50%;
   /* webkit-overflow-scrolling: touch; */
 }
 
@@ -93,7 +93,7 @@
   display: flex;
   justify-content: space-around;
   margin: 10px auto;
-  width: 60%;
+  width: 90%;
 }
 
 .pokemon-detail-content-type-list-item {
