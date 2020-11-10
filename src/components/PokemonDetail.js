@@ -74,7 +74,7 @@ const PokemonDetail = props => {
             <ul className='pokemon-detail-content-type-list pokemon-detail-content-text-item'>
               {displayTypes}
             </ul>
-            <EvolutionChain />
+            <EvolutionChain speciesUrl = {speciesUrl}/>
           </div>
         </div>
         <Button type='right active' />
