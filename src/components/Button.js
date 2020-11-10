@@ -6,11 +6,9 @@ import button from '../CSS/button.css'
 
 const Button = (props) => {
 
-  const handleClick = () =>{
+  const handleClick = (parent) =>{
     props.onClick();
   }
-
-
 
   return (
     <div>

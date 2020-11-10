@@ -11,7 +11,7 @@ import pokemonList from "../CSS/pokemonList.css";
 
 import PokemonListItem from "./PokemonListItem";
 
-const PokemonList = (props) => {
+const PokemonList = props => {
   // Component state
   const [pageNumber, setPageNumber] = useState(1);
   const [pageUrl, setPageUrl] = useState("https://pokeapi.co/api/v2/pokemon");
@@ -94,6 +94,7 @@ const PokemonList = (props) => {
           type='left'
           onClick={e => changePage("previous")}
           status={prevBtnStatus}
+          parent='pokemonList'
         />
 
         <h3 className='list-page-number'>Page {pageNumber} of 50</h3>
@@ -102,6 +103,7 @@ const PokemonList = (props) => {
           type='right'
           onClick={e => changePage("next")}
           status={nextBtnStatus}
+          parent='pokemonList'
         />
       </div>
     </div>

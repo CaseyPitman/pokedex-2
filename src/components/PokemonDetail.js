@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // Assets
-import placeholder from "../img/placeholder-image.png";
+import pokeball from "../img/pokeball.png";
 
 // Components
 import Button from "./Button";
@@ -19,7 +19,7 @@ const PokemonDetail = props => {
   const [prvBtnStatus, setPrvBtnStatus] = useState("active");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
-  const [imageSrc, setImageSrc] = useState(placeholder);
+  const [imageSrc, setImageSrc] = useState(pokeball);
   const [number, setNumber] = useState(null);
   const [name, setName] = useState("?");
   const [types, setTypes] = useState([]);
@@ -31,7 +31,9 @@ const PokemonDetail = props => {
     const getDetails = async () => {
       const { data } = await axios.get(props.curPokemonDetailUrl);
       console.log(data);
-      setImageSrc(data.sprites.front_default);
+      if (data.sprites.front_default !== null) {
+        setImageSrc(data.sprites.front_default);
+      }
       setNumber(data.id);
       setName(data.name);
       setTypes(data.types);
@@ -39,6 +41,8 @@ const PokemonDetail = props => {
       // Set active || inactive class on buttons
       if (data.id === 1) {
         setPrvBtnStatus("inactive");
+      } else if (data.id === 10107) {
+        setNextBtnStatus("inactive");
       }
     };
     getDetails();
