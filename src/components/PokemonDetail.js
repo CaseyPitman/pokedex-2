@@ -16,6 +16,9 @@ import display from "../CSS/display.css";
 import global from "../CSS/global.css";
 
 const PokemonDetail = props => {
+  const [prvBtnStatus, setPrvBtnStatus] = useState("active");
+  const [nextBtnStatus, setNextBtnStatus] = useState("active");
+
   const [imageSrc, setImageSrc] = useState(placeholder);
   const [number, setNumber] = useState(null);
   const [name, setName] = useState("?");
@@ -33,6 +36,10 @@ const PokemonDetail = props => {
       setName(data.name);
       setTypes(data.types);
       setSpeciesUrl(data.species.url);
+      // Set active || inactive class on buttons
+      if (data.id === 1) {
+        setPrvBtnStatus("inactive");
+      }
     };
     getDetails();
   }, [props.curPokemonDetailUrl]);
@@ -56,7 +63,7 @@ const PokemonDetail = props => {
         onClick={handleCloseButtonClick}></i>
 
       <div className='pokemon-detail-content-container'>
-        <Button type='left active' />
+        <Button type='left' status={prvBtnStatus} parent='PokemonDetail' />
         <div className='pokemon-detail-content'>
           <img
             className='pokemon-detail-img'
@@ -77,7 +84,7 @@ const PokemonDetail = props => {
             {/* <EvolutionChain speciesUrl = {speciesUrl}/> */}
           </div>
         </div>
-        <Button type='right active' />
+        <Button type='right' status={nextBtnStatus} parent='PokemonDetail' />
       </div>
     </div>
   );
