@@ -45,7 +45,7 @@ const PokemonDetail = props => {
       // Set active || inactive class on buttons
       if (data.id === 1) {
         setPrvBtnStatus("inactive");
-      } else if (data.id === 10107) {
+      } else if (data.id === 893) {
         setNextBtnStatus("inactive");
       }
     };
