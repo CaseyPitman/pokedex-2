@@ -7,4 +7,5 @@
 7. For search - possibly make a call to assemble data consisting of name and id number only. 
 8. Autocomplete for search. 
 9. Official artwork?
+10. Readme
 

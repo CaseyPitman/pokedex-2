@@ -19,6 +19,8 @@ const PokemonDetail = props => {
   const [prvBtnStatus, setPrvBtnStatus] = useState("active");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
+  const [curPokemon, setCurPokemon] = useState(props.curPokemonDetailUrl)
+  
   const [imageSrc, setImageSrc] = useState(pokeball);
   const [number, setNumber] = useState(null);
   const [name, setName] = useState("?");
@@ -29,7 +31,7 @@ const PokemonDetail = props => {
   // API call for individual pokemon details.
   useEffect(() => {
     const getDetails = async () => {
-      const { data } = await axios.get(props.curPokemonDetailUrl);
+      const { data } = await axios.get(curPokemon);
       console.log(data);
       if (data.sprites.front_default !== null) {
         setImageSrc(data.sprites.front_default);
@@ -46,7 +48,7 @@ const PokemonDetail = props => {
       }
     };
     getDetails();
-  }, [props.curPokemonDetailUrl]);
+  }, [curPokemon]);
 
   useEffect(() => {
     const mappedTypes = types.map(cur => (
