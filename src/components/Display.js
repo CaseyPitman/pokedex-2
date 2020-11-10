@@ -39,6 +39,7 @@ const Display = props => {
         <PokemonDetail
           closeModal={closeModal}
           curPokemonDetailUrl={curPokemonDetailUrl}
+          makeModal = {makeModal}
         />
       </ReactModal>
     </div>

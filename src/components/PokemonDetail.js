@@ -20,7 +20,7 @@ const PokemonDetail = props => {
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
   const [prevPokemon, setPrevPokemon] = useState("");
-  const [curPokemon, setCurPokemon] = useState(props.curPokemonDetailUrl);
+  const [curPokemon, setCurPokemon] = useState("");
   const [nextPokemon, setNextPokemon] = useState("");
 
   const [imageSrc, setImageSrc] = useState(pokeball);
@@ -38,7 +38,7 @@ const PokemonDetail = props => {
       if (data.sprites.front_default !== null) {
         setImageSrc(data.sprites.front_default);
       }
-     
+
       setNumber(data.id);
       setName(data.name);
       setTypes(data.types);
@@ -48,22 +48,29 @@ const PokemonDetail = props => {
         setPrvBtnStatus("inactive");
       } else if (data.id === 893) {
         setNextBtnStatus("inactive");
-      } 
-      setCurPokemon(data.species.name)
+      } else {
+        setPrvBtnStatus("active");
+        setNextBtnStatus("active");
+      }
 
+  
+
+      setCurPokemon(data.species.name);
     };
     getDetails();
-  }, [props.curPokemonDetailUrl]);
+  }, [props.curPokemonDetailUrl, curPokemon]);
 
   // Set prev pokemon and next pokemon
   useEffect(() => {
-    if (number && number > 1){
-      setPrevPokemon(`https://pokeapi.co/api/v2/pokemon/${number-1}`);
-    } 
+    if (number && number > 1) {
+      setPrevPokemon(`https://pokeapi.co/api/v2/pokemon/${number - 1}`);
+    }
 
-    if (number < 893){
-      setNextPokemon(`https://pokeapi.co/api/v2/pokemon/${number+1}`)
-    } else {setNextPokemon("")}
+    if (number < 893) {
+      setNextPokemon(`https://pokeapi.co/api/v2/pokemon/${number + 1}`);
+    } else {
+      setNextPokemon("");
+    }
   }, [number]);
 
   useEffect(() => {
@@ -85,7 +92,11 @@ const PokemonDetail = props => {
         onClick={handleCloseButtonClick}></i>
 
       <div className='pokemon-detail-content-container'>
-        <Button type='left' status={prvBtnStatus} />
+        <Button
+          type='left'
+          status={prvBtnStatus}
+          onClick={e => props.makeModal(prevPokemon)}
+        />
         <div className='pokemon-detail-content'>
           <img
             className='pokemon-detail-img'
@@ -106,7 +117,11 @@ const PokemonDetail = props => {
             {/* <EvolutionChain speciesUrl = {speciesUrl}/> */}
           </div>
         </div>
-        <Button type='right' status={nextBtnStatus} />
+        <Button
+          type='right'
+          status={nextBtnStatus}
+          onClick={e => props.makeModal(nextPokemon)}
+        />
       </div>
     </div>
   );
