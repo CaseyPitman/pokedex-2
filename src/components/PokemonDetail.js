@@ -19,8 +19,10 @@ const PokemonDetail = props => {
   const [prvBtnStatus, setPrvBtnStatus] = useState("active");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
-  const [curPokemon, setCurPokemon] = useState(props.curPokemonDetailUrl)
-  
+  const [prevPokemon, setPrevPokemon] = useState("");
+  const [curPokemon, setCurPokemon] = useState(props.curPokemonDetailUrl);
+  const [nextPokemon, setNextPokemon] = useState("");
+
   const [imageSrc, setImageSrc] = useState(pokeball);
   const [number, setNumber] = useState(null);
   const [name, setName] = useState("?");
@@ -69,7 +71,7 @@ const PokemonDetail = props => {
         onClick={handleCloseButtonClick}></i>
 
       <div className='pokemon-detail-content-container'>
-        <Button type='left' status={prvBtnStatus} parent='PokemonDetail' />
+        <Button type='left' status={prvBtnStatus} />
         <div className='pokemon-detail-content'>
           <img
             className='pokemon-detail-img'
@@ -90,7 +92,7 @@ const PokemonDetail = props => {
             {/* <EvolutionChain speciesUrl = {speciesUrl}/> */}
           </div>
         </div>
-        <Button type='right' status={nextBtnStatus} parent='PokemonDetail' />
+        <Button type='right' status={nextBtnStatus} />
       </div>
     </div>
   );
