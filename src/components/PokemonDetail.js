@@ -74,23 +74,35 @@ const PokemonDetail = props => {
 
   // MAKE A CALL FOR FLAVOR TEXT USING SPECIES URL
   useEffect(() => {
+    const source = axios.CancelToken.source();
+
     const getFlavorText = async () => {
-      const { data } = await axios.get(speciesUrl);
-      console.log(data.flavor_text_entries[0].language.name);
+      try {
+        const { data } = await axios.get(speciesUrl, {
+          cancelToken: source.token,
+        });
+        console.log(data.flavor_text_entries[0].language.name);
 
-      //Iterate through flavor text entries until reach one written in English (en)
+        //Iterate through flavor text entries until reach one written in English (en)
 
-      for (let i = 0; i < data.flavor_text_entries.length; i++) {
-        if (data.flavor_text_entries[i].language.name === "en") {
-          setFlavorText(data.flavor_text_entries[i].flavor_text);
-          break;
+        for (let i = 0; i < data.flavor_text_entries.length; i++) {
+          if (data.flavor_text_entries[i].language.name === "en") {
+            setFlavorText(data.flavor_text_entries[i].flavor_text);
+            break;
+          }
         }
+      } catch (error) {
+        console.log(`Something went wrong: ${error}`);
       }
     };
-
     if (speciesUrl !== "") {
       getFlavorText();
     }
+
+    // Cleanup
+    return () => {
+      source.cancel();
+    };
   }, [speciesUrl]);
 
   // Set prev pokemon and next pokemon
