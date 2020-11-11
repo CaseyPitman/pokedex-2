@@ -13,18 +13,35 @@ const PokemonListItem = props => {
 
   // Calls for Pokemon image, number, and name to display on list.
   useEffect(() => {
-    const getPokemon = async () => {
-      const { data } = await axios.get(props.detailsUrl);
+    const source = axios.CancelToken.source();
 
-      if (data.sprites.front_default === null) {
-        setImg(pokeball);
-      } else {
-        setImg(data.sprites.front_default);
+    const getPokemon = async () => {
+      try {
+        const { data } = await axios.get(props.detailsUrl, {
+          cancelToken: source.token,
+        });
+
+        if (data.sprites.front_default === null) {
+          setImg(pokeball);
+        } else {
+          setImg(data.sprites.front_default);
+        }
+        setNumber(data.id);
+        setName(data.name);
+      } catch (error) {
+        if (axios.isCancel(error)) {
+          //User cancels request
+          console.log("Request canceled", error.message);
+        } else {
+          console.log("Something went wrong: ", error.message);
+        }
       }
-      setNumber(data.id);
-      setName(data.name);
     };
     getPokemon();
+
+    return () => {
+      source.cancel();
+    };
   }, [props.detailsUrl]);
 
   const handleClick = () => {

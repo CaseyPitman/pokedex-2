@@ -24,13 +24,21 @@ const PokemonList = props => {
 
   // Call for list of currently showing pokemon
   useEffect(() => {
+    const source = axios.CancelToken.source();
+
     const getList = async () => {
-      const { data } = await axios.get(pageUrl);
+      const { data } = await axios.get(pageUrl, {
+        cancelToken: source.token,
+      });
       setList(data.results);
       setPrevPageUrl(data.previous);
       setNextPageUrl(data.next);
     };
     getList();
+    // Cleanup
+    return () => {
+      source.cancel();
+    };
   }, [pageUrl]);
 
   //Map the list to make the PokemonListItems for display

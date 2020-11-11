@@ -33,8 +33,12 @@ const PokemonDetail = props => {
 
   // API call for individual pokemon details.
   useEffect(() => {
+    const source = axios.CancelToken.source();
+
     const getDetails = async () => {
-      const { data } = await axios.get(props.curPokemonDetailUrl);
+      const { data } = await axios.get(props.curPokemonDetailUrl, {
+        cancelToken: source.token,
+      });
       console.log(data);
       if (data.sprites.front_default !== null) {
         setImageSrc(data.sprites.front_default);
@@ -57,6 +61,11 @@ const PokemonDetail = props => {
       setCurPokemon(data.species.name);
     };
     getDetails();
+
+    // Cleanup
+    return () => {
+      source.cancel();
+    };
   }, [props.curPokemonDetailUrl]);
 
   // MAKE A CALL FOR FLAVOR TEXT USING SPECIES URL
@@ -71,7 +80,7 @@ const PokemonDetail = props => {
         if (data.flavor_text_entries[i].language.name === "en") {
           setFlavorText(data.flavor_text_entries[i].flavor_text);
           break;
-        } 
+        }
       }
     };
 
