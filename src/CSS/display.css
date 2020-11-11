@@ -2,10 +2,14 @@
 
 .display {
   margin: 40px auto;
-  max-width: 1200px;
   min-height: 970px;
   width: 100%;
   font-size: 16px;
+}
+
+.display-container {
+  margin: 0 auto;
+  max-width: 1440px;
 }
 
 /* POKEMON DETAIL MODAL */

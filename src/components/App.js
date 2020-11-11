@@ -28,8 +28,8 @@ const App = () => {
 
   return (
     <div>
-      <Header changeListType={changeListType} />
-      <Display />
+      <Header  />
+      <Display changeListType={changeListType}/>
 
       <Footer />
     </div>

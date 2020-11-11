@@ -1,6 +1,10 @@
 import React from "react";
 
-const SearchBar = () => {
+// Components
+import Search from "./FilterType"
+import FilterType from "./FilterType";
+
+const SearchBar = (props) => {
   return (
     <div className='banner-inputs-container'>
       <div className='banner-inputs'>
@@ -10,6 +14,5 @@ const SearchBar = () => {
     </div>
   );
 };
-
 
 export default SearchBar;

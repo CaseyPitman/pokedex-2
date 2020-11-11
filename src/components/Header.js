@@ -20,12 +20,12 @@ const Header = props => {
         src={headerImg}
         alt='Bulbasaur, Charmander, and Squirtle looking at a Pokédex.'
       />
-      <div className='banner-inputs-container'>
+      {/* <div className='banner-inputs-container'>
         <div className='banner-inputs'>
           <FilterType changeListType={props.changeListType} />
           <Search />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // Components
 import PokemonList from "./PokemonList";
 import PokemonDetail from "./PokemonDetail";
+import SearchBar from "./SearchBar";
 
 import ReactModal from "react-modal";
 
@@ -26,22 +27,25 @@ const Display = props => {
 
   return (
     <div className='display'>
-      <PokemonList
-        pokemonListByType={props.pokemonListByType}
-        makeModal={makeModal}
-      />
-
-      <ReactModal
-        isOpen={modalStatus}
-        overlayClassName='modal-overlay'
-        className='modal-content-container'
-        onRequestClose={closeModal}>
-        <PokemonDetail
-          closeModal={closeModal}
-          curPokemonDetailUrl={curPokemonDetailUrl}
-          makeModal = {makeModal}
+      <SearchBar changeListType={props.changeListType} />
+      <div className='display-container'>
+        <PokemonList
+          pokemonListByType={props.pokemonListByType}
+          makeModal={makeModal}
         />
-      </ReactModal>
+
+        <ReactModal
+          isOpen={modalStatus}
+          overlayClassName='modal-overlay'
+          className='modal-content-container'
+          onRequestClose={closeModal}>
+          <PokemonDetail
+            closeModal={closeModal}
+            curPokemonDetailUrl={curPokemonDetailUrl}
+            makeModal={makeModal}
+          />
+        </ReactModal>
+      </div>
     </div>
   );
 };
