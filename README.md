@@ -1,10 +1,17 @@
 <img src="src/img/starter-pokemon.jpg" width ='250'>
 
+
 # Pokédex Project        
 A simple Pokedéx with basic information about all current Pokémon using data from the [PokéAPI](https://pokeapi.co/).
 
+
 ## Introduction
 
+I made this Pokédex for my son and daughter, both of whom are crazy for Pokémon.
+
+This is the second version of the Pokedéx that I've made. The first version was vanilla JavaScript and Bootstrap and, while it worked, it was quite sluggish. There was no api call for data. Everything was pre-loaded in a data.js file. It also only incorporated the original 151 Pokémon. 
+
+I decided to revisit this project after learning some React and discovering [PokéAPI](https://pokeapi.co/). I wanted this version to run smoother and more efficently, as well as to include all known Pokémon.
 
 
 ## Technologies
@@ -17,13 +24,16 @@ A simple Pokedéx with basic information about all current Pokémon using data f
 
 ## Features
 
+* Sequential listing of all known Pokémon presented as a paginated list including number, name, and classic sprite images.
+* Detail view of individual Pokémon including classic sprite image, number, name, and type.
+* Intra-modal Pokémon detail navigation. 
 
 
 ## To Do:
 
 - [ ] Reposition search bar. 
 - [x] Implement navigation between previous & next pokémon in detailed view.
-- [ ] Implement filter by pokémon type functionality.
+- [ ] Implement filter by Pokémon type functionality.
 - [ ] Implement search with autocomplete functionality.
 - [ ] Assemble data to support search/autocomplete functionality. 
 - [x] Set an upper limit on Pokémon rendered. 
@@ -33,9 +43,10 @@ A simple Pokedéx with basic information about all current Pokémon using data f
 ## Notes 
 
 * The PokéAPI is not the easiest to use. While it is extremely detailed and nearly comprehensive, it is not always easy to retreive all the information needed in a single endpoint. For example: the [evolution-chain](https://pokeapi.co/api/v2/evolution-chain/3/) endpoint has a vast amount of information about each evolution chain, yet it lacks what I'd consider to be the most basic required piece of information: a simple list of all Pokémon, in order, that make up a specific chain (For example: ['Squirtle', 'Wartortle', 'Blastoise']). Without access to such a simple piece of data, assembling and displaying an evoltion chain is a labrynthine process, and I'm still trying to work it out. 
-<br><br>
+<br>
+<br>
 * I knew early on I wanted to use modals to display information about specifically selected Pokémon. I used the same strategy in my first version of the Pokédex and liked the result. This was my first time using modals in React, and I quickly came across [React-Modal](http://reactcommunity.org/react-modal/). They have great documentation and it didn't take me long to get up and running. I'll definitely be using it again. 
 
 
 
- 
+
