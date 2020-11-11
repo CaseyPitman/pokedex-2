@@ -38,7 +38,8 @@ I decided to revisit this project after learning some React and discovering [Pok
 - [ ] Assemble data to support search/autocomplete functionality. 
 - [x] Set an upper limit on Pokémon rendered. 
 - [ ] Display evolution chain.
-- [ ] Display flavor text.
+- [x] Display flavor text.
+- [ ] Implement custom Hook useCall to make calls to PokéAPI.
 
 
 ## Notes 
