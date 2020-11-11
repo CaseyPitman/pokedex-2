@@ -29,6 +29,7 @@ const PokemonDetail = props => {
   const [types, setTypes] = useState([]);
   const [displayTypes, setDisplayTypes] = useState([]);
   const [speciesUrl, setSpeciesUrl] = useState("");
+  const [flavorText, setFlavorText] = useState("")
 
   // API call for individual pokemon details.
   useEffect(() => {
@@ -43,6 +44,7 @@ const PokemonDetail = props => {
       setName(data.name);
       setTypes(data.types);
       setSpeciesUrl(data.species.url);
+
       // Set active || inactive class on buttons
       if (data.id === 1) {
         setPrvBtnStatus("inactive");
@@ -52,13 +54,24 @@ const PokemonDetail = props => {
         setPrvBtnStatus("active");
         setNextBtnStatus("active");
       }
-
-  
-
       setCurPokemon(data.species.name);
     };
     getDetails();
-  }, [props.curPokemonDetailUrl, curPokemon]);
+  }, [props.curPokemonDetailUrl]);
+
+  // MAKE A CALL FOR FLAVOR TEXT USING SPECIES URL
+  useEffect(() => {
+    const getFlavorText = async () => {
+      const { data } = await axios.get(speciesUrl);
+      console.log(data.flavor_text_entries[0]);
+
+      setFlavorText(data.flavor_text_entries[0].flavor_text);
+    };
+
+    if (speciesUrl !== "") {
+      getFlavorText();
+    }
+  }, [speciesUrl]);
 
   // Set prev pokemon and next pokemon
   useEffect(() => {
@@ -114,6 +127,7 @@ const PokemonDetail = props => {
             <ul className='pokemon-detail-content-type-list pokemon-detail-content-text-item'>
               {displayTypes}
             </ul>
+    
             {/* <EvolutionChain speciesUrl = {speciesUrl}/> */}
           </div>
         </div>
