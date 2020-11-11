@@ -5,15 +5,17 @@ import axios from "axios";
 import header from "../CSS/header.css";
 
 const FilterType = ({ changeListType }) => {
-
   const [types, setTypes] = useState([]);
 
   // //Make call for list of types.
   useEffect(() => {
     const getTypes = async () => {
-      const response = await axios.get("https://pokeapi.co/api/v2/type");
-
-      setTypes(response.data.results);
+      try {
+        const response = await axios.get("https://pokeapi.co/api/v2/type");
+        setTypes(response.data.results);
+      } catch (error) {
+        console.log("Something went wrong: ", error.message);
+      }
     };
     getTypes();
   }, []);

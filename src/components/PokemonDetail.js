@@ -36,29 +36,33 @@ const PokemonDetail = props => {
     const source = axios.CancelToken.source();
 
     const getDetails = async () => {
-      const { data } = await axios.get(props.curPokemonDetailUrl, {
-        cancelToken: source.token,
-      });
-      console.log(data);
-      if (data.sprites.front_default !== null) {
-        setImageSrc(data.sprites.front_default);
-      }
+      try {
+        const { data } = await axios.get(props.curPokemonDetailUrl, {
+          cancelToken: source.token,
+        });
+        console.log(data);
+        if (data.sprites.front_default !== null) {
+          setImageSrc(data.sprites.front_default);
+        }
 
-      setNumber(data.id);
-      setName(data.name);
-      setTypes(data.types);
-      setSpeciesUrl(data.species.url);
+        setNumber(data.id);
+        setName(data.name);
+        setTypes(data.types);
+        setSpeciesUrl(data.species.url);
 
-      // Set active || inactive class on buttons
-      if (data.id === 1) {
-        setPrvBtnStatus("inactive");
-      } else if (data.id === 893) {
-        setNextBtnStatus("inactive");
-      } else {
-        setPrvBtnStatus("active");
-        setNextBtnStatus("active");
+        // Set active || inactive class on buttons
+        if (data.id === 1) {
+          setPrvBtnStatus("inactive");
+        } else if (data.id === 893) {
+          setNextBtnStatus("inactive");
+        } else {
+          setPrvBtnStatus("active");
+          setNextBtnStatus("active");
+        }
+        setCurPokemon(data.species.name);
+      } catch (error) {
+        console.log("Something went wrong: ", error.message);
       }
-      setCurPokemon(data.species.name);
     };
     getDetails();
 
