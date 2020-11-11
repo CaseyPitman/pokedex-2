@@ -63,7 +63,7 @@ const PokemonDetail = props => {
   useEffect(() => {
     const getFlavorText = async () => {
       const { data } = await axios.get(speciesUrl);
-      console.log(data.flavor_text_entries[0]);
+      console.log(data.flavor_text_entries);
 
       setFlavorText(data.flavor_text_entries[0].flavor_text);
     };
@@ -127,7 +127,7 @@ const PokemonDetail = props => {
             <ul className='pokemon-detail-content-type-list pokemon-detail-content-text-item'>
               {displayTypes}
             </ul>
-    
+            <h3 className = 'flavor-text'>{flavorText}</h3>
             {/* <EvolutionChain speciesUrl = {speciesUrl}/> */}
           </div>
         </div>
