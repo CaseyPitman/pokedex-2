@@ -1,4 +1,4 @@
-1. Move search/filter bar out of header and into display component
+
 
 3. Implement Type filter
 4. Allow click on type in PokemonDetail to close modal and then auto-filter to clicked type
