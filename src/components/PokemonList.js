@@ -27,14 +27,19 @@ const PokemonList = props => {
     const source = axios.CancelToken.source();
 
     const getList = async () => {
-      const { data } = await axios.get(pageUrl, {
-        cancelToken: source.token,
-      });
-      setList(data.results);
-      setPrevPageUrl(data.previous);
-      setNextPageUrl(data.next);
+      try {
+        const { data } = await axios.get(pageUrl, {
+          cancelToken: source.token,
+        });
+        setList(data.results);
+        setPrevPageUrl(data.previous);
+        setNextPageUrl(data.next);
+      } catch (error) {
+        console.log(`There seems to be something wrong: ${error}`);
+      }
     };
     getList();
+
     // Cleanup
     return () => {
       source.cancel();

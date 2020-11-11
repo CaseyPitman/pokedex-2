@@ -2,7 +2,7 @@
 
 3. Implement Type filter
 4. Allow click on type in PokemonDetail to close modal and then auto-filter to clicked type
-5. Set upper limit on pokemon - stop rendering at the point the normal numbers run out - 893 is the last one. 
+5. Set upper limit on pokemon - stop rendering at the point the normal numbers run out - 893 is the last one. page 45 is the last page. 
 6. Implement search
 7. For search - possibly make a call to assemble data consisting of name and id number only. 
 8. Autocomplete for search. 
