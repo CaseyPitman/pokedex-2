@@ -29,7 +29,7 @@ const PokemonDetail = props => {
   const [types, setTypes] = useState([]);
   const [displayTypes, setDisplayTypes] = useState([]);
   const [speciesUrl, setSpeciesUrl] = useState("");
-  const [flavorText, setFlavorText] = useState("")
+  const [flavorText, setFlavorText] = useState("");
 
   // API call for individual pokemon details.
   useEffect(() => {
@@ -63,9 +63,16 @@ const PokemonDetail = props => {
   useEffect(() => {
     const getFlavorText = async () => {
       const { data } = await axios.get(speciesUrl);
-      console.log(data.flavor_text_entries);
+      console.log(data.flavor_text_entries[0].language.name);
 
-      setFlavorText(data.flavor_text_entries[0].flavor_text);
+      //Iterate through flavor text entries until reach one written in English (en)
+
+      for (let i = 0; i < data.flavor_text_entries.length; i++) {
+        if (data.flavor_text_entries[i].language.name === "en") {
+          setFlavorText(data.flavor_text_entries[i].flavor_text);
+          break;
+        } 
+      }
     };
 
     if (speciesUrl !== "") {
@@ -127,7 +134,7 @@ const PokemonDetail = props => {
             <ul className='pokemon-detail-content-type-list pokemon-detail-content-text-item'>
               {displayTypes}
             </ul>
-            <h3 className = 'flavor-text'>{flavorText}</h3>
+            <h3 className='flavor-text'>{flavorText}</h3>
             {/* <EvolutionChain speciesUrl = {speciesUrl}/> */}
           </div>
         </div>
