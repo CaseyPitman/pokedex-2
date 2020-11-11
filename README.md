@@ -9,7 +9,7 @@ A simple Pokedéx with basic information about all current Pokémon using data f
 
 I made this Pokédex for my son and daughter, both of whom are crazy for Pokémon.
 
-This is the second version of the Pokedéx that I've made. The first version was vanilla JavaScript and Bootstrap and, while it worked, it was quite sluggish. There was no api call for data. Everything was pre-loaded in a data.js file. It also only incorporated the original 151 Pokémon. 
+This is the second version of the Pokedéx that I've made. The first version was vanilla JavaScript paired with Bootstrap and, while it worked, it was quite sluggish. There was no api call for data. Everything was pre-loaded in a data.js file. It also only incorporated the original 151 Pokémon. 
 
 I decided to revisit this project after learning some React and discovering [PokéAPI](https://pokeapi.co/). I wanted this version to run smoother and more efficently, as well as to include all known Pokémon.
 
