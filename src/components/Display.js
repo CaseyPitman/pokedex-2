@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // Components
-import PokemonList from "./PokemonListAll";
+import PokemonListAll from "./PokemonListAll";
+import PokemonListByType from "./PokemonListByType";
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
 
@@ -44,8 +45,8 @@ const Display = props => {
           typeOfDisplay={typeOfDisplay}
         />
       );
-    } else if (typeOfDisplay === 'selected type'){
-      setDisplayedComponent(<h1> shows type list</h1>)
+    } else if (typeOfDisplay === "selected type") {
+      setDisplayedComponent(<PokemonListByType />);
     }
   }, [typeOfDisplay]);
 
