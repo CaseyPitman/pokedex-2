@@ -107,6 +107,9 @@ const PokemonDetail = props => {
 
   // Set prev pokemon and next pokemon
   useEffect(() => {
+
+    // ADD SOME KIND OF CONDITIONAL LOGIC HERE THAT LETS THE TYPE LIST MODALS MOVE TO THE NEXT OR PREVIOUS IN TYPE.
+
     if (number && number > 1) {
       setPrevPokemon(`https://pokeapi.co/api/v2/pokemon/${number - 1}`);
     }

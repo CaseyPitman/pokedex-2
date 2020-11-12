@@ -29,7 +29,7 @@ const PokemonList = props => {
     
       const getList = async () => {
         try {
-          //do some conditional get here depending on type of list
+          
           const { data } = await axios.get(pageUrl, {
             cancelToken: source.token,
           });
