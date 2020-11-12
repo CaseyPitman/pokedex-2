@@ -146,6 +146,12 @@
   font-weight: 300;
 }
 
+.pokemon-list-by-type-heading {
+  text-align: center;
+  margin: 20px auto;
+  width:100%;
+}
+
 
 
 /* Mobile adjustments */

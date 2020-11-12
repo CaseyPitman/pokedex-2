@@ -6,6 +6,7 @@ import Button from './Button';
 const PokemonListByType = () => {
   return (
     <div className='pokemon-list'>
+       <h1 className = 'pokemon-list-by-type-heading'>Type Name Here</h1>
       <div className='grid-container'>
         {/* <PokemonListItem /> */}
         {/* {listItems} */}
