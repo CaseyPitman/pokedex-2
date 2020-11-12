@@ -48,7 +48,7 @@ const Display = props => {
     } else if (typeOfDisplay === "selected type") {
       setDisplayedComponent(<PokemonListByType listByType={listByType} />);
     }
-  }, [typeOfDisplay]);
+  }, [typeOfDisplay, listByType]);
 
   //url will go get all data on a specific type.
   const changeListType = url => {

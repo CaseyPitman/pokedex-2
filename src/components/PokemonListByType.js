@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-
+// Components
+import PokemonListItem from "./PokemonListItem";
 import Button from './Button';
 
-const PokemonListByType = () => {
+const PokemonListByType = (props) => {
+
+   const [pokemon, setPokemon] = useState([]);
+
+
+
   return (
     <div className='pokemon-list'>
        <h1 className = 'pokemon-list-by-type-heading'>Type Name Here</h1>
