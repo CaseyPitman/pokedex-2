@@ -46,7 +46,7 @@ const Display = props => {
         />
       );
     } else if (typeOfDisplay === "selected type") {
-      setDisplayedComponent(<PokemonListByType />);
+      setDisplayedComponent(<PokemonListByType listByType={listByType} />);
     }
   }, [typeOfDisplay]);
 
