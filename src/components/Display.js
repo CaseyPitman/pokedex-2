@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios'
+import axios from "axios";
 // Components
 import PokemonList from "./PokemonList";
 import PokemonDetail from "./PokemonDetail";
@@ -14,9 +14,9 @@ ReactModal.setAppElement("#root");
 const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
   const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
-  const [typeOfDisplay, setTypeOfDisplay] = useState('all'); // 'selected type'
-  const [displayedList, setDisplayedList] = useState(null);
-  
+  const [typeOfDisplay, setTypeOfDisplay] = useState("all"); // 'selected type'
+  const [displayedComponent, setDisplayedComponent] = useState(null);
+
   const [listUrl, setListUrl] = useState("");
   const [listByType, setListByType] = useState([]);
 
@@ -26,24 +26,34 @@ const Display = props => {
       const getPokemon = async () => {
         const response = await axios.get(listUrl);
         setListByType(response.data.pokemon);
-        console.log(response.data.pokemon)
+        console.log(response.data.pokemon);
       };
       getPokemon();
     }
   }, [listUrl]);
 
-// also make a state for the type of list - type based or all. Send that down to Pokemon list to let it decide what type of list to make?
-  
+  // also make a state for the type of list - type based or all. Send that down to Pokemon list to let it decide what type of list to make?
 
-
-
+  useEffect(() => {
+    if (typeOfDisplay === "all") {
+      //Show all pokemon
+      setDisplayedComponent(
+        <PokemonList
+          pokemonListByType={props.pokemonListByType}
+          makeModal={makeModal}
+          typeOfDisplay={typeOfDisplay}
+        />
+      );
+    } else if (typeOfDisplay === 'selected type'){
+      setDisplayedComponent(<h1> shows type list</h1>)
+    }
+  }, [typeOfDisplay]);
 
   //url will go get all data on a specific type.
   const changeListType = url => {
     setListUrl(url);
-    setTypeOfDisplay('selected type')
+    setTypeOfDisplay("selected type");
   };
-
 
   const makeModal = pokemon => {
     // console.log(pokemon);
@@ -59,11 +69,12 @@ const Display = props => {
     <div className='display'>
       <SearchBar changeListType={changeListType} />
       <div className='display-container'>
-        <PokemonList
+        {/* <PokemonList
           pokemonListByType={props.pokemonListByType}
           makeModal={makeModal}
-          typeOfDisplay = {typeOfDisplay}
-        />
+          typeOfDisplay={typeOfDisplay}
+        /> */}
+        {displayedComponent}
 
         <ReactModal
           isOpen={modalStatus}
