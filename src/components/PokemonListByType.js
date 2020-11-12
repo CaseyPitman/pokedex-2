@@ -1,9 +1,32 @@
 import React from "react";
 
+
+import Button from './Button';
+
 const PokemonListByType = () => {
   return (
-    <div>
-      <h1>pokemon type list goes here.</h1>
+    <div className='pokemon-list'>
+      <div className='grid-container'>
+        {/* <PokemonListItem /> */}
+        {/* {listItems} */}
+      </div>
+      <div className='pokemon-list-pagination'>
+        <Button
+          type='left'
+         //  onClick={e => changePage("previous")}
+         //  status={prevBtnStatus}
+          parent='pokemonList'
+        />
+
+        <h3 className='list-page-number'>Page blank of blank</h3>
+
+        <Button
+          type='right'
+         //  onClick={e => changePage("next")}
+         //  status={nextBtnStatus}
+          parent='pokemonList'
+        />
+      </div>
     </div>
   );
 };
