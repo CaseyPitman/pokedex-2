@@ -26,16 +26,13 @@ const PokemonList = props => {
   useEffect(() => {
     const source = axios.CancelToken.source();
 
-    if (props.typeOfDisplay === "all") {
+    
       const getList = async () => {
         try {
           //do some conditional get here depending on type of list
           const { data } = await axios.get(pageUrl, {
             cancelToken: source.token,
           });
-
-          console.log("list");
-          console.log(data);
           setList(data.results);
           setPrevPageUrl(data.previous);
           setNextPageUrl(data.next);
@@ -44,17 +41,12 @@ const PokemonList = props => {
         }
       };
       getList();
-    }
-
-    else if (props.typeOfDisplay === 'selected type'){
-      console.log('make a type list');
-    }
 
     // Cleanup
     return () => {
       source.cancel();
     };
-  }, [pageUrl, props.typeOfDisplay]);
+  }, [pageUrl]);
 
   //Map the list to make the PokemonListItems for display
   useEffect(() => {

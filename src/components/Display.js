@@ -15,6 +15,7 @@ const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
   const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
   const [typeOfDisplay, setTypeOfDisplay] = useState('all'); // 'selected type'
+  const [displayedList, setDisplayedList] = useState(null);
   
   const [listUrl, setListUrl] = useState("");
   const [listByType, setListByType] = useState([]);
@@ -32,6 +33,10 @@ const Display = props => {
   }, [listUrl]);
 
 // also make a state for the type of list - type based or all. Send that down to Pokemon list to let it decide what type of list to make?
+  
+
+
+
 
   //url will go get all data on a specific type.
   const changeListType = url => {
