@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
 // Components
 import PokemonList from "./PokemonList";
 import PokemonDetail from "./PokemonDetail";
@@ -15,6 +15,26 @@ const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
   const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
 
+  
+  const [listUrl, setListUrl] = useState("");
+  const [listByType, setListByType] = useState([]);
+
+  // Call for list of pokemon in the requested type.
+  useEffect(() => {
+    if (listUrl !== "") {
+      const getPokemon = async () => {
+        const response = await axios.get(listUrl);
+        setListByType(response.data.pokemon);
+      };
+      getPokemon();
+    }
+  }, [listUrl]);
+
+  const changeListType = url => {
+    setListUrl(url);
+  };
+
+
   const makeModal = pokemon => {
     // console.log(pokemon);
     setCurPokemonDetailUrl(pokemon);
@@ -27,7 +47,7 @@ const Display = props => {
 
   return (
     <div className='display'>
-      <SearchBar changeListType={props.changeListType} />
+      <SearchBar changeListType={changeListType} />
       <div className='display-container'>
         <PokemonList
           pokemonListByType={props.pokemonListByType}

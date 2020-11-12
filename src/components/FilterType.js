@@ -6,12 +6,15 @@ import header from "../CSS/header.css";
 
 const FilterType = ({ changeListType }) => {
   const [types, setTypes] = useState([]);
+  const [typeUrl, setTypeUrl] = useState('');
 
   // //Make call for list of types.
   useEffect(() => {
     const getTypes = async () => {
       try {
         const response = await axios.get("https://pokeapi.co/api/v2/type");
+        console.log('types')
+        console.log(response.data);
         setTypes(response.data.results);
       } catch (error) {
         console.log("Something went wrong: ", error.message);
