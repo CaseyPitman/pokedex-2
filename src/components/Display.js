@@ -14,7 +14,7 @@ ReactModal.setAppElement("#root");
 const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
   const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
-
+  const [typeOfDisplay, setTypeOfDisplay] = useState('all'); // 'selected type'
   
   const [listUrl, setListUrl] = useState("");
   const [listByType, setListByType] = useState([]);
@@ -25,13 +25,18 @@ const Display = props => {
       const getPokemon = async () => {
         const response = await axios.get(listUrl);
         setListByType(response.data.pokemon);
+        console.log(response.data.pokemon)
       };
       getPokemon();
     }
   }, [listUrl]);
 
+// also make a state for the type of list - type based or all. Send that down to Pokemon list to let it decide what type of list to make?
+
+  //url will go get all data on a specific type.
   const changeListType = url => {
     setListUrl(url);
+    setTypeOfDisplay('selected type')
   };
 
 
@@ -52,6 +57,7 @@ const Display = props => {
         <PokemonList
           pokemonListByType={props.pokemonListByType}
           makeModal={makeModal}
+          typeOfDisplay = {typeOfDisplay}
         />
 
         <ReactModal

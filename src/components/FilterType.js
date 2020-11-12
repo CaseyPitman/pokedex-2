@@ -25,6 +25,7 @@ const FilterType = ({ changeListType }) => {
 
   //Handles change in selector.
   const onChangeSelect = event => {
+    console.log(`selected type: ${event.target.value}`)
     changeListType(event.target.value);
   };
 
