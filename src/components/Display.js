@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // Components
-import PokemonList from "./PokemonList";
+import PokemonList from "./PokemonListAll";
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
 
@@ -38,7 +38,7 @@ const Display = props => {
     if (typeOfDisplay === "all") {
       //Show all pokemon
       setDisplayedComponent(
-        <PokemonList
+        <PokemonListAll
           pokemonListByType={props.pokemonListByType}
           makeModal={makeModal}
           typeOfDisplay={typeOfDisplay}
