@@ -52,8 +52,12 @@ const Display = props => {
 
   //url will go get all data on a specific type.
   const changeListType = url => {
-    setListUrl(url);
-    setTypeOfDisplay("selected type");
+    if (url === "all") {
+      setTypeOfDisplay("all");
+    } else {
+      setListUrl(url);
+      setTypeOfDisplay("selected type");
+    }
   };
 
   const makeModal = pokemon => {
