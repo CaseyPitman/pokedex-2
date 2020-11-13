@@ -35,16 +35,15 @@ const Display = props => {
 
 
 
+
+
   // Change the type of pokemon you want to show. 
 
-  // const changeListType = url => {
-  //   if (url === "all") {
-  //     setTypeOfDisplay("all");
-  //   } else {
-  //     setListUrl(url);
-  //     setTypeOfDisplay("selected type");
-  //   }
-  // };
+  const changeListType = type => {
+  
+    setCurType(type);
+ 
+};
 
 
 
@@ -87,11 +86,7 @@ const Display = props => {
   // }, [typeOfDisplay, listByType]);
 
   // //url will go get all data on a specific type.
-  const changeListType = type => {
-   
-      setCurType(type);
-   
-  };
+  
 
   const makeModal = pokemon => {
     // console.log(pokemon);

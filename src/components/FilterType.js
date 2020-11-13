@@ -24,14 +24,13 @@ const FilterType = ({ changeListType }) => {
     getTypes();
   }, []);
 
-  //Handles change in selector.
+  //Handles change in selector. Will pass type of pokemon to be filtered up to Display.
   const onChangeSelect = event => {
     console.log(`selected type: ${event.target.value}`);
     changeListType(event.target.value);
   };
 
   // Map call results to create options for dropdown selector.
-
   const options = types.map(({ name }) => {
 
     return (
