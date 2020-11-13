@@ -8,13 +8,13 @@ import ReactModal from "react-modal";
 import display from "../CSS/display.css";
 
 // Components
-// import PokemonListAll from "./PokemonListAll";
-// import PokemonListByType from "./PokemonListByType";
+// import PokemonList from "./PokemonList";
+
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
 
 
-//React-Modal Set up.
+//React-Modal set up.
 ReactModal.setAppElement("#root");
 
 const Display = props => {
@@ -27,11 +27,18 @@ const Display = props => {
   const [curPage, setCurPage]= useState(1);
 
 
+  //Set list of Pokemon to show.
   useEffect(() => {
-    if (currentListData.length === 0) {
+
+    //Will display all pokemon, regardless of type.
+    if (currentListData.length === 0 || curType === 'all') {
       setCurrentListData(props.pokemonData);
+    } else if (curType !== 'all'){
+      // const filteredPokemon = props.pokemonData.filter()
+      console.log(`will display ${curType} type pokemon.`)
     }
-  });
+
+  }, [props.pokemonData, curType]);
 
 
 
