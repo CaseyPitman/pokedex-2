@@ -26,11 +26,15 @@ const App = () => {
     getData();
   }, []);
 
+  // 
+
+
+
 
   return (
     <div>
       <Header />
-      <Display />
+      <Display pokemonData = {pokemonData}/>
 
       <Footer />
     </div>
