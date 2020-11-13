@@ -27,7 +27,7 @@ const Display = props => {
       const getPokemon = async () => {
         const response = await axios.get(listUrl);
         setListByType(response.data.pokemon);
-        console.log(response.data.pokemon);
+        // console.log(response.data.pokemon);
       };
       getPokemon();
     }

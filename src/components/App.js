@@ -8,23 +8,17 @@ import Display from "./Display";
 import Footer from "./Footer";
 
 const App = () => {
-  // const [listUrl, setListUrl] = useState("");
-  // const [listByType, setListByType] = useState([]);
 
-  // // Call for list of pokemon in the requested type.
-  // useEffect(() => {
-  //   if (listUrl !== "") {
-  //     const getPokemon = async () => {
-  //       const response = await axios.get(listUrl);
-  //       setListByType(response.data.pokemon);
-  //     };
-  //     getPokemon();
-  //   }
-  // }, [listUrl]);
+  //Store list of all Pokemon to be rendered
+  const [pokemonData, setPokemonData] = useState([]);
 
-  // const changeListType = url => {
-  //   setListUrl(url);
-  // };
+
+  //
+
+
+
+
+
 
   return (
     <div>

@@ -10,27 +10,27 @@ const PokemonListByType = props => {
   const [pokemon, setPokemon] = useState([]);
   const [listItems, setListItems] = useState([]);
 
-  useEffect(() => {
-    setPokemon(props.listByType);
-  }, [props.listByType]);
+  // useEffect(() => {
+  //   setPokemon(props.listByType);
+  // }, [props.listByType]);
 
-  //Map the list to make the PokemonListItems for display
-  useEffect(() => {
-    const curItems = props.listByType.map(cur=> {
+  // //Map the list to make the PokemonListItems for display
+  // useEffect(() => {
+  //   const curItems = props.listByType.map(cur=> {
 
-      console.log(pokemon);
-      return (
-        <PokemonListItem
-          key={cur.pokemon.name}
-          name={cur.pokemon.name}
-          detailsUrl={cur.pokemon.url}
-          makeModal={props.makeModal}
-        />
-      );
-    });
+  //     console.log(pokemon);
+  //     return (
+  //       <PokemonListItem
+  //         key={cur.pokemon.name}
+  //         name={cur.pokemon.name}
+  //         detailsUrl={cur.pokemon.url}
+  //         makeModal={props.makeModal}
+  //       />
+  //     );
+  //   });
 
-    setListItems(curItems);
-  }, [pokemon]);
+  //   setListItems(curItems);
+  // }, [pokemon]);
 
   return (
     <div className='pokemon-list'>
