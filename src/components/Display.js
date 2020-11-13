@@ -1,29 +1,52 @@
 import React, { useState, useEffect } from "react";
+
+// Dependencies
 import axios from "axios";
+import ReactModal from "react-modal";
+
+// Styles
+import display from "../CSS/display.css";
+
 // Components
 // import PokemonListAll from "./PokemonListAll";
 // import PokemonListByType from "./PokemonListByType";
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
 
-import ReactModal from "react-modal";
 
-import display from "../CSS/display.css";
-
+//React-Modal Set up.
 ReactModal.setAppElement("#root");
 
 const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
+  // Store the list off currently displayed pokemon (all, or a specific type);
   const [currentListData, setCurrentListData] = useState([]);
-
+  // Store current type of pokemon to be displayed
+  const [curType, setCurType] = useState('all');
   //Store the current page number of the displayed list (for display & pagination)
   const [curPage, setCurPage]= useState(1);
+
 
   useEffect(() => {
     if (currentListData.length === 0) {
       setCurrentListData(props.pokemonData);
     }
   });
+
+
+
+  // Change the type of pokemon you want to show. 
+
+  // const changeListType = url => {
+  //   if (url === "all") {
+  //     setTypeOfDisplay("all");
+  //   } else {
+  //     setListUrl(url);
+  //     setTypeOfDisplay("selected type");
+  //   }
+  // };
+
+
 
   // const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
   // const [typeOfDisplay, setTypeOfDisplay] = useState("all"); // 'selected type'
@@ -64,14 +87,11 @@ const Display = props => {
   // }, [typeOfDisplay, listByType]);
 
   // //url will go get all data on a specific type.
-  // const changeListType = url => {
-  //   if (url === "all") {
-  //     setTypeOfDisplay("all");
-  //   } else {
-  //     setListUrl(url);
-  //     setTypeOfDisplay("selected type");
-  //   }
-  // };
+  const changeListType = type => {
+   
+      setCurType(type);
+   
+  };
 
   const makeModal = pokemon => {
     // console.log(pokemon);
@@ -86,7 +106,7 @@ const Display = props => {
   return (
     <div className='display'>
       <SearchBar
-      // changeListType={changeListType}
+      changeListType={changeListType}
       />
       <div className='display-container'>
         {/* <PokemonList
@@ -94,6 +114,7 @@ const Display = props => {
           makeModal={makeModal}
           typeOfDisplay={typeOfDisplay}
         /> */}
+
         {/* {displayedComponent} */}
 
         <ReactModal

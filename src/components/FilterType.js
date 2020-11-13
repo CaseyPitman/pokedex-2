@@ -32,13 +32,11 @@ const FilterType = ({ changeListType }) => {
 
   // Map call results to create options for dropdown selector.
 
-  const options = types.map(({ name, url }) => {
-    //Capitalize name for selector menu.
-    name = name.charAt(0).toUpperCase() + name.slice(1);
+  const options = types.map(({ name }) => {
 
     return (
-      <option key={name} value={url}>
-        {name}
+      <option key={name} value={name}>
+        {name.charAt(0).toUpperCase() + name.slice(1)}
       </option>
     );
   });
