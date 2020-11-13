@@ -13,7 +13,7 @@ const FilterType = ({ changeListType }) => {
     const getTypes = async () => {
       try {
         const response = await axios.get("https://pokeapi.co/api/v2/type");
-        console.log("types");
+        // console.log("types");
         // console.log(response.data);
         setTypes(response.data.results);
       } catch (error) {
