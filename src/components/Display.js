@@ -14,8 +14,16 @@ ReactModal.setAppElement("#root");
 
 const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
+  const [currentListData, setCurrentListData] = useState([]);
 
+  //Store the current page number of the displayed list (for display & pagination)
+  const [curPage, setCurPage]= useState(1);
 
+  useEffect(() => {
+    if (currentListData.length === 0) {
+      setCurrentListData(props.pokemonData);
+    }
+  });
 
   // const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
   // const [typeOfDisplay, setTypeOfDisplay] = useState("all"); // 'selected type'
@@ -77,8 +85,8 @@ const Display = props => {
 
   return (
     <div className='display'>
-      <SearchBar 
-      // changeListType={changeListType} 
+      <SearchBar
+      // changeListType={changeListType}
       />
       <div className='display-container'>
         {/* <PokemonList
