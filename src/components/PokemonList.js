@@ -43,7 +43,7 @@ const PokemonList = props => {
     //Limit to 20 per page
     let items = [];
     if (currentList.length !== 0) {
-      for (let i = 0; i < 20; i++) {
+      for (let i = startIdx; i < startIdx + 20; i++) {
         items.push(currentList[i]);
       }
     }
@@ -65,10 +65,19 @@ const PokemonList = props => {
     });
 
     setListItems(curItems);
-  }, [currentList]);
+  }, [currentList, pageNumber]);
 
+
+  //Change page
   const changePage = dir => {
     console.log(dir);
+
+    if (dir === 'next' || pageNumber === 1){
+      setPrevBtnStatus('active');
+      setPageNumber(pageNumber + 1);
+      setStartIdx(startIdx + 20);
+    }
+
   };
 
   return (
