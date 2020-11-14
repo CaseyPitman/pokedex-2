@@ -25,64 +25,61 @@ const PokemonList = props => {
   const [pageNumber, setPageNumber] = useState(null);
   const [startIdx, setStartIdx] = useState(null);
 
-
   const [prevBtnStatus, setPrevBtnStatus] = useState("inactive");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
-
-
   // Set starting states
-  // useEffect(() => {
-    
-  //   setCurrentList(props.displayList);
-  // }, [props.displayList])
+  useEffect(() => {
+    setCurrentList(props.displayList);
+    setPageNumber(props.curPage);
+    setStartIdx(props.curStartingIndex);
+  }, [props.displayList]);
 
   //Map the list to make the PokemonListItems for display
 
-    // const curItems = list.map(pokemon => {
-    //   return (
-    //     <PokemonListItem
-    //       key={pokemon.name}
-    //       name={pokemon.name}
-    //       detailsUrl={pokemon.url}
-    //       makeModal={props.makeModal}
-    //     />
-    //   );
-    // });
-
+  // const curItems = list.map(pokemon => {
+  //   return (
+  //     <PokemonListItem
+  //       key={pokemon.name}
+  //       name={pokemon.name}
+  //       detailsUrl={pokemon.url}
+  //       makeModal={props.makeModal}
+  //     />
+  //   );
+  // });
 
   const changePage = dir => {
     console.log(dir);
     //Set page number
 
     //Limit to 50 pages. Do not advance past page 50.
-  //   if (dir === "next" && pageNumber === 50) {
-  //     return;
-  //   }
+    //   if (dir === "next" && pageNumber === 50) {
+    //     return;
+    //   }
 
-  //   //On page one, do not subtract if previous button clicked.
-  //   if (dir === "previous" && pageNumber !== 1) {
-  //     setPageNumber(pageNumber - 1);
-  //     setPageUrl(prevPageUrl);
-  //   }
+    //   //On page one, do not subtract if previous button clicked.
+    //   if (dir === "previous" && pageNumber !== 1) {
+    //     setPageNumber(pageNumber - 1);
+    //     setPageUrl(prevPageUrl);
+    //   }
 
-  //   if (pageNumber === 2) {
-  //     setPrevBtnStatus("inactive");
-  //   }
+    //   if (pageNumber === 2) {
+    //     setPrevBtnStatus("inactive");
+    //   }
 
-  //   if (dir === "next") {
-  //     setPageNumber(pageNumber + 1);
-  //     setPageUrl(nextPageUrl);
-  //     setPrevBtnStatus("active");
-  //   }
+    //   if (dir === "next") {
+    //     setPageNumber(pageNumber + 1);
+    //     setPageUrl(nextPageUrl);
+    //     setPrevBtnStatus("active");
+    //   }
 
-  //   if (pageNumber === 49 && dir === "next") {
-  //     setNextBtnStatus("inactive");
-  //   } else {
-  //     setNextBtnStatus("active");
-  //   }
+    //   if (pageNumber === 49 && dir === "next") {
+    //     setNextBtnStatus("inactive");
+    //   } else {
+    //     setNextBtnStatus("active");
+    //   }
 
-  //   // Todo : skip to page functionality?
+    //   // Todo : skip to page functionality?
   };
 
   return (
