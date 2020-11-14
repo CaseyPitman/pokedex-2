@@ -20,13 +20,22 @@ const PokemonList = props => {
   // const [list, setList] = useState([]);
   // const [listItems, setListItems] = useState([]);
 
+  //Store current list to be displayed
+  const [currentList, setCurrentList] = useState([]);
+  const [pageNumber, setPageNumber] = useState(null);
+  const [startIdx, setStartIdx] = useState(null);
 
 
   const [prevBtnStatus, setPrevBtnStatus] = useState("inactive");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
-  // Call for list of currently showing pokemon
-  
+
+
+  // Set starting states
+  // useEffect(() => {
+    
+  //   setCurrentList(props.displayList);
+  // }, [props.displayList])
 
   //Map the list to make the PokemonListItems for display
 
