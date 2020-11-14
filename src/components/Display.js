@@ -8,7 +8,7 @@ import ReactModal from "react-modal";
 import display from "../CSS/display.css";
 
 // Components
-// import PokemonList from "./PokemonList";
+import PokemonList from "./PokemonList";
 
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
@@ -113,14 +113,14 @@ const Display = props => {
   return (
     <div className='display'>
       <SearchBar changeListType={changeListType} />
+      <h1 className='pokemon-type-headline'> {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon </h1>
       <div className='display-container'>
-        {/* <PokemonList
-          pokemonListByType={props.pokemonListByType}
+        <PokemonList
           makeModal={makeModal}
-          typeOfDisplay={typeOfDisplay}
-        /> */}
-
-        {/* {displayedComponent} */}
+          displayList = {displayList}
+          curPage = {curPage}
+          curStartingIndex = {curStartingIndex}
+        />
 
         <ReactModal
           isOpen={modalStatus}
