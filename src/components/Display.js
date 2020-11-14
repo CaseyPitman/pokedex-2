@@ -13,46 +13,51 @@ import display from "../CSS/display.css";
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
 
-
 //React-Modal set up.
 ReactModal.setAppElement("#root");
 
 const Display = props => {
   const [modalStatus, setModalStatus] = useState(false);
-  // Store the list off currently displayed pokemon (all, or a specific type);
-  const [currentListData, setCurrentListData] = useState([]);
+  // Full List of pokemon
+  const [pokemonList, setPokemonList] = useState([]);
+  // Store the list of currently displayed pokemon (all, or a specific type);
+  const [displayList, setDisplayList] = useState([]);
   // Store current type of pokemon to be displayed
-  const [curType, setCurType] = useState('all');
+  const [curType, setCurType] = useState("all");
   //Store the current page number of the displayed list (for display & pagination)
-  const [curPage, setCurPage]= useState(1);
+  const [curPage, setCurPage] = useState(1);
+  // Store the current starting currentListData[idx]
+  const [curStartingIndex, setCurStartingIndex] = useState(0);
 
-
-  //Set list of Pokemon to show.
+  // Store list of all pokemon
   useEffect(() => {
-
-    //Will display all pokemon, regardless of type.
-    if (currentListData.length === 0 || curType === 'all') {
-      setCurrentListData(props.pokemonData);
-    } else if (curType !== 'all'){
-      // const filteredPokemon = props.pokemonData.filter()
-      console.log(`will display ${curType} type pokemon.`)
+    if (pokemonList.length === 0) {
+      setPokemonList(props.pokemonData);
     }
+  }, [props.pokemonData]);
 
-  }, [props.pokemonData, curType]);
+  // Make the current list to show
+  useEffect(() => {
+    const getPokemonToShow = async () => {
+      if (curType === "all") {
+        setDisplayList(pokemonList);
+      } else {
+        const {data} = await axios.get(`https://pokeapi.co/api/v2/type/${curType}`);
+
+        console.log(data.pokemon);
+      }
+    };
+
+    getPokemonToShow();
 
 
+  }, [pokemonList, curType]);
 
-
-
-  // Change the type of pokemon you want to show. 
+  // Change the type of pokemon you want to show.
 
   const changeListType = type => {
-  
     setCurType(type);
- 
-};
-
-
+  };
 
   // const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
   // const [typeOfDisplay, setTypeOfDisplay] = useState("all"); // 'selected type'
@@ -93,7 +98,6 @@ const Display = props => {
   // }, [typeOfDisplay, listByType]);
 
   // //url will go get all data on a specific type.
-  
 
   const makeModal = pokemon => {
     // console.log(pokemon);
@@ -107,9 +111,7 @@ const Display = props => {
 
   return (
     <div className='display'>
-      <SearchBar
-      changeListType={changeListType}
-      />
+      <SearchBar changeListType={changeListType} />
       <div className='display-container'>
         {/* <PokemonList
           pokemonListByType={props.pokemonListByType}

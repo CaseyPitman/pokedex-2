@@ -11,14 +11,16 @@ const App = () => {
   //Store list of all Pokemon to be rendered
   const [pokemonData, setPokemonData] = useState([]);
 
+
   //  Call to retrieve list of all Pokemon and then store name and url.
   useEffect(() => {
     const getData = async () => {
       try {
-        const {data} = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=1050");
+        const { data } = await axios.get(
+          "https://pokeapi.co/api/v2/pokemon?limit=1050"
+        );
 
         setPokemonData(data.results);
-
       } catch (error) {
         console.log(`Something has gone wrong: ${error}`);
       }
@@ -26,15 +28,13 @@ const App = () => {
     getData();
   }, []);
 
-  // 
 
-
-
+ 
 
   return (
     <div>
       <Header />
-      <Display pokemonData = {pokemonData}/>
+      <Display pokemonData={pokemonData} />
 
       <Footer />
     </div>
