@@ -18,12 +18,14 @@ const PokemonList = props => {
   // const [nextPageUrl, setNextPageUrl] = useState("");
   // const [prevPageUrl, setPrevPageUrl] = useState("");
   // const [list, setList] = useState([]);
-  // const [listItems, setListItems] = useState([]);
 
   //Store current list to be displayed
   const [currentList, setCurrentList] = useState([]);
   const [pageNumber, setPageNumber] = useState(null);
   const [startIdx, setStartIdx] = useState(null);
+
+  // Store list items
+  const [listItems, setListItems] = useState([]);
 
   const [prevBtnStatus, setPrevBtnStatus] = useState("inactive");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
@@ -33,20 +35,33 @@ const PokemonList = props => {
     setCurrentList(props.displayList);
     setPageNumber(props.curPage);
     setStartIdx(props.curStartingIndex);
-  }, [props.displayList]);
+  }, [props.displayList, props.curPage, props.curStartingIndex]);
 
   //Map the list to make the PokemonListItems for display
+  useEffect(() => {
+    //Limit to 20 per page
+    let items = [];
+    if (currentList.length !== 0) {
+      for (let i = 0; i < 20; i++) {
+        items.push(currentList[i]);
+      }
+    }
+    
 
-  // const curItems = list.map(pokemon => {
-  //   return (
-  //     <PokemonListItem
-  //       key={pokemon.name}
-  //       name={pokemon.name}
-  //       detailsUrl={pokemon.url}
-  //       makeModal={props.makeModal}
-  //     />
-  //   );
-  // });
+
+    const curItems = items.map(pokemon => {
+      return (
+        <PokemonListItem
+          key={pokemon.name}
+          name={pokemon.name}
+          detailsUrl={pokemon.url}
+          makeModal={props.makeModal}
+        />
+      );
+    });
+
+    setListItems(curItems);
+  }, [currentList]);
 
   const changePage = dir => {
     console.log(dir);
@@ -86,7 +101,7 @@ const PokemonList = props => {
     <div className='pokemon-list'>
       <div className='grid-container'>
         {/* <PokemonListItem /> */}
-        {/* {listItems} */}
+        {listItems}
       </div>
       <div className='pokemon-list-pagination'>
         <Button
