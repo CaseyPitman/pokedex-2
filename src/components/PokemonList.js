@@ -23,6 +23,7 @@ const PokemonList = props => {
   const [currentList, setCurrentList] = useState([]);
   const [pageNumber, setPageNumber] = useState(null);
   const [startIdx, setStartIdx] = useState(null);
+  const [curTotalPages, setCurTotalPages] = useState(null);
 
   // Store list items
   const [listItems, setListItems] = useState([]);
@@ -46,8 +47,11 @@ const PokemonList = props => {
         items.push(currentList[i]);
       }
     }
-    
 
+    if (currentList.length !== 0) {
+      // Determine number of pages
+      setCurTotalPages(Math.ceil(currentList.length / 20));
+    }
 
     const curItems = items.map(pokemon => {
       return (
@@ -65,36 +69,6 @@ const PokemonList = props => {
 
   const changePage = dir => {
     console.log(dir);
-    //Set page number
-
-    //Limit to 50 pages. Do not advance past page 50.
-    //   if (dir === "next" && pageNumber === 50) {
-    //     return;
-    //   }
-
-    //   //On page one, do not subtract if previous button clicked.
-    //   if (dir === "previous" && pageNumber !== 1) {
-    //     setPageNumber(pageNumber - 1);
-    //     setPageUrl(prevPageUrl);
-    //   }
-
-    //   if (pageNumber === 2) {
-    //     setPrevBtnStatus("inactive");
-    //   }
-
-    //   if (dir === "next") {
-    //     setPageNumber(pageNumber + 1);
-    //     setPageUrl(nextPageUrl);
-    //     setPrevBtnStatus("active");
-    //   }
-
-    //   if (pageNumber === 49 && dir === "next") {
-    //     setNextBtnStatus("inactive");
-    //   } else {
-    //     setNextBtnStatus("active");
-    //   }
-
-    //   // Todo : skip to page functionality?
   };
 
   return (
@@ -111,7 +85,7 @@ const PokemonList = props => {
           parent='pokemonList'
         />
 
-        <h3 className='list-page-number'>Page Number</h3>
+        <h3 className='list-page-number'>Page {pageNumber}</h3>
 
         <Button
           type='right'
