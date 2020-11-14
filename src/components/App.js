@@ -11,7 +11,6 @@ const App = () => {
   //Store list of all Pokemon to be rendered
   const [pokemonData, setPokemonData] = useState([]);
 
-
   //  Call to retrieve list of all Pokemon and then store name and url.
   useEffect(() => {
     const getData = async () => {
@@ -27,9 +26,6 @@ const App = () => {
     };
     getData();
   }, []);
-
-
- 
 
   return (
     <div>

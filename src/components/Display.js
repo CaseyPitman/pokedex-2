@@ -42,19 +42,20 @@ const Display = props => {
       if (curType === "all") {
         setDisplayList(pokemonList);
       } else {
-        const {data} = await axios.get(`https://pokeapi.co/api/v2/type/${curType}`);
+        const { data } = await axios.get(
+          `https://pokeapi.co/api/v2/type/${curType}`
+        );
 
-        console.log(data.pokemon);
+        //Retrieve data from one level deeper to match format of "all" list.
+        const pokemon = data.pokemon.map(cur => cur.pokemon);
+
+        setDisplayList(pokemon);
       }
     };
-
     getPokemonToShow();
-
-
   }, [pokemonList, curType]);
 
   // Change the type of pokemon you want to show.
-
   const changeListType = type => {
     setCurType(type);
   };
