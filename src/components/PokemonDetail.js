@@ -111,7 +111,7 @@ const PokemonDetail = props => {
 
   useEffect(() => {
     const mappedTypes = types.map(cur => (
-      <PokemonTypeListItem key={cur.slot} name={cur.type.name} />
+      <PokemonTypeListItem key={cur.slot} name={cur.type.name} changeListType = {props.changeListType} />
     ));
     setDisplayTypes(mappedTypes);
   }, [types]);

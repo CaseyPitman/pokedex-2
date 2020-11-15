@@ -48,6 +48,10 @@ const Display = props => {
   }, [props.pokemonData]);
 
   // Make the current list to show
+
+  
+// THIS MODULE NEEDS WORK - NEED TO FIND A WAY TO LIMIT THE POKEMON TO LESS THAN 893
+
   useEffect(() => {
     const getPokemonToShow = async () => {
       if (curType === "all") {
@@ -71,6 +75,8 @@ const Display = props => {
   // Change the type of pokemon you want to show.
   const changeListType = type => {
     setCurType(type);
+    //Close modal if open
+    setModalStatus(false)
   };
 
   const makeModal = (index, navDir = "") => {
@@ -119,6 +125,7 @@ const Display = props => {
             curPokemonDetailUrl={curPokemonDetailUrl}
             makeModal={makeModal}
             index = {currentDetailIdx}
+            changeListType = {changeListType}
           />
         </ReactModal>
       </div>

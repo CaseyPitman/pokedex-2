@@ -1,7 +1,5 @@
 
 
-- Hook up nav buttons in pokemonDetail view.
-
 - Allow click on type in PokemonDetail to close modal and then auto-filter to clicked type
 
 - Implement search
@@ -13,3 +11,4 @@
 - load screen
 
 - navigate page snap to top of section.
+

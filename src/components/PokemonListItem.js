@@ -21,12 +21,13 @@ const PokemonListItem = props => {
           cancelToken: source.token,
         });
 
+        setNumber(data.id);
+
         if (data.sprites.front_default === null) {
           setImg(pokeball);
         } else {
           setImg(data.sprites.front_default);
         }
-        setNumber(data.id);
         setName(data.name);
       } catch (error) {
         if (axios.isCancel(error)) {

@@ -32,12 +32,13 @@ I decided to revisit this project after learning some React and discovering [Pok
 ## To Do:
 
 - [x] Reposition search bar. 
-- [x] Implement navigation between previous & next pokémon in detailed view.
+- [x] Implement navigation between previous & next Pokémon in detailed view.
 - [x] Implement filter by Pokémon type functionality.
 - [ ] Implement search with autocomplete functionality.
 - [x] Assemble data to support search/autocomplete functionality. 
 - [x] Eliminate redundant calls to [PokéAPI](https://pokeapi.co/)
 - [x] Set an upper limit on Pokémon rendered. 
+- [x] Implement intra-modal navigation.
 - [ ] Display evolution chain.
 - [x] Display flavor text.
 - [ ] Implement custom Hook useCall to make calls to PokéAPI.
