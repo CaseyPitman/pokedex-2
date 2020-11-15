@@ -71,21 +71,25 @@ const PokemonList = props => {
     setListItems(curItems);
   }, [currentList, pageNumber]);
 
+  //Maintain styles and functionality status of buttons.
+  useEffect(() => {
+    setPrevBtnStatus(pageNumber === 1 ? "inactive" : "active");
+    setNextBtnStatus(pageNumber === curTotalPages ? "inactive" : "active");
+  }, [pageNumber]);
+
   //Change page
   const changePage = dir => {
     console.log(dir);
 
-
-
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setStartIdx(startIdx + 20);
-    }    
-    
-    setPrevBtnStatus(pageNumber === 0 ? "inactive" : "active");
-    setNextBtnStatus(pageNumber === curTotalPages -1 ? 'inactive' : 'active');
+    }
 
-
+    if (dir === "previous") {
+      setPageNumber(pageNumber - 1);
+      setStartIdx(startIdx - 20);
+    }
   };
 
   return (
@@ -102,7 +106,9 @@ const PokemonList = props => {
           parent='pokemonList'
         />
 
-  <h3 className='list-page-number'>Page {pageNumber} of {curTotalPages}</h3>
+        <h3 className='list-page-number'>
+          Page {pageNumber} of {curTotalPages}
+        </h3>
 
         <Button
           type='right'

@@ -4,7 +4,9 @@ import React from "react";
 import button from "../CSS/button.css";
 
 const Button = props => {
+  // Handle pagination button clicks.
   const handleClick = () => {
+    // No more pages to be viewed.
     if (props.status === "inactive") {
       return;
     }
