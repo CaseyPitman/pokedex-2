@@ -28,6 +28,9 @@ const Display = props => {
   const [curPage, setCurPage] = useState(1);
   // Store the current starting currentListData[idx]
   const [curStartingIndex, setCurStartingIndex] = useState(0);
+  // Store url to retrieve details for currently displayed pokemon details (modal)
+  const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
+
 
   // Store list of all pokemon
   useEffect(() => {
@@ -60,7 +63,7 @@ const Display = props => {
     setCurType(type);
   };
 
-  // const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
+
   // const [typeOfDisplay, setTypeOfDisplay] = useState("all"); // 'selected type'
   // const [displayedComponent, setDisplayedComponent] = useState(null);
 
@@ -102,7 +105,7 @@ const Display = props => {
 
   const makeModal = pokemon => {
     // console.log(pokemon);
-    // setCurPokemonDetailUrl(pokemon);
+    setCurPokemonDetailUrl(pokemon);
     setModalStatus(true);
   };
 
@@ -129,7 +132,7 @@ const Display = props => {
           onRequestClose={closeModal}>
           <PokemonDetail
             closeModal={closeModal}
-            // curPokemonDetailUrl={curPokemonDetailUrl}
+            curPokemonDetailUrl={curPokemonDetailUrl}
             makeModal={makeModal}
           />
         </ReactModal>

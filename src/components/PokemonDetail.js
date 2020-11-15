@@ -8,7 +8,6 @@ import pokeball from "../img/pokeball.png";
 
 // Components
 import Button from "./Button";
-import EvolutionChain from "./EvolutionChain";
 import PokemonTypeListItem from "./PokemonTypeListItem";
 
 // Styles
@@ -42,7 +41,8 @@ const PokemonDetail = props => {
         });
         console.log(data);
         if (data.sprites.front_default !== null) {
-          setImageSrc(data.sprites.front_default);
+          setImageSrc(data.sprites.other['official-artwork'].front_default);
+          // setImageSrc(data.sprites.front_default);
         }
 
         setNumber(data.id);
@@ -106,20 +106,20 @@ const PokemonDetail = props => {
   }, [speciesUrl]);
 
   // Set prev pokemon and next pokemon
-  useEffect(() => {
+  // useEffect(() => {
 
-    // ADD SOME KIND OF CONDITIONAL LOGIC HERE THAT LETS THE TYPE LIST MODALS MOVE TO THE NEXT OR PREVIOUS IN TYPE.
+  //   // ADD SOME KIND OF CONDITIONAL LOGIC HERE THAT LETS THE TYPE LIST MODALS MOVE TO THE NEXT OR PREVIOUS IN TYPE.
 
-    if (number && number > 1) {
-      setPrevPokemon(`https://pokeapi.co/api/v2/pokemon/${number - 1}`);
-    }
+  //   if (number && number > 1) {
+  //     setPrevPokemon(`https://pokeapi.co/api/v2/pokemon/${number - 1}`);
+  //   }
 
-    if (number < 893) {
-      setNextPokemon(`https://pokeapi.co/api/v2/pokemon/${number + 1}`);
-    } else {
-      setNextPokemon("");
-    }
-  }, [number]);
+  //   if (number < 893) {
+  //     setNextPokemon(`https://pokeapi.co/api/v2/pokemon/${number + 1}`);
+  //   } else {
+  //     setNextPokemon("");
+  //   }
+  // }, [number]);
 
   useEffect(() => {
     const mappedTypes = types.map(cur => (
