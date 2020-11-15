@@ -79,7 +79,6 @@ const PokemonList = props => {
 
   //Change page
   const changePage = dir => {
-    console.log(dir);
 
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
