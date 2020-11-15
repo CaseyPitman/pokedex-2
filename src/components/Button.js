@@ -1,18 +1,21 @@
 import React from "react";
 
 // Styles
-import button from '../CSS/button.css'
+import button from "../CSS/button.css";
 
-
-const Button = (props) => {
-
-  const handleClick = (parent) =>{
+const Button = props => {
+  const handleClick = () => {
+    if (props.status === "inactive") {
+      return;
+    }
     props.onClick();
-  }
+  };
 
   return (
     <div>
-      <i className={`nav-icon fas fa-arrow-alt-circle-${props.type} ${props.status}`}  onClick = {handleClick}></i>
+      <i
+        className={`nav-icon fas fa-arrow-alt-circle-${props.type} ${props.status}`}
+        onClick={handleClick}></i>
     </div>
   );
 };

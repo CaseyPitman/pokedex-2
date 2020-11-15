@@ -44,18 +44,18 @@ const PokemonList = props => {
     let items = [];
     if (currentList.length !== 0) {
       for (let i = startIdx; i < startIdx + 20; i++) {
-        items.push(currentList[i]);
+        if (currentList[i]) {
+          items.push(currentList[i]);
+        }
       }
     }
 
     if (currentList.length !== 0) {
       // Determine number of pages
-      setCurTotalPages(Math.ceil(currentList.length / 20)+1);
+      setCurTotalPages(Math.ceil(currentList.length / 20));
     }
 
     const curItems = items.map(pokemon => {
-
-
       //PAGINATION IS THROWING ERROR ON FINAL PAGE OF EACH SET.
 
       return (
@@ -71,19 +71,20 @@ const PokemonList = props => {
     setListItems(curItems);
   }, [currentList, pageNumber]);
 
-
   //Change page
   const changePage = dir => {
     console.log(dir);
 
-    
-    setPrevBtnStatus(pageNumber === 0 ? 'inactive' : 'active');
-    // setNextBtnStatus(pageNumber === curTotalPages ? 'inactive' : 'active');
 
-    if (dir === 'next') {
+
+    if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setStartIdx(startIdx + 20);
-    }
+    }    
+    
+    setPrevBtnStatus(pageNumber === 0 ? "inactive" : "active");
+    setNextBtnStatus(pageNumber === curTotalPages -1 ? 'inactive' : 'active');
+
 
   };
 
@@ -101,7 +102,7 @@ const PokemonList = props => {
           parent='pokemonList'
         />
 
-        <h3 className='list-page-number'>Page {pageNumber}</h3>
+  <h3 className='list-page-number'>Page {pageNumber} of {curTotalPages}</h3>
 
         <Button
           type='right'
