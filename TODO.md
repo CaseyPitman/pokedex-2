@@ -1,4 +1,3 @@
-- placeholder for text on detail view.
 
 
 - Hook up nav buttons in pokemonDetail view.
