@@ -31,7 +31,6 @@ const Display = props => {
   // Store url to retrieve details for currently displayed pokemon details (modal)
   const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
 
-
   // Store list of all pokemon
   useEffect(() => {
     if (pokemonList.length === 0) {
@@ -62,7 +61,6 @@ const Display = props => {
   const changeListType = type => {
     setCurType(type);
   };
-
 
   // const [typeOfDisplay, setTypeOfDisplay] = useState("all"); // 'selected type'
   // const [displayedComponent, setDisplayedComponent] = useState(null);
@@ -116,13 +114,16 @@ const Display = props => {
   return (
     <div className='display'>
       <SearchBar changeListType={changeListType} />
-      <h1 className='pokemon-type-headline'> {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon </h1>
+      <h1 className='pokemon-type-headline'>
+        {" "}
+        {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon{" "}
+      </h1>
       <div className='display-container'>
         <PokemonList
           makeModal={makeModal}
-          displayList = {displayList}
-          curPage = {curPage}
-          curStartingIndex = {curStartingIndex}
+          displayList={displayList}
+          curPage={curPage}
+          curStartingIndex={curStartingIndex}
         />
 
         <ReactModal

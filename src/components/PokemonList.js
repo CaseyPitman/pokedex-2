@@ -56,8 +56,6 @@ const PokemonList = props => {
     }
 
     const curItems = items.map(pokemon => {
-      
-
       return (
         <PokemonListItem
           key={pokemon.name}
@@ -79,7 +77,6 @@ const PokemonList = props => {
 
   //Change page
   const changePage = dir => {
-
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setStartIdx(startIdx + 20);

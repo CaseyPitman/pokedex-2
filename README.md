@@ -33,9 +33,10 @@ I decided to revisit this project after learning some React and discovering [Pok
 
 - [x] Reposition search bar. 
 - [x] Implement navigation between previous & next pokémon in detailed view.
-- [ ] Implement filter by Pokémon type functionality.
+- [x] Implement filter by Pokémon type functionality.
 - [ ] Implement search with autocomplete functionality.
-- [ ] Assemble data to support search/autocomplete functionality. 
+- [x] Assemble data to support search/autocomplete functionality. 
+- [x] Eliminate redundant calls to [PokéAPI](https://pokeapi.co/)
 - [x] Set an upper limit on Pokémon rendered. 
 - [ ] Display evolution chain.
 - [x] Display flavor text.

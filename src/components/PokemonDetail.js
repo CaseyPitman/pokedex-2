@@ -42,12 +42,11 @@ const PokemonDetail = props => {
         console.log(data);
         if (data.sprites.front_default !== null) {
           // No official artwork
-          if (!data.sprites.other['official-artwork'].front_default){
+          if (!data.sprites.other["official-artwork"].front_default) {
             setImageSrc(data.sprites.front_default);
-          }else {
-          setImageSrc(data.sprites.other['official-artwork'].front_default);
+          } else {
+            setImageSrc(data.sprites.other["official-artwork"].front_default);
           }
-          
         }
 
         setNumber(data.id);
@@ -109,22 +108,6 @@ const PokemonDetail = props => {
       source.cancel();
     };
   }, [speciesUrl]);
-
-  // Set prev pokemon and next pokemon
-  // useEffect(() => {
-
-  //   // ADD SOME KIND OF CONDITIONAL LOGIC HERE THAT LETS THE TYPE LIST MODALS MOVE TO THE NEXT OR PREVIOUS IN TYPE.
-
-  //   if (number && number > 1) {
-  //     setPrevPokemon(`https://pokeapi.co/api/v2/pokemon/${number - 1}`);
-  //   }
-
-  //   if (number < 893) {
-  //     setNextPokemon(`https://pokeapi.co/api/v2/pokemon/${number + 1}`);
-  //   } else {
-  //     setNextPokemon("");
-  //   }
-  // }, [number]);
 
   useEffect(() => {
     const mappedTypes = types.map(cur => (

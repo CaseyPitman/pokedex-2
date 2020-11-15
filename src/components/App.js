@@ -18,8 +18,8 @@ const App = () => {
         const { data } = await axios.get(
           "https://pokeapi.co/api/v2/pokemon?limit=1050"
         );
-
-        setPokemonData(data.results.slice(0,893));
+        // Limit pokmeon to 893 'regular' pokemon
+        setPokemonData(data.results.slice(0, 893));
       } catch (error) {
         console.log(`Something has gone wrong: ${error}`);
       }
