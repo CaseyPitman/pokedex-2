@@ -19,7 +19,7 @@ const App = () => {
           "https://pokeapi.co/api/v2/pokemon?limit=1050"
         );
 
-        setPokemonData(data.results);
+        setPokemonData(data.results.slice(0,893));
       } catch (error) {
         console.log(`Something has gone wrong: ${error}`);
       }

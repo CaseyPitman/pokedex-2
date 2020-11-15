@@ -41,8 +41,13 @@ const PokemonDetail = props => {
         });
         console.log(data);
         if (data.sprites.front_default !== null) {
+          // No official artwork
+          if (!data.sprites.other['official-artwork'].front_default){
+            setImageSrc(data.sprites.front_default);
+          }else {
           setImageSrc(data.sprites.other['official-artwork'].front_default);
-          // setImageSrc(data.sprites.front_default);
+          }
+          
         }
 
         setNumber(data.id);

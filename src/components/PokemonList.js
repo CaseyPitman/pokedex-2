@@ -56,7 +56,7 @@ const PokemonList = props => {
     }
 
     const curItems = items.map(pokemon => {
-      //PAGINATION IS THROWING ERROR ON FINAL PAGE OF EACH SET.
+      
 
       return (
         <PokemonListItem
