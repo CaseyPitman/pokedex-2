@@ -1,7 +1,5 @@
 
 
-- Allow click on type in PokemonDetail to close modal and then auto-filter to clicked type
-
 - Implement search
 
 - Autocomplete for search.

@@ -8,7 +8,7 @@ const SearchBar = (props) => {
   return (
     <div className='search-bar'>
       <div className='banner-inputs'>
-        <FilterType changeListType={props.changeListType} />
+        <FilterType changeListType={props.changeListType} curType = {props.curType}/>
         <Search />
       </div>
     </div>

@@ -49,8 +49,7 @@ const Display = props => {
 
   // Make the current list to show
 
-  
-// THIS MODULE NEEDS WORK - NEED TO FIND A WAY TO LIMIT THE POKEMON TO LESS THAN 893
+  // THIS MODULE NEEDS WORK - NEED TO FIND A WAY TO LIMIT THE POKEMON TO LESS THAN 893
 
   useEffect(() => {
     const getPokemonToShow = async () => {
@@ -76,24 +75,24 @@ const Display = props => {
   const changeListType = type => {
     setCurType(type);
     //Close modal if open
-    setModalStatus(false)
+    setModalStatus(false);
+
+
+    //SET FILTER DROPDOWN?
   };
 
   const makeModal = (index, navDir = "") => {
-
-    
     if (navDir === "previous" && index > 0) {
       setCurPokemonDetailUrl(displayList[index - 1].url);
       setCurDetailIdx(index - 1);
     } else if (navDir === "next" && index < displayList.length) {
       setCurPokemonDetailUrl(displayList[index + 1].url);
       setCurDetailIdx(index + 1);
-
     } else {
       setCurPokemonDetailUrl(displayList[index].url);
       setCurDetailIdx(index);
     }
-    
+
     setModalStatus(true);
   };
 
@@ -103,7 +102,7 @@ const Display = props => {
 
   return (
     <div className='display'>
-      <SearchBar changeListType={changeListType} />
+      <SearchBar changeListType={changeListType} curType = {curType} />
       <h1 className='pokemon-type-headline'>
         {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon
       </h1>
@@ -124,8 +123,8 @@ const Display = props => {
             closeModal={closeModal}
             curPokemonDetailUrl={curPokemonDetailUrl}
             makeModal={makeModal}
-            index = {currentDetailIdx}
-            changeListType = {changeListType}
+            index={currentDetailIdx}
+            changeListType={changeListType}
           />
         </ReactModal>
       </div>

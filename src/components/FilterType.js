@@ -4,7 +4,7 @@ import axios from "axios";
 // Styles
 import header from "../CSS/header.css";
 
-const FilterType = ({ changeListType }) => {
+const FilterType = ({ changeListType, curType }) => {
   const [types, setTypes] = useState([]);
   const [typeUrl, setTypeUrl] = useState("");
 
@@ -30,6 +30,7 @@ const FilterType = ({ changeListType }) => {
     changeListType(event.target.value);
   };
 
+
   // Map call results to create options for dropdown selector.
   const options = types.map(({ name }) => {
 
@@ -42,11 +43,11 @@ const FilterType = ({ changeListType }) => {
 
   return (
     <div className='filter-type'>
-      <select className='input-field' onChange={onChangeSelect}>
+      <select className='input-field' onChange={onChangeSelect} >
         <option key='default' value='all'>
           Sort by Type
         </option>
-        <option key='all' value='all'>
+        <option key='all' value='all' >
           All Pokémon
         </option>
 
