@@ -45,7 +45,9 @@ const PokemonListItem = props => {
   }, [props.detailsUrl]);
 
   const handleClick = () => {
-    props.makeModal(props.detailsUrl);
+    // pass the detail url and the index from current list of pokemon displayed.
+
+    props.makeModal(props.detailsUrl, props.index);
   };
 
   return (

@@ -24,7 +24,7 @@ const Display = props => {
 
   // Store the list of currently displayed pokemon (all, or a specific type);
   //MODAL NAV FLOWS FROM HERE
-  const [displayList, setDisplayList] = useState([]);      
+  const [displayList, setDisplayList] = useState([]);
 
   // Store current type of pokemon to be displayed
   const [curType, setCurType] = useState("all");
@@ -57,8 +57,8 @@ const Display = props => {
 
         //Retrieve data from one level deeper to match format of "all" list.
         const pokemon = data.pokemon.map(cur => cur.pokemon);
-          // Attach index for modal nav
-          pokemon.forEach(cur => cur.idx = pokemon.indexOf(cur));
+        // Attach index for modal nav
+        pokemon.forEach(cur => (cur.idx = pokemon.indexOf(cur)));
 
         setDisplayList(pokemon);
       }
@@ -71,9 +71,8 @@ const Display = props => {
     setCurType(type);
   };
 
-  
-  const makeModal = pokemon => {
-    // console.log(pokemon);
+  const makeModal = (pokemon, index) => {
+    console.log(`index: ${index}`);
     setCurPokemonDetailUrl(pokemon);
     setModalStatus(true);
   };
@@ -86,8 +85,7 @@ const Display = props => {
     <div className='display'>
       <SearchBar changeListType={changeListType} />
       <h1 className='pokemon-type-headline'>
-        {" "}
-        {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon{" "}
+        {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon
       </h1>
       <div className='display-container'>
         <PokemonList

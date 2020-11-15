@@ -63,6 +63,7 @@ const PokemonList = props => {
       return (
         <PokemonListItem
           key={pokemon.name}
+          index = {pokemon.idx}
           name={pokemon.name}
           detailsUrl={pokemon.url}
           makeModal={props.makeModal}
