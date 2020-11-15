@@ -55,6 +55,8 @@ const PokemonDetail = props => {
         setSpeciesUrl(data.species.url);
 
         // Set active || inactive class on buttons
+        // FIX ERROR HERE WHERE NEXT BUTTON STATUS IS MESSED UP. NEEDS TO BE SOMEHOW TIED TO LENGTH OF ARRAY HOLDING THE LIST OF CURRENT TYPE. 
+
         if (data.id === 1) {
           setPrvBtnStatus("inactive");
         } else if (data.id === 893) {
