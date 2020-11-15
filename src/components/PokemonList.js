@@ -50,10 +50,14 @@ const PokemonList = props => {
 
     if (currentList.length !== 0) {
       // Determine number of pages
-      setCurTotalPages(Math.ceil(currentList.length / 20));
+      setCurTotalPages(Math.ceil(currentList.length / 20)+1);
     }
 
     const curItems = items.map(pokemon => {
+
+
+      //PAGINATION IS THROWING ERROR ON FINAL PAGE OF EACH SET.
+
       return (
         <PokemonListItem
           key={pokemon.name}
@@ -72,8 +76,11 @@ const PokemonList = props => {
   const changePage = dir => {
     console.log(dir);
 
-    if (dir === 'next' || pageNumber === 1){
-      setPrevBtnStatus('active');
+    
+    setPrevBtnStatus(pageNumber === 0 ? 'inactive' : 'active');
+    // setNextBtnStatus(pageNumber === curTotalPages ? 'inactive' : 'active');
+
+    if (dir === 'next') {
       setPageNumber(pageNumber + 1);
       setStartIdx(startIdx + 20);
     }
