@@ -6,7 +6,7 @@ import FilterType from "./FilterType";
 
 const SearchBar = (props) => {
   return (
-    <div className='banner-inputs-container'>
+    <div className='search-bar'>
       <div className='banner-inputs'>
         <FilterType changeListType={props.changeListType} />
         <Search />

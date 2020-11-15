@@ -1,4 +1,5 @@
-- styles for list type headline.
+- placeholder for text on detail view.
+
 
 - Hook up nav buttons in pokemonDetail view.
 
@@ -11,3 +12,5 @@
 - mobile/tablet styles
 
 - load screen
+
+- navigate page snap to top of section.

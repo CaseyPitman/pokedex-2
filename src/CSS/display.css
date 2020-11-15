@@ -1,7 +1,7 @@
 /* Styles for PokemonDetail component */
 
 .display {
-  margin: 40px auto;
+  margin: auto;
   min-height: 970px;
   width: 100%;
   font-size: 16px;
@@ -10,6 +10,46 @@
 .display-container {
   margin: 0 auto;
   max-width: 1440px;
+}
+
+.search-bar {
+  background-color: rgb(255, 62, 50);
+  border-top: 1px solid rgb(44, 44, 44);
+  border-bottom: 1px solid rgb(44, 44, 44);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+.banner-inputs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.filter-type,
+.search-input {
+  text-align: center;
+  width: 40%;
+}
+
+.input-field {
+  font-family: "Tomorrow", sans-serif;
+  font-size: 16px;
+  padding: 5px;
+  width: 175px;
+}
+
+.pokemon-type-headline {
+  font-size: 50px;
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
 }
 
 /* POKEMON DETAIL MODAL */
@@ -112,7 +152,7 @@
 
 /* Evolution Chain */
 
-.evolution-chain {
+/* .evolution-chain {
   background: rgb(60, 90, 166);
   border-radius: 10px;
   color: rgb(255, 203, 5);
@@ -140,7 +180,7 @@
   color: rgb(199, 160, 8);
   cursor: pointer;
   transform: scale(1.05);
-}
+} */
 
 .flavor-text {
   font-weight: 300;
@@ -149,10 +189,8 @@
 .pokemon-list-by-type-heading {
   text-align: center;
   margin: 20px auto;
-  width:100%;
+  width: 100%;
 }
-
-
 
 /* Mobile adjustments */
 
