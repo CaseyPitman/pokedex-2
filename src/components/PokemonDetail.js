@@ -39,7 +39,7 @@ const PokemonDetail = props => {
         const { data } = await axios.get(props.curPokemonDetailUrl, {
           cancelToken: source.token,
         });
-        console.log(data);
+
         if (data.sprites.front_default !== null) {
           // No official artwork
           if (!data.sprites.other["official-artwork"].front_default) {

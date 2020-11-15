@@ -20,7 +20,8 @@ const PokemonList = props => {
   // const [list, setList] = useState([]);
 
   //Store current list to be displayed
-  const [currentList, setCurrentList] = useState([]);
+  const [currentList, setCurrentList] = useState([]);   //modal nav
+
   const [pageNumber, setPageNumber] = useState(null);
   const [startIdx, setStartIdx] = useState(null);
   const [curTotalPages, setCurTotalPages] = useState(null);
@@ -40,7 +41,7 @@ const PokemonList = props => {
 
   //Map the list to make the PokemonListItems for display
   useEffect(() => {
-    //Limit to 20 per page
+    //Limit to 15 per page
     let items = [];
     if (currentList.length !== 0) {
       for (let i = startIdx; i < startIdx + 15; i++) {
@@ -56,6 +57,9 @@ const PokemonList = props => {
     }
 
     const curItems = items.map(pokemon => {
+      
+
+
       return (
         <PokemonListItem
           key={pokemon.name}

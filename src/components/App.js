@@ -19,13 +19,21 @@ const App = () => {
           "https://pokeapi.co/api/v2/pokemon?limit=1050"
         );
         // Limit pokmeon to 893 'regular' pokemon
-        setPokemonData(data.results.slice(0, 893));
+        const useList = (data.results.slice(0, 893));
+        // Attach index for nav purposes.
+        useList.forEach(cur => cur.idx = useList.indexOf(cur));
+
+ 
+        setPokemonData(useList);
       } catch (error) {
         console.log(`Something has gone wrong: ${error}`);
       }
     };
     getData();
   }, []);
+
+
+
 
   return (
     <div>
