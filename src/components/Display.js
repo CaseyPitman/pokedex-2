@@ -38,6 +38,8 @@ const Display = props => {
   // Store url to retrieve details for currently displayed pokemon details (modal)
   const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
 
+  const [currentDetailIdx, setCurDetailIdx] = useState(null);
+
   // Store list of all pokemon
   useEffect(() => {
     if (pokemonList.length === 0) {
@@ -71,9 +73,21 @@ const Display = props => {
     setCurType(type);
   };
 
-  const makeModal = (pokemon, index) => {
-    console.log(`index: ${index}`);
-    setCurPokemonDetailUrl(pokemon);
+  const makeModal = (index, navDir = "") => {
+
+    
+    if (navDir === "previous" && index > 0) {
+      setCurPokemonDetailUrl(displayList[index - 1].url);
+      setCurDetailIdx(index - 1);
+    } else if (navDir === "next" && index < displayList.length) {
+      setCurPokemonDetailUrl(displayList[index + 1].url);
+      setCurDetailIdx(index + 1);
+
+    } else {
+      setCurPokemonDetailUrl(displayList[index].url);
+      setCurDetailIdx(index);
+    }
+    
     setModalStatus(true);
   };
 
@@ -104,6 +118,7 @@ const Display = props => {
             closeModal={closeModal}
             curPokemonDetailUrl={curPokemonDetailUrl}
             makeModal={makeModal}
+            index = {currentDetailIdx}
           />
         </ReactModal>
       </div>

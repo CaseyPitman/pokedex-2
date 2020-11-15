@@ -131,7 +131,7 @@ const PokemonDetail = props => {
         <Button
           type='left'
           status={prvBtnStatus}
-          onClick={e => props.makeModal(prevPokemon)}
+          onClick={e => props.makeModal(props.index, "previous")}
         />
         <div className='pokemon-detail-content'>
           <img
@@ -151,13 +151,12 @@ const PokemonDetail = props => {
               {displayTypes}
             </ul>
             <h3 className='flavor-text'>{flavorText}</h3>
-            {/* <EvolutionChain speciesUrl = {speciesUrl}/> */}
           </div>
         </div>
         <Button
           type='right'
           status={nextBtnStatus}
-          onClick={e => props.makeModal(nextPokemon)}
+          onClick={e => props.makeModal(props.index, "next")}
         />
       </div>
     </div>
