@@ -43,7 +43,7 @@ const PokemonList = props => {
     //Limit to 20 per page
     let items = [];
     if (currentList.length !== 0) {
-      for (let i = startIdx; i < startIdx + 20; i++) {
+      for (let i = startIdx; i < startIdx + 15; i++) {
         if (currentList[i]) {
           items.push(currentList[i]);
         }
@@ -52,7 +52,7 @@ const PokemonList = props => {
 
     if (currentList.length !== 0) {
       // Determine number of pages
-      setCurTotalPages(Math.ceil(currentList.length / 20));
+      setCurTotalPages(Math.ceil(currentList.length / 15));
     }
 
     const curItems = items.map(pokemon => {
@@ -79,12 +79,12 @@ const PokemonList = props => {
   const changePage = dir => {
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
-      setStartIdx(startIdx + 20);
+      setStartIdx(startIdx + 15);
     }
 
     if (dir === "previous") {
       setPageNumber(pageNumber - 1);
-      setStartIdx(startIdx - 20);
+      setStartIdx(startIdx - 15);
     }
   };
 
