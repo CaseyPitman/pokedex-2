@@ -7,7 +7,7 @@ import header from "../CSS/header.css";
 const FilterType = ({ changeListType, curType }) => {
   const [types, setTypes] = useState([]);
   const [typeUrl, setTypeUrl] = useState("");
-
+  const [currentType, setCurrentType] = ""
   // //Make call for list of types.
   useEffect(() => {
     const getTypes = async () => {
@@ -31,6 +31,7 @@ const FilterType = ({ changeListType, curType }) => {
   };
 
 
+
   // Map call results to create options for dropdown selector.
   const options = types.map(({ name }) => {
 
@@ -43,11 +44,11 @@ const FilterType = ({ changeListType, curType }) => {
 
   return (
     <div className='filter-type'>
-      <select className='input-field' onChange={onChangeSelect} >
-        <option key='default' value='all'>
+      <select className='input-field' value = {curType} onChange={onChangeSelect} >
+        <option key='default' value='default'>
           Sort by Type
         </option>
-        <option key='all' value='all' >
+        <option key='all' value='all'>
           All Pokémon
         </option>
 
