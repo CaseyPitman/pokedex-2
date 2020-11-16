@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-// 
 // Dependencies
-
+import Autosuggest from "react-autosuggest";
 
 const Search = () => {
   // Store search term for controlled input.
   const [term, setTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
 
-  
-
+  useEffect(() => {
+    setSuggestions([
+      { name: "Casey" },
+      { name: "Traci" },
+      { name: "Charlie" },
+      { name: "Lily Beth" },
+    ]);
+  }, []);
 
   return (
-
-
     <div className='search-input'>
       <form>
         <input
@@ -24,6 +28,8 @@ const Search = () => {
           placeholder='Search for Pokémon'></input>
       </form>
     </div>
+
+    // <Autosuggest suggestions={suggestions} />
   );
 };
 
