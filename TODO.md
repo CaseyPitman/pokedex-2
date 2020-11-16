@@ -10,6 +10,5 @@
 
 - navigate page snap to top of section.
 
-
-- DETAIL VIEW -  NEXT BUTTON THROWS ERROR FROM FINAL POKEMON IN THE LIST. BUTTON DOES NOT GRAY OUT AT THE END.
+-404, error, or no result page.
 

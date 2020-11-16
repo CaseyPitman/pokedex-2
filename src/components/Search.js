@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 
+// 
+// Dependencies
+
+
 const Search = () => {
+  // Store search term for controlled input.
   const [term, setTerm] = useState("");
 
   
 
 
   return (
+
+
     <div className='search-input'>
       <form>
         <input
