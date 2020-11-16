@@ -125,6 +125,7 @@ const Display = props => {
             makeModal={makeModal}
             index={currentDetailIdx}
             changeListType={changeListType}
+            numberInCurrentList = {displayList.length}
           />
         </ReactModal>
       </div>
