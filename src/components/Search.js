@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 // Dependencies
 import Autosuggest from "react-autosuggest";
 
+import theme from '../CSS/theme.css'
+
 const Search = () => {
   // Store search term for controlled input.
   const [term, setTerm] = useState(""); //AKA Value
@@ -56,7 +58,7 @@ const Search = () => {
     placeholder: "Search a family member",
     value: term,
     onChange: onChange,
-    className: 'input-field'
+    // className: 'input-field'
   };
 
   return (

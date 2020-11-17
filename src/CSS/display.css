@@ -32,11 +32,6 @@
   max-width: 1200px;
 }
 
-.filter-type,
-.search-input {
-  text-align: center;
-  width: 40%;
-}
 
 .input-field {
   font-family: "Tomorrow", sans-serif;
@@ -44,15 +39,6 @@
   padding: 5px;
   width: 175px;
 }
-
-.auto-suggestions {
-  background-color: white;
-  color:rgb(44,44,44);
-  margin: auto;
-  width: 175px;
-}
-
-
 
 
 .pokemon-type-headline {
