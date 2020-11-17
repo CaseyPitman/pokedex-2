@@ -2,7 +2,9 @@
 
 - Implement search
 
-- Autocomplete for search.
+- style auto suggest to keep it fit to the page. 
+
+- set search field values to caps?
 
 - mobile/tablet styles
 
