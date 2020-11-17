@@ -8,6 +8,7 @@ import theme from "../CSS/theme.css";
 const Search = (props) => {
   // Store search term for controlled input.
   const [term, setTerm] = useState(""); //AKA Value
+  const [searchIdx, setSearchIdx] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
 
   // const family = [
@@ -39,7 +40,7 @@ const Search = (props) => {
 
   // Use your imagination to render suggestions.
   const renderSuggestion = suggestion => (
-    <div className='auto-suggestions'>{suggestion.name}</div>
+    <div className='auto-suggestions' index = {suggestion.idx}>{suggestion.name}</div>
   );
 
   const onChange = (event, { newValue }) => {
@@ -65,9 +66,14 @@ const Search = (props) => {
     // className: 'input-field'
   };
 
-  const submitSearch = (event) => {
+  const submitSearch = async (event) => {
     event.preventDefault();
-    console.log(`search submitted for term: ${term}`)
+
+    //Retrieve index
+    let index = await props.pokemonList.findIndex(pokemon => pokemon.name === term);
+    setSearchIdx(index);
+
+    console.log(`search submitted for term: ${term}, with the index of ${index}`)
 
 
 
