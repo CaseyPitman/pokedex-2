@@ -5,17 +5,19 @@ import Autosuggest from "react-autosuggest";
 
 import theme from "../CSS/theme.css";
 
-const Search = () => {
+const Search = (props) => {
   // Store search term for controlled input.
   const [term, setTerm] = useState(""); //AKA Value
   const [suggestions, setSuggestions] = useState([]);
 
-  const family = [
-    { name: "Casey" },
-    { name: "Traci" },
-    { name: "Charlie" },
-    { name: "Lily Beth" },
-  ];
+  // const family = [
+  //   { name: "Casey" },
+  //   { name: "Traci" },
+  //   { name: "Charlie" },
+  //   { name: "Lily Beth" },
+  // ];
+
+
 
   // Teach Autosuggest how to calculate suggestions for any given input value.
   const getSuggestions = value => {
@@ -24,9 +26,9 @@ const Search = () => {
 
     return inputLength === 0
       ? []
-      : family.filter(
-          member =>
-            member.name.toLowerCase().slice(0, inputLength) === inputValue
+      : props.pokemonList.filter(
+          pokemon =>
+            pokemon.name.toLowerCase().slice(0, inputLength) === inputValue
         );
   };
 
@@ -66,21 +68,14 @@ const Search = () => {
   const submitSearch = (event) => {
     event.preventDefault();
     console.log(`search submitted for term: ${term}`)
+
+
+
   }
 
 
   return (
     <div className='search-input'>
-      {/* <form>
-        <input
-          className='input-field'
-          type='text'
-          value={term}
-          onChange={event => setTerm(event.target.value)}
-          placeholder='Search for Pokémon'></input>
-      </form> */}
-
-      {/* Probably gonna put Autosuggest in form to handle sumbit. */}
 
       <form onSubmit = {submitSearch}>
         <Autosuggest

@@ -102,7 +102,7 @@ const Display = props => {
 
   return (
     <div className='display'>
-      <SearchBar changeListType={changeListType} curType = {curType} />
+      <SearchBar changeListType={changeListType} curType = {curType} pokemonList = {pokemonList}/>
       <h1 className='pokemon-type-headline'>
         {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon
       </h1>
