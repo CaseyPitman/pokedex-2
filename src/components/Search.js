@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // Dependencies
 import Autosuggest from "react-autosuggest";
 
-import theme from '../CSS/theme.css'
+import theme from "../CSS/theme.css";
 
 const Search = () => {
   // Store search term for controlled input.
@@ -36,7 +36,9 @@ const Search = () => {
   const getSuggestionValue = suggestion => suggestion.name;
 
   // Use your imagination to render suggestions.
-  const renderSuggestion = suggestion => <div className = "auto-suggestions">{suggestion.name}</div>;
+  const renderSuggestion = suggestion => (
+    <div className='auto-suggestions'>{suggestion.name}</div>
+  );
 
   const onChange = (event, { newValue }) => {
     setTerm(newValue);
@@ -55,11 +57,17 @@ const Search = () => {
 
   // Autosuggest will pass through all these props to the input.
   const inputProps = {
-    placeholder: "Search a family member",
+    placeholder: "Search Pokémon",
     value: term,
     onChange: onChange,
     // className: 'input-field'
   };
+
+  const submitSearch = (event) => {
+    event.preventDefault();
+    console.log(`search submitted for term: ${term}`)
+  }
+
 
   return (
     <div className='search-input'>
@@ -72,17 +80,19 @@ const Search = () => {
           placeholder='Search for Pokémon'></input>
       </form> */}
 
+      {/* Probably gonna put Autosuggest in form to handle sumbit. */}
 
-{/* Probably gonna put Autosuggest in form to handle sumbit. */}
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
-        highlightFirstSuggestion={true}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-      />
+      <form onSubmit = {submitSearch}>
+        <Autosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={onSuggestionsClearRequested}
+          highlightFirstSuggestion={true}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={renderSuggestion}
+          inputProps={inputProps}
+        />
+      </form>
     </div>
   );
 };
