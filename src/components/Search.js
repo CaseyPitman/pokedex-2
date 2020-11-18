@@ -11,11 +11,6 @@ const Search = props => {
   const [searchIndex, setSearchIndex] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
 
-  
-
-
-
-
   // Teach Autosuggest how to calculate suggestions for any given input value.
   const getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
@@ -71,11 +66,15 @@ const Search = props => {
     let index = await props.pokemonList.findIndex(
       pokemon => pokemon.name === term
     );
-      setSearchIndex(index);
+    setSearchIndex(index);
     props.makeModal(index);
+    onSuggestionsClearRequested();
+    clearInput();
   };
 
-
+  const clearInput = () => {
+    setTerm('');
+  }
 
   return (
     <div className='search-input'>
