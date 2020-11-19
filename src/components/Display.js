@@ -9,7 +9,7 @@ import display from "../CSS/display.css";
 
 // Components
 import PokemonList from "./PokemonList";
-
+import SearchError from './SearchError';
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
 
@@ -76,7 +76,6 @@ const Display = props => {
     setCurType(type);
     //Close modal if open
     setModalStatus(false);
-
   };
 
   const makeModal = (index, navDir = "") => {
@@ -100,35 +99,46 @@ const Display = props => {
 
   return (
     <div className='display'>
+      <SearchBar
+        changeListType={changeListType}
+        curType={curType}
+        pokemonList={pokemonList}
+        makeModal={makeModal}
+      />
 
-      
-      <SearchBar changeListType={changeListType} curType = {curType} pokemonList = {pokemonList} makeModal={makeModal}/>
-      <h1 className='pokemon-type-headline'>
-        {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon
-      </h1>
-      <div className='display-container'>
-        <PokemonList
-          makeModal={makeModal}
-          displayList={displayList}
-          curPage={curPage}
-          curStartingIndex={curStartingIndex}
-        />
-
-        <ReactModal
-          isOpen={modalStatus}
-          overlayClassName='modal-overlay'
-          className='modal-content-container'
-          onRequestClose={closeModal}>
-          <PokemonDetail
-            closeModal={closeModal}
-            curPokemonDetailUrl={curPokemonDetailUrl}
-            makeModal={makeModal}
-            index={currentDetailIdx}
-            changeListType={changeListType}
-            numberInCurrentList = {displayList.length}
-          />
-        </ReactModal>
+      <div className = 'errorDisplay'>
+        <SearchError/>
       </div>
+
+
+      {/* <div className='no-error-display'>
+        <h1 className='pokemon-type-headline'>
+          {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon
+        </h1>
+        <div className='display-container'>
+          <PokemonList
+            makeModal={makeModal}
+            displayList={displayList}
+            curPage={curPage}
+            curStartingIndex={curStartingIndex}
+          />
+
+          <ReactModal
+            isOpen={modalStatus}
+            overlayClassName='modal-overlay'
+            className='modal-content-container'
+            onRequestClose={closeModal}>
+            <PokemonDetail
+              closeModal={closeModal}
+              curPokemonDetailUrl={curPokemonDetailUrl}
+              makeModal={makeModal}
+              index={currentDetailIdx}
+              changeListType={changeListType}
+              numberInCurrentList={displayList.length}
+            />
+          </ReactModal>
+        </div>
+      </div> */}
     </div>
   );
 };
