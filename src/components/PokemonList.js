@@ -44,7 +44,10 @@ const PokemonList = props => {
         }
       }
       setCurTotalPages(Math.ceil(currentList.length / 15));
-    }
+    } 
+    // else if (currentList.length === 0){
+    //   console.log('no pokemon of this type.')
+    // }
 
     const curItems = items.map(pokemon => {
       return (
