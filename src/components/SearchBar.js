@@ -9,7 +9,7 @@ const SearchBar = (props) => {
     <div className='search-bar'>
       <div className='banner-inputs'>
         <FilterType changeListType={props.changeListType} curType = {props.curType}/>
-        <Search pokemonList = {props.pokemonList} makeModal = {props.makeModal}/>
+        <Search pokemonList = {props.pokemonList} makeModal = {props.makeModal} changeDisplay = {props.changeDisplay}/>
       </div>
     </div>
   );

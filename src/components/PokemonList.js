@@ -12,15 +12,9 @@ import pokemonList from "../CSS/pokemonList.css";
 import PokemonListItem from "./PokemonListItem";
 
 const PokemonList = props => {
-  // Component state
-  // const [pageNumber, setPageNumber] = useState(1);
-  // const [pageUrl, setPageUrl] = useState("https://pokeapi.co/api/v2/pokemon");
-  // const [nextPageUrl, setNextPageUrl] = useState("");
-  // const [prevPageUrl, setPrevPageUrl] = useState("");
-  // const [list, setList] = useState([]);
 
   //Store current list to be displayed
-  const [currentList, setCurrentList] = useState([]);   //modal nav
+  const [currentList, setCurrentList] = useState([]); //modal nav
 
   const [pageNumber, setPageNumber] = useState(null);
   const [startIdx, setStartIdx] = useState(null);
@@ -49,21 +43,14 @@ const PokemonList = props => {
           items.push(currentList[i]);
         }
       }
-    }
-
-    if (currentList.length !== 0) {
-      // Determine number of pages
       setCurTotalPages(Math.ceil(currentList.length / 15));
     }
 
     const curItems = items.map(pokemon => {
-      
-
-
       return (
         <PokemonListItem
           key={pokemon.name}
-          index = {pokemon.idx}
+          index={pokemon.idx}
           name={pokemon.name}
           detailsUrl={pokemon.url}
           makeModal={props.makeModal}

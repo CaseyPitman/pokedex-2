@@ -71,8 +71,9 @@ const Display = props => {
     getPokemonToShow();
   }, [pokemonList, curType]);
 
+  // Set display on init
   useEffect(() => {
-    setCurrentDisplay("search error");
+    setCurrentDisplay("normal");
   }, []);
 
   //Change display
@@ -83,6 +84,9 @@ const Display = props => {
 
   // Change the type of pokemon you want to show.
   const changeListType = type => {
+    if (currentDisplay !== 'normal'){
+      setCurrentDisplay('normal');
+    }
     setCurType(type);
     //Close modal if open
     setModalStatus(false);
@@ -157,6 +161,7 @@ const Display = props => {
     <div className='display'>
       <SearchBar
         changeListType={changeListType}
+        changeDisplay = {changeDisplay}
         curType={curType}
         pokemonList={pokemonList}
         makeModal={makeModal}

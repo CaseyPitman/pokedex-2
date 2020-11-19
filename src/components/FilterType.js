@@ -45,7 +45,7 @@ const FilterType = ({ changeListType, curType }) => {
   return (
     <div className='filter-type'>
       <select className='input-field' value = {curType} onChange={onChangeSelect} >
-        <option key='default' value='default'>
+        <option key='default' value='all' selected>
           Sort by Type
         </option>
         <option key='all' value='all'>

@@ -62,8 +62,14 @@ const Search = props => {
     let index = await props.pokemonList.findIndex(
       pokemon => pokemon.name === term
     );
-    setSearchIndex(index);
-    props.makeModal(index);
+
+    console.log(`index: ${index}`);
+    if (index === -1) {
+      props.changeDisplay("search error");
+    } else {
+      setSearchIndex(index);
+      props.makeModal(index);
+    }
     onSuggestionsClearRequested();
     clearInput();
   };
