@@ -75,6 +75,12 @@ const Display = props => {
     setCurrentDisplay("search error");
   }, []);
 
+  //Change display
+  const changeDisplay = (changeTo) => {
+    console.log(`change to ${changeTo}`)
+    setCurrentDisplay(changeTo);
+  }
+
   // Change the type of pokemon you want to show.
   const changeListType = type => {
     setCurType(type);
@@ -103,7 +109,7 @@ const Display = props => {
 
   const searchErrorDisplay = (
     <div className='errorDisplay'>
-      <SearchError />
+      <SearchError changeDisplay = {changeDisplay}/>
     </div>
   );
 
