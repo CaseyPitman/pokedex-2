@@ -9,7 +9,7 @@ import display from "../CSS/display.css";
 
 // Components
 import PokemonList from "./PokemonList";
-import SearchError from './SearchError';
+import SearchError from "./SearchError";
 import PokemonDetail from "./PokemonDetail";
 import SearchBar from "./SearchBar";
 
@@ -40,6 +40,8 @@ const Display = props => {
 
   const [currentDetailIdx, setCurDetailIdx] = useState(null);
 
+  const [currentDisplay, setCurrentDisplay] = useState("normal");
+
   // Store list of all pokemon
   useEffect(() => {
     if (pokemonList.length === 0) {
@@ -48,8 +50,6 @@ const Display = props => {
   }, [props.pokemonData]);
 
   // Make the current list to show
-
-  // THIS MODULE NEEDS WORK - NEED TO FIND A WAY TO LIMIT THE POKEMON TO LESS THAN 893
 
   useEffect(() => {
     const getPokemonToShow = async () => {
@@ -70,6 +70,10 @@ const Display = props => {
     };
     getPokemonToShow();
   }, [pokemonList, curType]);
+
+  useEffect(() => {
+    setCurrentDisplay("search error");
+  }, []);
 
   // Change the type of pokemon you want to show.
   const changeListType = type => {
@@ -97,6 +101,52 @@ const Display = props => {
     setModalStatus(false);
   };
 
+  const searchErrorDisplay = (
+    <div className='errorDisplay'>
+      <SearchError />
+    </div>
+  );
+
+  const normalDisplay = (
+    <div className='no-error-display'>
+      <h1 className='pokemon-type-headline'>
+        {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon
+      </h1>
+      <div className='display-container'>
+        <PokemonList
+          makeModal={makeModal}
+          displayList={displayList}
+          curPage={curPage}
+          curStartingIndex={curStartingIndex}
+        />
+
+        <ReactModal
+          isOpen={modalStatus}
+          overlayClassName='modal-overlay'
+          className='modal-content-container'
+          onRequestClose={closeModal}>
+          <PokemonDetail
+            closeModal={closeModal}
+            curPokemonDetailUrl={curPokemonDetailUrl}
+            makeModal={makeModal}
+            index={currentDetailIdx}
+            changeListType={changeListType}
+            numberInCurrentList={displayList.length}
+          />
+        </ReactModal>
+      </div>
+    </div>
+  );
+
+  //Sets curent display depending on display status
+  const show = currentDisplay => {
+    if (currentDisplay === "normal") {
+      return normalDisplay;
+    } else if (currentDisplay === "search error") {
+      return searchErrorDisplay;
+    }
+  };
+
   return (
     <div className='display'>
       <SearchBar
@@ -106,10 +156,14 @@ const Display = props => {
         makeModal={makeModal}
       />
 
-      <div className = 'errorDisplay'>
-        <SearchError/>
-      </div>
+      {show(currentDisplay)}
 
+      {/* <div className='errorDisplay'>
+        <SearchError />
+      </div> */}
+      {/* {searchErrorDisplay}
+
+      {normalDisplay} */}
 
       {/* <div className='no-error-display'>
         <h1 className='pokemon-type-headline'>
