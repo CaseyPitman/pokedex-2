@@ -164,15 +164,33 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-flow: row;
+  flex-flow: column;
   height: 100%;
+  width: 50%;
+  margin: 100px auto 0;
 }
 
 .search-error-image {
   display:block;
   max-width: 300px;
-  margin: auto;
- 
+  margin: 30px auto;
+}
+
+.search-error-explanation {
+  font-weight:300;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.search-error-return-home {
+  margin-top: 20px;
+  color: rgb(255, 62, 50);
+}
+
+.search-error-return-home:hover {
+  cursor: pointer;
+  color: rgb(255, 62, 50, 0.8);
+  transform: scale(1.05);
 }
 
 /* Mobile adjustments */
