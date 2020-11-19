@@ -24,15 +24,13 @@ const Search = props => {
         );
   };
 
-  // When suggestion is clicked, Autosuggest needs to populate the input
-  // based on the clicked suggestion. Teach Autosuggest how to calculate the
-  // input value for every given suggestion.
+  // When suggestion is clicked, Autosuggest stores suggestion as value
   const getSuggestionValue = suggestion => suggestion.name;
 
-  // Use your imagination to render suggestions.
+  // Render suggestions (capitialized)
   const renderSuggestion = suggestion => (
     <div className='auto-suggestions' index={suggestion.idx}>
-      {suggestion.name}
+      {suggestion.name.charAt(0).toUpperCase() + suggestion.name.slice(1)}
     </div>
   );
 
@@ -41,7 +39,6 @@ const Search = props => {
   };
 
   // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
   const onSuggestionsFetchRequested = ({ value }) => {
     setSuggestions(getSuggestions(value));
   };
@@ -56,13 +53,12 @@ const Search = props => {
     placeholder: "Search Pokémon",
     value: term,
     onChange: onChange,
-    // className: 'input-field'
   };
 
   const submitSearch = async event => {
     event.preventDefault();
 
-    //Retrieve index
+    //Retrieve index of the selected pokemon
     let index = await props.pokemonList.findIndex(
       pokemon => pokemon.name === term
     );
@@ -72,9 +68,10 @@ const Search = props => {
     clearInput();
   };
 
+  //Clear input upon opening a modal.
   const clearInput = () => {
-    setTerm('');
-  }
+    setTerm("");
+  };
 
   return (
     <div className='search-input'>

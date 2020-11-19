@@ -77,8 +77,6 @@ const Display = props => {
     //Close modal if open
     setModalStatus(false);
 
-
-    //SET FILTER DROPDOWN?
   };
 
   const makeModal = (index, navDir = "") => {
@@ -102,6 +100,8 @@ const Display = props => {
 
   return (
     <div className='display'>
+
+      
       <SearchBar changeListType={changeListType} curType = {curType} pokemonList = {pokemonList} makeModal={makeModal}/>
       <h1 className='pokemon-type-headline'>
         {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon

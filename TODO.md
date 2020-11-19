@@ -1,8 +1,8 @@
 
 
-- Implement search
 
-- style auto suggest to keep it fit to the page. 
+
+
 
 - set search field values to caps?
 
@@ -12,5 +12,7 @@
 
 - navigate page snap to top of section.
 
--404, error, or no result page.
+- 404, error, or no result page.
+
+
 
