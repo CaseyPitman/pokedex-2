@@ -160,11 +160,19 @@
 
 /* Search Error page */
 
+.search-error {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row;
+  height: 100%;
+}
+
 .search-error-image {
   display:block;
   max-width: 300px;
   margin: auto;
-  height: 100%;
+ 
 }
 
 /* Mobile adjustments */

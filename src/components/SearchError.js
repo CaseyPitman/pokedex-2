@@ -11,10 +11,11 @@ const SearchError = () => {
 
    return (
 
-      <div className = 'SearchError'>
-         <h1>Search Error goes here</h1>
+      <div className = 'search-error'>
+         <h1 className = 'search-error-headline'>Oh no! Something is wrong.</h1>
          <img className = 'search-error-image' src = {searchErrorImage} alt = 'Sad Cubone is sad.'/>
-         
+         <h2 className = 'search-error-explanation'>The Pokémon you are searching for isn't here.<br/>Perhaps it does not exist.<br/>Perhaps it has not yet been catalogued.</h2>
+         <h4 className = 'search-error-return-home'>[HOME]</h4>
       </div>
    )
 }
