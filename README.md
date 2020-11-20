@@ -16,8 +16,9 @@ I decided to revisit this project after learning some React and discovering [Pok
 
 ## Technologies
 * [React](https://reactjs.org/)
-   * [React-Modal](http://reactcommunity.org/react-modal/)
    * [Create-React-App](https://github.com/facebook/create-react-app)
+   * [React-Modal](http://reactcommunity.org/react-modal/)
+   * [React-Autosuggest](https://github.com/moroshko/react-autosuggest)
 * [PokéAPI](https://github.com/PokeAPI)
 * [Axios](https://github.com/axios/axios)
 
@@ -34,14 +35,13 @@ I decided to revisit this project after learning some React and discovering [Pok
 - [x] Reposition search bar. 
 - [x] Implement navigation between previous & next Pokémon in detailed view.
 - [x] Implement filter by Pokémon type functionality.
-- [ ] Implement search with autocomplete functionality.
+- [x] Implement search with autocomplete functionality.
 - [x] Assemble data to support search/autocomplete functionality. 
 - [x] Eliminate redundant calls to [PokéAPI](https://pokeapi.co/)
 - [x] Set an upper limit on Pokémon rendered. 
 - [x] Implement intra-modal navigation.
 - [ ] Display evolution chain.
 - [x] Display flavor text.
-- [ ] Implement custom Hook useCall to make calls to PokéAPI.
 
 
 ## Notes 
