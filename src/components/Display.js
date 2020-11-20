@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Dependencies
 import axios from "axios";
@@ -17,6 +17,10 @@ import SearchBar from "./SearchBar";
 ReactModal.setAppElement("#root");
 
 const Display = props => {
+
+  //Ref for scroll to top of Display on nav click
+  const myRef = useRef(null)
+
   const [modalStatus, setModalStatus] = useState(false);
 
   // Full List of pokemon
@@ -91,6 +95,15 @@ const Display = props => {
     //Close modal if open
     setModalStatus(false);
   };
+
+  //Scrolls to top of Display on list page navigation
+  const executeScroll = () =>{
+    
+  }
+  
+
+
+
 
   const makeModal = (index, navDir = "") => {
     if (navDir === "previous" && index > 0) {
