@@ -95,3 +95,15 @@
    background-color: #ddd;
  }
  
+
+
+ /* Mobile Adjustments */
+
+ @media only screen and (max-width:768px){
+
+
+   .input-field, .react-autosuggest__input {
+     width:150px;
+   }
+
+ }

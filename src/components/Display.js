@@ -55,7 +55,7 @@ const Display = props => {
   // Make the current list to show
   useEffect(() => {
     const getPokemonToShow = async () => {
-      if (curType === "all" || curType === "default") {
+      if (curType === "all" || curType === "choose") {
         setDisplayList(pokemonList);
       } else {
         const { data } = await axios.get(

@@ -47,11 +47,11 @@ const FilterType = ({ changeListType, curType }) => {
   return (
     <div className='filter-type'>
       <select className='input-field' value = {curType} onChange={onChangeSelect} >
-        <option key='default' value='all'>
+        {/* <option key='default' value='choose'>
           Sort by Type
-        </option>
+        </option> */}
         <option key='all' value='all'>
-          All Pokémon
+          All Types
         </option>
 
         {options.slice(0,18)}

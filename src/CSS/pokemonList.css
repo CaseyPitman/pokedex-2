@@ -64,6 +64,7 @@
     align-content: space-evenly;
     justify-content: space-evenly;
     height: auto;
+    margin: auto;
     width: 95%;
   }
 
