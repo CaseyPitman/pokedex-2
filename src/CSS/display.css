@@ -12,7 +12,14 @@
   max-width: 1440px;
 }
 
-.search-bar {
+.pokemon-type-headline {
+  font-size: 50px;
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
+}
+
+/* .search-bar {
   background-color: rgb(255, 62, 50);
   border-top: 1px solid rgb(44, 44, 44);
   border-bottom: 1px solid rgb(44, 44, 44);
@@ -32,7 +39,6 @@
   max-width: 1200px;
 }
 
-
 .input-field {
   font-family: "Tomorrow", sans-serif;
   font-size: 16px;
@@ -40,13 +46,12 @@
   width: 175px;
 }
 
-
 .pokemon-type-headline {
   font-size: 50px;
   margin: 20px auto;
   text-align: center;
   width: 100%;
-}
+} */
 
 /* POKEMON DETAIL MODAL */
 .modal-overlay {

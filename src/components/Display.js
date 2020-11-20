@@ -17,9 +17,8 @@ import SearchBar from "./SearchBar";
 ReactModal.setAppElement("#root");
 
 const Display = props => {
-
   //Ref for scroll to top of Display on nav click
-  const myRef = useRef(null)
+  const myRef = useRef(null);
 
   const [modalStatus, setModalStatus] = useState(false);
 
@@ -54,7 +53,6 @@ const Display = props => {
   }, [props.pokemonData]);
 
   // Make the current list to show
-
   useEffect(() => {
     const getPokemonToShow = async () => {
       if (curType === "all" || curType === "default") {
@@ -81,15 +79,15 @@ const Display = props => {
   }, []);
 
   //Change display
-  const changeDisplay = (changeTo) => {
-    console.log(`change to ${changeTo}`)
+  const changeDisplay = changeTo => {
+    console.log(`change to ${changeTo}`);
     setCurrentDisplay(changeTo);
-  }
+  };
 
   // Change the type of pokemon you want to show.
   const changeListType = type => {
-    if (currentDisplay !== 'normal'){
-      setCurrentDisplay('normal');
+    if (currentDisplay !== "normal") {
+      setCurrentDisplay("normal");
     }
     setCurType(type);
     //Close modal if open
@@ -97,14 +95,11 @@ const Display = props => {
   };
 
   //Scrolls to top of Display on list page navigation
-  const executeScroll = () =>{
+  const executeScroll = () => {
     myRef.current.scrollIntoView();
-  }
-  
+  };
 
-
-
-
+  // Create modal to display pokemon details
   const makeModal = (index, navDir = "") => {
     if (navDir === "previous" && index > 0) {
       setCurPokemonDetailUrl(displayList[index - 1].url);
@@ -126,7 +121,7 @@ const Display = props => {
 
   const searchErrorDisplay = (
     <div className='errorDisplay'>
-      <SearchError changeDisplay = {changeDisplay}/>
+      <SearchError changeDisplay={changeDisplay} />
     </div>
   );
 
@@ -141,7 +136,7 @@ const Display = props => {
           displayList={displayList}
           curPage={curPage}
           curStartingIndex={curStartingIndex}
-          executeScroll = {executeScroll}
+          executeScroll={executeScroll}
         />
 
         <ReactModal
@@ -172,52 +167,16 @@ const Display = props => {
   };
 
   return (
-    <div className='display' ref = {myRef}>
+    <div className='display' ref={myRef}>
       <SearchBar
         changeListType={changeListType}
-        changeDisplay = {changeDisplay}
+        changeDisplay={changeDisplay}
         curType={curType}
         pokemonList={pokemonList}
         makeModal={makeModal}
       />
 
       {show(currentDisplay)}
-
-      {/* <div className='errorDisplay'>
-        <SearchError />
-      </div> */}
-      {/* {searchErrorDisplay}
-
-      {normalDisplay} */}
-
-      {/* <div className='no-error-display'>
-        <h1 className='pokemon-type-headline'>
-          {curType.charAt(0).toUpperCase() + curType.slice(1)} Pokémon
-        </h1>
-        <div className='display-container'>
-          <PokemonList
-            makeModal={makeModal}
-            displayList={displayList}
-            curPage={curPage}
-            curStartingIndex={curStartingIndex}
-          />
-
-          <ReactModal
-            isOpen={modalStatus}
-            overlayClassName='modal-overlay'
-            className='modal-content-container'
-            onRequestClose={closeModal}>
-            <PokemonDetail
-              closeModal={closeModal}
-              curPokemonDetailUrl={curPokemonDetailUrl}
-              makeModal={makeModal}
-              index={currentDetailIdx}
-              changeListType={changeListType}
-              numberInCurrentList={displayList.length}
-            />
-          </ReactModal>
-        </div>
-      </div> */}
     </div>
   );
 };

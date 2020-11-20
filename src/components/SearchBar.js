@@ -1,5 +1,9 @@
 import React from "react";
 
+
+import searchBar from "../CSS/searchBar.css";
+
+
 // Components
 import Search from "./Search"
 import FilterType from "./FilterType";

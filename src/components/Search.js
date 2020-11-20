@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // Dependencies
 import Autosuggest from "react-autosuggest";
 
-import theme from "../CSS/theme.css";
+// import theme from "../CSS/theme.css";
 
 const Search = props => {
   // Store search term for controlled input.
@@ -63,7 +63,6 @@ const Search = props => {
       pokemon => pokemon.name === term
     );
 
-    console.log(`index: ${index}`);
     if (index === -1) {
       props.changeDisplay("search error");
     } else {
@@ -81,7 +80,7 @@ const Search = props => {
 
   return (
     <div className='search-input'>
-      <form onSubmit={submitSearch}>
+      <form onSubmit={submitSearch} className = 'search-input-form'>
         <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={onSuggestionsFetchRequested}
