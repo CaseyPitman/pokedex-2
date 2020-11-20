@@ -98,7 +98,7 @@ const Display = props => {
 
   //Scrolls to top of Display on list page navigation
   const executeScroll = () =>{
-    
+    myRef.current.scrollIntoView();
   }
   
 
@@ -141,6 +141,7 @@ const Display = props => {
           displayList={displayList}
           curPage={curPage}
           curStartingIndex={curStartingIndex}
+          executeScroll = {executeScroll}
         />
 
         <ReactModal
@@ -171,7 +172,7 @@ const Display = props => {
   };
 
   return (
-    <div className='display'>
+    <div className='display' ref = {myRef}>
       <SearchBar
         changeListType={changeListType}
         changeDisplay = {changeDisplay}

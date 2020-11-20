@@ -72,6 +72,7 @@ const PokemonList = props => {
 
   //Change page
   const changePage = dir => {
+  
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setStartIdx(startIdx + 15);
@@ -81,6 +82,7 @@ const PokemonList = props => {
       setPageNumber(pageNumber - 1);
       setStartIdx(startIdx - 15);
     }
+    props.executeScroll();
   };
 
   return (
