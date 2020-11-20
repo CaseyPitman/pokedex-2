@@ -19,39 +19,6 @@
   width: 100%;
 }
 
-/* .search-bar {
-  background-color: rgb(255, 62, 50);
-  border-top: 1px solid rgb(44, 44, 44);
-  border-bottom: 1px solid rgb(44, 44, 44);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-}
-
-.banner-inputs {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-flow: row wrap;
-  margin: auto;
-  max-width: 1200px;
-}
-
-.input-field {
-  font-family: "Tomorrow", sans-serif;
-  font-size: 16px;
-  padding: 5px;
-  width: 175px;
-}
-
-.pokemon-type-headline {
-  font-size: 50px;
-  margin: 20px auto;
-  text-align: center;
-  width: 100%;
-} */
 
 /* POKEMON DETAIL MODAL */
 .modal-overlay {
@@ -211,8 +178,10 @@
 }
 
 
-
-
 /* Mobile adjustments */
 
+@media only screen and (max-width: 768px){
 
+
+  
+}

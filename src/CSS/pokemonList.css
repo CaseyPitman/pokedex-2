@@ -13,7 +13,7 @@
 .pokemon-list-item {
   border: 1px solid transparent;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 14px;
   padding-bottom: 5px;
   text-align: center;
 }
@@ -29,18 +29,18 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height:125px;
+  max-height: 125px;
   margin: auto;
   max-width: 125px;
 }
 
 .pokemon-list-pagination {
-  background-color: rgb(255,255,255,0.9);
+  background-color: rgb(255, 255, 255, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row wrap;
-  margin: 50px auto ;
+  margin: 50px auto;
   width: 30%;
 
   position: -webkit-sticky; /* Safari */
@@ -48,11 +48,26 @@
   bottom: 0px;
 }
 
-
 /* Tablet adjustments */
 
-@media only screen and (max-width: 800px){
-  .pokemon-list-pagination{
-    width:40%;
+@media only screen and (max-width: 800px) {
+  .pokemon-list-pagination {
+    width: 40%;
+  }
+}
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 25% 25% 25%;
+    grid-row-gap: 50px;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    height: auto;
+    width: 95%;
+  }
+
+  .pokemon-list-pagination {
+    width: 50%;
   }
 }
