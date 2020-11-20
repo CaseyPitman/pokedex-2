@@ -198,11 +198,21 @@
   transform: scale(1.05);
 }
 
-/* Mobile adjustments */
 
-@media only screen and (max-width: 767px) {
+/* Tablet Adjustments */
+
+@media only screen and (max-width: 768px){
+  .modal-content-container {
+    width:75%;
+  }
   .display {
     font-size: 12px;
-    width: 95%;
   }
 }
+
+
+
+
+/* Mobile adjustments */
+
+
