@@ -2,7 +2,7 @@
 
 
 # Pokédex Project        
-A simple Pokedéx with basic information about all current Pokémon using data from the [PokéAPI](https://pokeapi.co/).
+A React Pokedéx with basic information about all current Pokémon using data from the [PokéAPI](https://pokeapi.co/).
 
 
 ## Introduction
