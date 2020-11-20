@@ -142,6 +142,10 @@
   margin: 100px auto 0;
 }
 
+.search-error-headline {
+  text-align: center;
+}
+
 .search-error-image {
   display:block;
   max-width: 300px;
@@ -213,7 +217,5 @@
     width: 80%;
   }
 
-  .search-error-headline {
-    text-align: center;
-  }
+
 }
