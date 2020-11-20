@@ -41,7 +41,7 @@
   align-items: center;
   flex-flow: row wrap;
   margin: 50px auto ;
-  width: 25%;
+  width: 30%;
 
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -51,7 +51,7 @@
 
 /* Tablet adjustments */
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 800px){
   .pokemon-list-pagination{
     width:40%;
   }
