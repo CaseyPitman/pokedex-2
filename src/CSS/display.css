@@ -169,17 +169,22 @@
 /* Tablet Adjustments */
 
 @media only screen and (max-width: 800px){
+
   .modal-content-container {
     width:75%;
   }
+
   .display {
     font-size: 12px;
   }
+
+
+
+
 }
 
 
 /* Mobile adjustments */
-
 @media only screen and (max-width: 768px){
 
   .pokemon-type-headline {
@@ -203,6 +208,12 @@
   .modal-content-container {
     width: 90%;
   }
-  
-  
+
+  .search-error {
+    width: 80%;
+  }
+
+  .search-error-headline {
+    text-align: center;
+  }
 }
