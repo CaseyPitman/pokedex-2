@@ -1,3 +1,5 @@
+// This component is the parent to all various display children.
+
 import React, { useState, useEffect, useRef } from "react";
 
 // Dependencies
