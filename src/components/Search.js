@@ -80,7 +80,7 @@ const Search = props => {
 
   return (
     <div className='search-input'>
-      <form onSubmit={submitSearch} className = 'search-input-form'>
+      <form onSubmit={submitSearch} className='search-input-form'>
         <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={onSuggestionsFetchRequested}
