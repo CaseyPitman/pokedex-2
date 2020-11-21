@@ -1,8 +1,9 @@
+// This component renders the search bar. 
+
 import React from "react";
 
-
+// Styles
 import searchBar from "../CSS/searchBar.css";
-
 
 // Components
 import Search from "./Search"
