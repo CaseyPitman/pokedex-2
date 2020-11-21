@@ -1,20 +1,16 @@
 
 //This module displays when there is an error in the search (user searches for non-existent pokemon);
-import React from 'react';
 
+import React from 'react';
 
 // Assets
 import searchErrorImage from '../img/sad-cubone.png'
-
-
 
 const SearchError = ({changeDisplay}) => {
 
    //Use clicks home to return to normal view.
    const onClick = () => {
-
       changeDisplay('normal');
-
    }
 
    return (
