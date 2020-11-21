@@ -93,6 +93,8 @@ const Display = props => {
     setCurType(type);
     //Close modal if open
     setModalStatus(false);
+    //Scroll to display top
+    myRef.current.scrollIntoView();
   };
 
   //Scrolls to top of Display on list page navigation
