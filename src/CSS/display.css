@@ -177,6 +177,18 @@
   .display {
     font-size: 12px;
   }
+
+  .search-error-headline {
+    font-size: 30px;
+  }
+
+  .search-error-explanation {
+    font-size: 22px;
+  }
+
+  .search-error-return-home {
+    font-size: 28px;
+  }
 }
 
 /* Mobile adjustments */
@@ -213,11 +225,51 @@
 @media screen and (orientation: landscape) and (max-device-width: 812px) {
   .modal-content-container {
     min-height: 0px;
-    max-height: 90%;
+    max-height: 95%;
     padding: 5px;
     width: 90%;
-    background-color: green;
   }
 
+  .pokemon-detail-content-container {
+    width: 90%;
+  }
 
+  .pokemon-detail-img {
+    max-width: 150px;
+  }
+
+  .pokemon-detail-content-text-number,
+  .pokemon-detail-content-text-name {
+    font-size: 1.5em;
+  }
+
+  .pokemon-detail-content-type-list {
+    font-size: 1.2em;
+  }
+
+  .flavor-text {
+    font-size: 1em;
+  }
+
+  .search-error {
+    margin: 20px auto;
+  }
+
+  .search-error-headline {
+    font-size: 18px;
+  }
+
+  .search-error-image {
+    margin: 10px auto;
+    max-width: 100px;
+  }
+
+  .search-error-explanation {
+    font-size: 16px;
+  }
+
+  .search-error-return-home {
+    font-size: 20px;
+    margin-top: 10px;
+  }
 }
