@@ -1,3 +1,5 @@
+// This component displays the list of pokemon use wants to show (All or a specific type).
+
 import React, { useEffect, useState } from "react";
 
 // Dependencies
@@ -5,17 +7,16 @@ import axios from "axios";
 
 // Components
 import Button from "./Button";
+import PokemonListItem from "./PokemonListItem";
 
 // Styles
 import pokemonList from "../CSS/pokemonList.css";
 
-import PokemonListItem from "./PokemonListItem";
-
 const PokemonList = props => {
-
   //Store current list to be displayed
   const [currentList, setCurrentList] = useState([]); //modal nav
 
+  // Store pagination information
   const [pageNumber, setPageNumber] = useState(null);
   const [startIdx, setStartIdx] = useState(null);
   const [curTotalPages, setCurTotalPages] = useState(null);
@@ -23,6 +24,7 @@ const PokemonList = props => {
   // Store list items
   const [listItems, setListItems] = useState([]);
 
+  // Manage nav button status
   const [prevBtnStatus, setPrevBtnStatus] = useState("inactive");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
@@ -44,11 +46,9 @@ const PokemonList = props => {
         }
       }
       setCurTotalPages(Math.ceil(currentList.length / 15));
-    } 
-    // else if (currentList.length === 0){
-    //   console.log('no pokemon of this type.')
-    // }
+    }
 
+    // Render the list items for display
     const curItems = items.map(pokemon => {
       return (
         <PokemonListItem
@@ -72,25 +72,25 @@ const PokemonList = props => {
 
   //Change page
   const changePage = dir => {
-  
+    // Advance to next page in the list
     if (dir === "next") {
       setPageNumber(pageNumber + 1);
       setStartIdx(startIdx + 15);
     }
-
+    // Regress to previous page in the list
     if (dir === "previous") {
       setPageNumber(pageNumber - 1);
       setStartIdx(startIdx - 15);
     }
+    // Scroll to top of Display component with each nav click
     props.executeScroll();
   };
 
   return (
     <div className='pokemon-list'>
-      <div className='grid-container'>
-        {/* <PokemonListItem /> */}
-        {listItems}
-      </div>
+      {/* Grid list */}
+      <div className='grid-container'>{listItems}</div>
+      {/* Pagination */}
       <div className='pokemon-list-pagination'>
         <Button
           type='left'
