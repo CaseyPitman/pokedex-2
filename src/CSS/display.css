@@ -1,10 +1,10 @@
 /* Styles for PokemonDetail component */
 
 .display {
+  font-size: 16px;
   margin: auto;
   min-height: 970px;
   width: 100%;
-  font-size: 16px;
 }
 
 .display-container {
@@ -22,6 +22,7 @@
 /* POKEMON DETAIL MODAL */
 .modal-overlay {
   background-color: rgb(44, 44, 44, 0.88);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -34,21 +35,19 @@
 }
 
 .modal-content-container {
-  font-family: "Tomorrow", sans-serif;
-  color: rgb(44, 44, 44);
+  background: #fff;
   border: 1px solid transparent;
   border-radius: 5px;
-  background: #fff;
+  color: rgb(44, 44, 44);
+  font-family: "Tomorrow", sans-serif;
   min-height: 500px;
-  overflow: auto;
   outline: none;
+  overflow: auto;
   padding: 20px;
   width: 50%;
-  /* webkit-overflow-scrolling: touch; */
 }
 
 /* POKEMON DETAIL CONTENT */
-
 .pokemon-detail {
   display: flex;
   justify-content: center;
@@ -80,6 +79,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   width: 90%;
 }
 
@@ -102,15 +102,16 @@
 
 .pokemon-detail-content-type-list {
   font-size: 1.5em;
-  display: flex;
-  justify-content: space-around;
   margin: 10px auto;
   width: 90%;
+
+  display: flex;
+  justify-content: space-around;
 }
 
 .pokemon-detail-content-type-list-item {
-  display: inline-block;
   color: rgba(238, 67, 55);
+  display: inline-block;
 }
 
 .pokemon-detail-content-type-list-item:hover {
@@ -124,8 +125,8 @@
 }
 
 .pokemon-list-by-type-heading {
-  text-align: center;
   margin: 20px auto;
+  text-align: center;
   width: 100%;
 }
 
@@ -136,9 +137,10 @@
   justify-content: space-around;
   align-items: center;
   flex-flow: column;
+
   height: 100%;
-  width: 50%;
   margin: 100px auto 0;
+  width: 50%;
 }
 
 .search-error-headline {
@@ -147,8 +149,8 @@
 
 .search-error-image {
   display: block;
-  max-width: 300px;
   margin: 30px auto;
+  max-width: 300px;
 }
 
 .search-error-explanation {
@@ -158,8 +160,8 @@
 }
 
 .search-error-return-home {
-  margin-top: 20px;
   color: rgb(255, 62, 50);
+  margin-top: 20px;
 }
 
 .search-error-return-home:hover {
@@ -207,8 +209,8 @@
   }
 
   .flavor-text {
-    font-weight: 300;
     font-size: 16px;
+    font-weight: 300;
     width: 100%;
   }
 
@@ -225,8 +227,8 @@
 
 @media screen and (orientation: landscape) and (max-device-width: 812px) {
   .modal-content-container {
-    min-height: 0px;
     max-height: 95%;
+    min-height: 0px;
     padding: 5px;
     width: 90%;
   }

@@ -4,8 +4,10 @@
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-row-gap: 50px;
+
   align-content: space-evenly;
   justify-content: space-evenly;
+
   height: auto;
   width: 100%;
 }
@@ -20,36 +22,35 @@
 
 .pokemon-list-item:hover {
   cursor: pointer;
-
   border: 1px solid rgb(255, 62, 50);
   color: rgb(255, 62, 50);
 }
 
 .pokemon-list-item-img {
   display: block;
-  width: 100%;
   height: auto;
-  max-height: 125px;
   margin: auto;
+  max-height: 125px;
   max-width: 125px;
+  width: 100%;
 }
 
 .pokemon-list-pagination {
   background-color: rgb(255, 255, 255, 0.9);
+  margin: 50px auto;
+  width: 30%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row wrap;
-  margin: 50px auto;
-  width: 30%;
-
+  
   position: -webkit-sticky; /* Safari */
   position: sticky;
   bottom: 0px;
 }
 
 /* Tablet adjustments */
-
 @media only screen and (max-width: 800px) {
   .pokemon-list-pagination {
     width: 40%;
