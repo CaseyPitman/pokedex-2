@@ -26,6 +26,7 @@ I decided to revisit this project after learning some React and discovering [Pok
 ## Features
 
 * Sequential listing of all known Pokémon presented as a paginated list including number, name, and classic sprite images.
+* Pokémon search function featuring autosuggest of existing Pokémon.
 * Detail view of individual Pokémon including classic sprite image, number, name, and type.
 * Intra-modal Pokémon detail navigation. 
 
