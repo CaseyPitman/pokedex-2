@@ -1,3 +1,5 @@
+// This component renders the contents of the detail view as displayed in modals (via Display component).
+
 import React, { useState, useEffect } from "react";
 
 // Dependencies
@@ -15,13 +17,11 @@ import display from "../CSS/display.css";
 import global from "../CSS/global.css";
 
 const PokemonDetail = props => {
+  // Manage active/inactive class on buttons
   const [prvBtnStatus, setPrvBtnStatus] = useState("active");
   const [nextBtnStatus, setNextBtnStatus] = useState("active");
 
-  const [prevPokemon, setPrevPokemon] = useState("");
-  const [curPokemon, setCurPokemon] = useState("");
-  const [nextPokemon, setNextPokemon] = useState("");
-
+  // Stores all the data to be displayed.
   const [imageSrc, setImageSrc] = useState(pokeball);
   const [number, setNumber] = useState(null);
   const [name, setName] = useState("?");
@@ -32,6 +32,7 @@ const PokemonDetail = props => {
 
   // API call for individual pokemon details.
   useEffect(() => {
+    // Cancel if necessary
     const source = axios.CancelToken.source();
 
     const getDetails = async () => {
@@ -41,14 +42,16 @@ const PokemonDetail = props => {
         });
 
         if (data.sprites.front_default !== null) {
-          // No official artwork
+          // If there is no official artwork dispaly classic sprite
           if (!data.sprites.other["official-artwork"].front_default) {
             setImageSrc(data.sprites.front_default);
           } else {
+            //Display official artwork
             setImageSrc(data.sprites.other["official-artwork"].front_default);
           }
         }
 
+        // Set number, name, types and url
         setNumber(data.id);
         setName(data.name);
         setTypes(data.types);
@@ -63,14 +66,13 @@ const PokemonDetail = props => {
           setPrvBtnStatus("active");
           setNextBtnStatus("active");
         }
-        setCurPokemon(data.species.name);
       } catch (error) {
         console.log("Something went wrong: ", error.message);
       }
     };
     getDetails();
 
-    // Cleanup
+    // Cleanup function/cancel call
     return () => {
       source.cancel();
     };
@@ -87,8 +89,7 @@ const PokemonDetail = props => {
         });
         console.log(data.flavor_text_entries[0].language.name);
 
-        //Iterate through flavor text entries until reach one written in English (en)
-
+        //Iterate through flavor text entries until we reach one written in English (en)
         for (let i = 0; i < data.flavor_text_entries.length; i++) {
           if (data.flavor_text_entries[i].language.name === "en") {
             setFlavorText(data.flavor_text_entries[i].flavor_text);
@@ -103,15 +104,20 @@ const PokemonDetail = props => {
       getFlavorText();
     }
 
-    // Cleanup
+    // Cleanup function/cancel
     return () => {
       source.cancel();
     };
   }, [speciesUrl]);
 
   useEffect(() => {
+    // Map the types associated with the current pokemon and render them as list items.
     const mappedTypes = types.map(cur => (
-      <PokemonTypeListItem key={cur.slot} name={cur.type.name} changeListType = {props.changeListType} />
+      <PokemonTypeListItem
+        key={cur.slot}
+        name={cur.type.name}
+        changeListType={props.changeListType}
+      />
     ));
     setDisplayTypes(mappedTypes);
   }, [types]);

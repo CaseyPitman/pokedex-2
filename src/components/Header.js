@@ -1,3 +1,5 @@
+// This component renders the header
+
 import React from "react";
 
 // Assets

@@ -1,3 +1,5 @@
+// This component renders the footer. 
+
 import React from "react";
 
 // Assets
