@@ -64,7 +64,7 @@
 }
 
 .close-modal-button:hover {
-  color: rgb(255, 62, 50, 0.7);
+  color: rgba(238, 67, 55, 0.7);
   cursor: pointer;
 }
 
@@ -110,10 +110,11 @@
 
 .pokemon-detail-content-type-list-item {
   display: inline-block;
+  color: rgba(238, 67, 55);
 }
 
 .pokemon-detail-content-type-list-item:hover {
-  color: rgb(42, 117, 187);
+  color: rgba(238, 67, 55, 0.85);
   cursor: pointer;
   transform: scale(1.05);
 }
