@@ -7,9 +7,7 @@
 
 
    - mobile landscape - adjust width/height detail modal
-   
 
--enable search from searchError page.
 
 
 

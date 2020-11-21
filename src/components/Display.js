@@ -110,8 +110,8 @@ const Display = props => {
       setCurDetailIdx(index + 1);
     } else {
       //Set display from SearchError to Normal
-      if (currentDisplay === 'search error'){
-        setCurrentDisplay('normal');
+      if (currentDisplay === "search error") {
+        setCurrentDisplay("normal");
       }
       setCurPokemonDetailUrl(displayList[index].url);
       setCurDetailIdx(index);
