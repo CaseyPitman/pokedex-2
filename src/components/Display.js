@@ -80,8 +80,9 @@ const Display = props => {
 
   //Change display
   const changeDisplay = changeTo => {
-    console.log(`change to ${changeTo}`);
     setCurrentDisplay(changeTo);
+    //Scroll to top of Display
+    myRef.current.scrollIntoView();
   };
 
   // Change the type of pokemon you want to show.
