@@ -1,5 +1,8 @@
+
+// Parent App component
 import React, { useEffect, useState } from "react";
 
+// Dependencies
 import axios from "axios";
 
 // Components
@@ -18,14 +21,10 @@ const App = () => {
         const { data } = await axios.get(
           "https://pokeapi.co/api/v2/pokemon?limit=1050"
         );
-        // Limit pokmeon to 893 'regular' pokemon
-        // const useList = (data.results.slice(0, 893));
-
-        const useList = (data.results);
-        // Attach index for nav purposes.
-        useList.forEach(cur => cur.idx = useList.indexOf(cur));
-
- 
+        const useList = data.results;
+        // Attach index to each pokemon for nav purposes.
+        useList.forEach(cur => (cur.idx = useList.indexOf(cur)));
+        //Store list of all currently known pokemon
         setPokemonData(useList);
       } catch (error) {
         console.log(`Something has gone wrong: ${error}`);
@@ -34,14 +33,10 @@ const App = () => {
     getData();
   }, []);
 
-
-
-
   return (
     <div>
       <Header />
       <Display pokemonData={pokemonData} />
-
       <Footer />
     </div>
   );
