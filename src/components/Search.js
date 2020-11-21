@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
+//This component renders the individual pokemon search input and handles autosuggest features.
+
+import React, { useState } from "react";
 
 // Dependencies
 import Autosuggest from "react-autosuggest";
 
-// import theme from "../CSS/theme.css";
 
 const Search = props => {
   // Store search term for controlled input.
   const [term, setTerm] = useState(""); //AKA Value
-  const [searchIndex, setSearchIndex] = useState(null);
+  // Store current search suggestions
   const [suggestions, setSuggestions] = useState([]);
 
-  // Teach Autosuggest how to calculate suggestions for any given input value.
+  // Calculate suggestions for any given input value.
   const getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
-
     return inputLength === 0
       ? []
       : props.pokemonList.filter(
@@ -34,27 +34,29 @@ const Search = props => {
     </div>
   );
 
+  // Update term as user types
   const onChange = (event, { newValue }) => {
     setTerm(newValue);
   };
 
-  // Autosuggest will call this function every time you need to update suggestions.
+  // Autosuggest will call this function to update suggestions.
   const onSuggestionsFetchRequested = ({ value }) => {
     setSuggestions(getSuggestions(value));
   };
 
-  // Autosuggest will call this function every time you need to clear suggestions.
+  // Autosuggest will call this function to clear suggestions.
   const onSuggestionsClearRequested = () => {
     setSuggestions([]);
   };
 
-  // Autosuggest will pass through all these props to the input.
+  // Autosuggest will pass these props to the input.
   const inputProps = {
     placeholder: "Search Pokémon",
     value: term,
     onChange: onChange,
   };
 
+  // Handles user submission of search term
   const submitSearch = async event => {
     event.preventDefault();
 
@@ -62,14 +64,17 @@ const Search = props => {
     let index = await props.pokemonList.findIndex(
       pokemon => pokemon.name === term
     );
-
+    //User inputs a non-existent pokemon
     if (index === -1) {
+      // Tells display to show error message to user
       props.changeDisplay("search error");
     } else {
-      setSearchIndex(index);
+      //Displays PokemonDetail modal for searched pokemon
       props.makeModal(index);
     }
+    // Clear suggestions
     onSuggestionsClearRequested();
+    // Clear search input field on successful search and modal render
     clearInput();
   };
 
