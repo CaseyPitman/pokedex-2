@@ -66,10 +66,12 @@
   }
 
   .pokemon-list-pagination {
+    bottom: 20px;
     width: 50%;
   }
 
   .pokemon-list-item {
     font-size:14px;
   }
+
 }
