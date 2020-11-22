@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styles
-import button from "../CSS/button.css";
+import "../CSS/button.css";
 
 const Button = props => {
   // Handle pagination button clicks.

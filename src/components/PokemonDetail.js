@@ -13,8 +13,8 @@ import Button from "./Button";
 import PokemonTypeListItem from "./PokemonTypeListItem";
 
 // Styles
-import display from "../CSS/display.css";
-import global from "../CSS/global.css";
+import "../CSS/display.css";
+import "../CSS/global.css";
 
 const PokemonDetail = props => {
   // Manage active/inactive class on buttons
@@ -76,7 +76,7 @@ const PokemonDetail = props => {
     return () => {
       source.cancel();
     };
-  }, [props.curPokemonDetailUrl]);
+  }, [props.curPokemonDetailUrl, props.index, props.changeListType, props.numberInCurrentList]);
 
   // MAKE A CALL FOR FLAVOR TEXT USING SPECIES URL
   useEffect(() => {
@@ -120,7 +120,7 @@ const PokemonDetail = props => {
       />
     ));
     setDisplayTypes(mappedTypes);
-  }, [types]);
+  }, [types, props.changeListType]);
 
   // Handle click on close button
   const handleCloseButtonClick = () => {

@@ -2,15 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 
-// Dependencies
-import axios from "axios";
-
 // Components
 import Button from "./Button";
 import PokemonListItem from "./PokemonListItem";
 
 // Styles
-import pokemonList from "../CSS/pokemonList.css";
+import "../CSS/pokemonList.css";
 
 const PokemonList = props => {
   //Store current list to be displayed
@@ -62,13 +59,13 @@ const PokemonList = props => {
     });
 
     setListItems(curItems);
-  }, [currentList, pageNumber]);
+  }, [currentList, pageNumber, props.makeModal, startIdx]);
 
   //Maintain styles and functionality status of buttons.
   useEffect(() => {
     setPrevBtnStatus(pageNumber === 1 ? "inactive" : "active");
     setNextBtnStatus(pageNumber === curTotalPages ? "inactive" : "active");
-  }, [pageNumber]);
+  }, [pageNumber, curTotalPages]);
 
   //Change page
   const changePage = dir => {

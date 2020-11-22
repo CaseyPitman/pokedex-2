@@ -7,7 +7,7 @@ import growlithe from "../img/growlithe.jpg";
 import squirtleGlasses from "../img/squirtle-glasses.png";
 
 // Styles
-import footer from "../CSS/footer.css";
+import "../CSS/footer.css";
 
 const Footer = () => {
   return (

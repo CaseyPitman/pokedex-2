@@ -15,7 +15,7 @@
 .pokemon-list-item {
   border: 1px solid transparent;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 18px;
   padding-bottom: 5px;
   text-align: center;
 }
@@ -67,5 +67,9 @@
 
   .pokemon-list-pagination {
     width: 50%;
+  }
+
+  .pokemon-list-item {
+    font-size:14px;
   }
 }

@@ -7,7 +7,7 @@ import axios from "axios";
 import ReactModal from "react-modal";
 
 // Styles
-import display from "../CSS/display.css";
+import "../CSS/display.css";
 
 // Components
 import PokemonList from "./PokemonList";
@@ -31,9 +31,9 @@ const Display = props => {
   // Store current type of pokemon to be displayed
   const [curType, setCurType] = useState("all");
   //Store the current page number of the displayed list (for display & pagination)
-  const [curPage, setCurPage] = useState(1);
+  const [curPage] = useState(1);
   // Store the current starting currentListData[idx]
-  const [curStartingIndex, setCurStartingIndex] = useState(0);
+  const [curStartingIndex] = useState(0);
   // Store url to retrieve details for currently displayed pokemon details (modal)
   const [curPokemonDetailUrl, setCurPokemonDetailUrl] = useState("");
   // Index of currently displayed pokemon detail
@@ -47,7 +47,7 @@ const Display = props => {
     if (pokemonList.length === 0) {
       setPokemonList(props.pokemonData);
     }
-  }, [props.pokemonData]);
+  }, [props.pokemonData, pokemonList.length]);
 
   // Make the current list to show
   useEffect(() => {

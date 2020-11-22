@@ -6,8 +6,8 @@ import React from "react";
 import headerImg from "../img/starter-pokemon.jpg";
 
 // Styles
-import global from "../CSS/global.css";
-import header from "../CSS/header.css";
+// import global from "../CSS/global.css";
+// import header from "../CSS/header.css";
 
 const Header = props => {
   return (

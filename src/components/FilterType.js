@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // Styles
-import header from "../CSS/header.css";
+import "../CSS/header.css";
 
 const FilterType = ({ changeListType, curType }) => {
   // Store all possible types of pokemon (retrieved at initialization)
