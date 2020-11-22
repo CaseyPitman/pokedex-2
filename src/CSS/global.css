@@ -6,7 +6,13 @@
   padding: 0px;
 }
 
+html {
+  width:100%;
+}
+
 #root {
   font-family: "Tomorrow", sans-serif;
   color: rgb(44, 44, 44);
+  width:100%;
 }
+
