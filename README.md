@@ -51,6 +51,6 @@ I decided to revisit this project after learning some React and discovering [Pok
 
 * I knew early on I wanted to use modals to display information about specifically selected Pokémon. I used the same strategy in my first version of the Pokédex and liked the result. This was my first time using modals in React, and I quickly came across [React-Modal](http://reactcommunity.org/react-modal/). They have great documentation and it didn't take me long to get up and running. I'll definitely be using it again. 
 
-* I've been learning React for a while now, and had started with the old-school class components model. I've recently started learning React Hooks and felt this would be an ideal project for me to explore their capabilities and get a lot of good experiendce using them. I encountered a few dead ends and quirks, but overall I feel like I'm getting a pretty good grasp on Hooks. 
+* I've been learning React for a while now, and had started with the old-school class components model. I've recently started learning React Hooks and felt this would be an ideal project for me to explore their capabilities and get a lot of good experience using them. I encountered a few dead ends and quirks, but overall I feel like I'm getting a pretty good grasp on Hooks. 
 
 
